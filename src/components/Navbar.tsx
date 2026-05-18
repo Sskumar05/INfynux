@@ -26,10 +26,14 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "glass-strong py-3.5 shadow-lg shadow-black/10"
+          : "glass py-5.5"
+      }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className={`flex items-center justify-between rounded-2xl px-5 py-3 transition-all ${scrolled ? "glass-strong" : "glass"}`}>
+        <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative h-9 w-9 rounded-lg bg-gradient-cosmic flex items-center justify-center animate-pulse-glow">
               <Sparkles className="h-5 w-5 text-white" />
@@ -52,13 +56,13 @@ export function Navbar() {
             ))}
           </div>
           <div className="flex items-center gap-3">
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-full glass hover:text-[var(--cyan)] transition-colors"
               aria-label="Toggle theme"
             >
               {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-            </button>
+            </button> */}
             <Link
               to="/contact"
               className="hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-5 py-2.5 text-sm font-semibold text-[#001018] hover:scale-105 transition-transform shadow-lg shadow-[var(--cyan)]/30"
@@ -75,13 +79,13 @@ export function Navbar() {
           </div>
         </nav>
         {menuOpen && (
-          <div className="md:hidden mt-2 glass-strong rounded-2xl p-4 flex flex-col gap-3">
+          <div className="md:hidden mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
             {links.map((l) => (
               <Link 
                 key={l.to} 
                 to={l.to} 
                 onClick={() => setMenuOpen(false)} 
-                className="px-2 py-2 text-foreground hover:text-[var(--cyan)]"
+                className="px-2 py-2 text-foreground hover:text-[var(--cyan)] transition-colors"
                 activeProps={{ className: "text-[var(--cyan)]" }}
               >
                 {l.label}

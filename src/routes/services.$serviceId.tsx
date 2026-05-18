@@ -69,6 +69,35 @@ const SERVICES_DATA: Record<string, any> = {
       { q: "Can you work with our existing brand?", a: "Definitely. We can either follow your established brand guidelines or help you evolve them for a more modern digital presence." }
     ]
   },
+  "app-development": {
+    title: "App Development",
+    icon: Smartphone,
+    heading: "Creating Exceptional Native & Cross-Platform Applications",
+    intro: "Mobile application development is the art and science of building software designed specifically for handheld devices. At Rubi Royals, we design high-performance, responsive iOS and Android applications that engage users, simplify workflows, and scale effortlessly.",
+    why: "In a mobile-first society, a custom application is the most direct channel to your target audience. It provides a personalized, deeply integrated workspace for your customers, driving unparalleled loyalty and active daily engagement.",
+    process: [
+      { name: "Strategic Discovery", desc: "We define user journeys, map feature priorities, and draft the product roadmap." },
+      { name: "UI/UX Prototyping", desc: "We build intuitive, fluid screen transitions and touch-optimized interfaces." },
+      { name: "Cross-Platform Build", desc: "We engineer performant app builds using modern frameworks like Flutter or React Native." },
+      { name: "API & Backend Integration", desc: "We connect the app securely with real-time cloud datastores and server APIs." },
+      { name: "Store Deployment", desc: "We manage the deployment and approval process for the Apple App Store and Google Play Store." }
+    ],
+    features: [
+      { icon: Zap, title: "Native-Speed Engine", desc: "Highly optimized rendering engine ensuring buttery-smooth 60fps scrolling." },
+      { icon: ShieldCheck, title: "Biometric Protection", desc: "Secure FaceID/TouchID logins and encrypted local storage protocols." },
+      { icon: Layers, title: "Offline Sync Mode", desc: "Allows users to interact seamlessly even with limited network connectivity." },
+      { icon: Smartphone, title: "Device-Level Access", desc: "Direct hardware integrations (Camera, GPS, Bluetooth, Push Notifications)." }
+    ],
+    tech: ["React Native", "Flutter", "TypeScript", "Node.js", "Firebase", "AWS"],
+    pricing: "Custom quotes based on product scope. Starts from $4,000.",
+    faqs: [
+      { q: "Do you build for both iOS and Android?", a: "Yes, we utilize modern cross-platform frameworks to build highly performant apps for both iOS and Android from a single shared codebase." },
+      { q: "Can you help publish the app to the app stores?", a: "Absolutely. We handle the entire deployment process, including preparing metadata, setting up developer accounts, and clearing the approval pipelines." },
+      { q: "Does the app work offline?", a: "We can design the app to cache critical database layers locally, allowing users to browse and execute actions that sync back once online." },
+      { q: "How do you handle updates?", a: "We build modular app components that support Over-The-Air (OTA) updates for quick bug fixes, and deliver standard store bundles for major features." },
+      { q: "Do you offer post-launch support?", a: "Yes, we provide ongoing maintenance packages that cover OS updates, platform compliance, analytics tracking, and performance tuning." }
+    ]
+  },
   "ai-integrations": {
     title: "AI Integrations",
     icon: Brain,

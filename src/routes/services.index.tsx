@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import AOS from "aos";
-import { Code2, Palette, Brain, Cloud, Sparkles, Megaphone, ArrowUpRight } from "lucide-react";
+import { Code2, Palette, Brain, Cloud, Sparkles, Megaphone, ArrowUpRight, Smartphone, AlignJustify, AlignCenter } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { BackToTop } from "../components/BackToTop";
@@ -19,9 +19,10 @@ function ServicesPage() {
   const services = [
     { id: "web-development", icon: Code2, title: "Web Development", desc: "Modern digital applications engineered for speed, precision, and scalability." },
     { id: "ui-ux-design", icon: Palette, title: "UI/UX Design", desc: "Seamless user experiences designed with precision and innovation." },
+    { id: "app-development", icon: Smartphone, title: "App Development", desc: "Premium mobile and cross-platform applications engineered for native performance." },
     { id: "ai-integrations", icon: Brain, title: "AI Integrations", desc: "AI-powered solutions crafted to deliver measurable business value." },
     { id: "cloud-solutions", icon: Cloud, title: "Cloud Solutions", desc: "Scalable cloud infrastructure built for speed, security, and reliability." },
-    { id: "branding", icon: Sparkles, title: "Branding", desc: "Powerful brand identities crafted for lasting digital impact." },
+    { id: "branding", icon: Sparkles, title: "Branding", desc: "Powerful brand identities crafted for lasting digital impact."},
     { id: "digital-marketing", icon: Megaphone, title: "Digital Marketing", desc: "Strategic digital campaigns engineered for measurable results." },
   ];
 
@@ -47,7 +48,9 @@ function ServicesPage() {
                   params={{ serviceId: s.id }}
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
-                  className="gradient-border rounded-2xl p-8 hover-lift group cursor-pointer block"
+                  className={`gradient-border rounded-2xl p-8 hover-lift group cursor-pointer block ${
+                    i === 6 ? "lg:col-start-2" : ""
+                  }`}
                 >
                   <div className="h-14 w-14 rounded-xl bg-gradient-cyan/10 border border-[var(--cyan)]/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
                     <s.icon className="h-7 w-7 text-[var(--cyan)]" />

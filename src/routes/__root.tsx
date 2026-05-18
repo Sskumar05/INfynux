@@ -111,6 +111,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 import { ThemeProvider } from "../components/ThemeProvider";
 import { WhatsAppButton } from "../components/WhatsAppButton";
 import { BackToTop } from "../components/BackToTop";
+import { Toaster } from "sonner";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -121,6 +122,16 @@ function RootComponent() {
         <Outlet />
         <BackToTop />
         <WhatsAppButton />
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: "#0A0A1F",
+              border: "1px solid rgba(0,229,255,0.2)",
+              color: "#E2E8F0",
+            },
+          }}
+        />
       </ThemeProvider>
     </QueryClientProvider>
   );

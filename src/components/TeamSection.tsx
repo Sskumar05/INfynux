@@ -97,9 +97,9 @@ function TeamMemberCard({ member, index }: { member: TeamMember; index: number }
       <div className="relative rounded-3xl gradient-border p-8 text-center h-full flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:shadow-[var(--cyan)]/10">
         {/* Profile Image with Gradient Border */}
         <div className="relative mb-6">
-          <div className="absolute inset-0 bg-gradient-cosmic rounded-full blur-sm opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-          <div className="relative h-32 w-32 rounded-full p-1 bg-gradient-cosmic">
-            <div className="h-full w-full rounded-full overflow-hidden border-2 border-background">
+          <div className="absolute inset-0 bg-gradient-cosmic rounded-xl blur-sm opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+          <div className="relative h-32 w-32 rounded-xl p-1 bg-gradient-cosmic">
+            <div className="h-full w-full rounded-xl overflow-hidden border-0 border-background">
               <img 
                 src={member.image} 
                 alt={member.name} 

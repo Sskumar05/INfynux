@@ -71,8 +71,9 @@ export function Footer() {
             items={[
               {label: "Web Development", to: "/services/web-development"}, 
               {label: "UI/UX Design", to: "/services/ui-ux-design"}, 
-              {label: "AI Integation", to: "/services/ai-integrations"}, 
-              {label: "Cloud Solutions", to: "/Services/cloud-solutions"}, 
+              {label: "App Development", to: "/services/app-development"},
+              {label: "AI Integration", to: "/services/ai-integrations"}, 
+              {label: "Cloud Solutions", to: "/services/cloud-solutions"}, 
               {label: "Branding", to: "/services/branding"},
               {label: "Digital Marketing", to: "/services/digital-marketing"}
             ]} 
@@ -94,19 +95,19 @@ export function Footer() {
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
                   <Mail className="h-5 w-5 text-[var(--cyan)]" />
                 </div>
-                <span className="text-sm text-muted-foreground pt-2">sshathiskumar54@gmail.com</span>
+                <span className="text-sm text-muted-foreground pt-2">yogeshwarandofficial@gmail.com</span>
               </li>
               <li className="flex items-start gap-4 group">
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
                   <WhatsAppIcon className="h-5 w-5 text-[var(--cyan)]" />
                 </div>
-                <span className="text-sm text-muted-foreground pt-2">91 9944911273</span>
+                <span className="text-sm text-muted-foreground pt-2">+91 8248978136</span>
               </li>
               <li className="flex items-start gap-4 group">
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
                   <Phone className="h-5 w-5 text-[var(--cyan)]" />
                 </div>
-                <span className="text-sm text-muted-foreground pt-2">+91 9944911273</span>
+                <span className="text-sm text-muted-foreground pt-2">+91 7010850923</span>
               </li>
             </ul>
           </div>

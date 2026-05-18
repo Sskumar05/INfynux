@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import {
   Rocket, Code2, Palette, Brain, Cloud, Sparkles, Megaphone,
-  ArrowRight, ArrowUpRight, Star, Send, Check,
+  ArrowRight, ArrowUpRight, Star, Send, Check, Smartphone
 } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
@@ -205,7 +205,8 @@ function ServicesSummary() {
   const services = [
     { id: "web-development", icon: Code2, title: "Web Development", desc: "Modern digital applications engineered for speed, precision, and scalability." },
     { id: "ui-ux-design", icon: Palette, title: "UI/UX Design", desc: "Seamless user experiences designed with precision and innovation." },
-    { id: "ai-integrations", icon: Brain, title: "AI Integrations", desc: "AI-powered solutions crafted to deliver measurable business value." },
+    { id: "app-development", icon: Smartphone, title: "App Development", desc: "Premium mobile and cross-platform applications engineered for native performance." },
+    // { id: "ai-integrations", icon: Brain, title: "AI Integrations", desc: "AI-powered solutions crafted to deliver measurable business value." },
   ];
   return (
     <section id="services" className="py-28 relative">
@@ -226,7 +227,9 @@ function ServicesSummary() {
               params={{ serviceId: s.id }}
               data-aos="fade-up"
               data-aos-delay={i * 100}
-              className="gradient-border rounded-2xl p-8 hover-lift group cursor-pointer block"
+              className={`gradient-border rounded-2xl p-8 hover-lift group cursor-pointer block ${
+                i === 3 ? "lg:col-start-2" : ""
+              }`}
             >
               <div className="h-14 w-14 rounded-xl bg-gradient-cyan/10 border border-[var(--cyan)]/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
                 <s.icon className="h-7 w-7 text-[var(--cyan)]" />
@@ -251,10 +254,28 @@ function ServicesSummary() {
 
 /* ---------- PORTFOLIO SUMMARY ---------- */
 function PortfolioSummary() {
-  const projects = [
-    { cat: "AI Platform", title: "Nebula OS", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=80" },
-    { cat: "Brand Identity", title: "Helix Labs", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=80" },
-    { cat: "Web App", title: "Orbit Finance", img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=80" },
+  const projects: Array<{ cat: string; title: string; img: string; desc?: string; url?: string }> = [
+   {
+      cat: "Web App",
+      title: "Learning knights",
+      img: "src/components/Learning knights.png",
+      // desc: "An enterprise-grade decentralized AI orchestration system. Powers autonomous agents, real-time quantum compute routing, and neural-mesh communication pipelines."
+      url: "https://learning-knights.vercel.app/"
+    },
+    {
+      cat: "WebSite",
+      title: "Virtual Study",
+      img: "src/components/Virtual study.png",
+      // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
+      url: "https://virtual-study-finder.netlify.app/home"
+    },
+       {
+      cat: "Web App",
+      title: "Rajesh Portfolio",
+      img: "src/components/Rajesh Portfolio.png",
+      // desc: "A premium wealth management platform featuring algorithmic trading dashboards, cross-border digital asset settlements, and real-time portfolio analytics.",
+      url: "https://rajeshv2004.github.io/RAJESHV-PORTFOLIO/"
+    }
   ];
   return (
     <section id="work" className="py-28 relative">
@@ -294,9 +315,17 @@ function PortfolioSummary() {
                   {p.cat}
                 </span>
                 <h3 className="text-2xl font-semibold mb-2">{p.title}</h3>
-                <div className="inline-flex items-center gap-2 text-sm text-muted-foreground group-hover:text-[var(--cyan)] transition-colors">
-                  View Case Study <ArrowUpRight className="h-4 w-4" />
-                </div>
+                 <div className="mt-2">
+                        <a 
+                          href={p.url || "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#00E5FF]/30 hover:bg-[#00E5FF]/10 px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-[#00E5FF] hover:scale-105 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-[#00E5FF]/15"
+                        >
+                          Explore Project <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      </div>
               </div>
             </div>
           ))}
@@ -412,9 +441,9 @@ function WhyChooseUs() {
 /* ---------- TESTIMONIALS ---------- */
 function Testimonials() {
   const items = [
-    { name: "Ava Mercer", role: "CEO, Helix Labs", text: "Rubi Royals didn't just deliver a brand — they re-engineered our orbit. Conversion is up 240% since launch." },
-    { name: "Kenji Saito", role: "Head of Product, Nebula OS", text: "Working with them feels like time-travel. They ship at a velocity we didn't think was possible." },
-    { name: "Marisol Vega", role: "Founder, Orbit Finance", text: "Every pixel, every interaction — surgical. The team operates with the precision of a research lab." },
+    { name: "Kumar", role: "Learning Knights", text: "Creative and modern digital ideas tailored for business growth." },
+    { name: "Rajan", role: "Portfolio", text: "High-quality development with clean design and smooth performance." },
+    { name: "Durga", role: "Virtual Study, Orbit Finance", text: " Reliable communication and continuous support throughout the project." },
   ];
   return (
     <section className="py-28">
@@ -460,27 +489,7 @@ function Testimonials() {
 
 /* ---------- CTA ---------- */
 function CTA() {
-  // return (
-  //   <section className="py-20">
-  //     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-  //       <div data-aos="fade-up" className="relative overflow-hidden rounded-3xl p-12 sm:p-20 text-center">
-  //         <div className="absolute inset-0 bg-gradient-cosmic opacity-90" />
-  //         <div className="absolute inset-0" style={{ background: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), transparent 60%)" }} />
-  //         <div className="relative">
-  //           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-  //             Ready to defy gravity?
-  //           </h2>
-  //           <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-  //             Let's build something extraordinary — together, beyond the atmosphere.
-  //           </p>
-  //           <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-background px-8 py-4 text-base font-semibold text-foreground hover:scale-105 transition-transform shadow-2xl">
-  //             Start Your Journey <Rocket className="h-5 w-5" />
-  //           </a>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </section>
-  // );
+  return null;
 }
 
 /* ---------- CONTACT SUMMARY ---------- */
