@@ -16,7 +16,7 @@ const SERVICES_DATA: Record<string, any> = {
     title: "Web Development",
     icon: Code2,
     heading: "Crafting Digital Experiences That Drive Growth",
-    intro: "Website development is the comprehensive process of building, creating, and maintaining websites. At INFYNEX, we view a website as the digital cornerstone of your brand. It's not just about aesthetics; it's about engineering a high-performance platform that works for your business 24/7.",
+    intro: "Website development is the comprehensive process of building, creating, and maintaining websites. At INFYNUX, we view a website as the digital cornerstone of your brand. It's not just about aesthetics; it's about engineering a high-performance platform that works for your business 24/7.",
     why: "In today's 'Search-First' economy, your website is your most valuable salesperson. It is the first place potential clients go to verify your credibility. For businesses in Nagapattinam and beyond, a professional website is the key to tapping into the global digital economy.",
     process: [
       { name: "Discovery & Planning", desc: "We start by understanding your business logic, target audience, and key performance indicators (KPIs)." },
@@ -73,7 +73,7 @@ const SERVICES_DATA: Record<string, any> = {
     title: "App Development",
     icon: Smartphone,
     heading: "Creating Exceptional Native & Cross-Platform Applications",
-    intro: "Mobile application development is the art and science of building software designed specifically for handheld devices. At INFYNEX, we design high-performance, responsive iOS and Android applications that engage users, simplify workflows, and scale effortlessly.",
+    intro: "Mobile application development is the art and science of building software designed specifically for handheld devices. At INFYNUX, we design high-performance, responsive iOS and Android applications that engage users, simplify workflows, and scale effortlessly.",
     why: "In a mobile-first society, a custom application is the most direct channel to your target audience. It provides a personalized, deeply integrated workspace for your customers, driving unparalleled loyalty and active daily engagement.",
     process: [
       { name: "Strategic Discovery", desc: "We define user journeys, map feature priorities, and draft the product roadmap." },
@@ -212,8 +212,8 @@ export const Route = createFileRoute("/services/$serviceId")({
   component: ServiceDetailsPage,
   head: () => ({
     meta: [
-      { title: "Services | INFYNEX" },
-      { name: "description", content: "Explore details about premium INFYNEX services and innovative tech solutions." },
+      { title: "Services | INFYNUX" },
+      { name: "description", content: "Explore details about premium INFYNUX services and innovative tech solutions." },
     ],
   }),
 });

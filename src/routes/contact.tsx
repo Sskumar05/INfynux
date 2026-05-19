@@ -15,8 +15,8 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact | INFYNEX" },
-      { name: "description", content: "Get in touch with INFYNEX. We respond within one earth-day." },
+      { title: "Contact | INFYNUX" },
+      { name: "description", content: "Get in touch with INFYNUX. We respond within one earth-day." },
     ],
   }),
 });

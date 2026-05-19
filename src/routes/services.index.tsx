@@ -10,8 +10,8 @@ export const Route = createFileRoute("/services/")({
   component: ServicesPage,
   head: () => ({
     meta: [
-      { title: "Services | INFYNEX" },
-      { name: "description", content: "Explore the premium, future-ready services offered by INFYNEX - from high-performance web applications to advanced AI integrations." },
+      { title: "Services | INFYNUX" },
+      { name: "description", content: "Explore the premium, future-ready services offered by INFYNUX - from high-performance web applications to advanced AI integrations." },
     ],
   }),
 });

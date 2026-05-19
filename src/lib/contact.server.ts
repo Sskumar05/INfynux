@@ -75,10 +75,10 @@ export const submitContactForm = createServerFn({ method: "POST" })
         Authorization: `Bearer ${resendKey}`,
       },
       body: JSON.stringify({
-        from: `INFYNEX <${fromEmail}>`,
+        from: `INFYNUX <${fromEmail}>`,
         to: ["yogeshwarandofficial@gmail.com"],
         reply_to: email,
-        subject: `New enquiry from ${name} — INFYNEX`,
+        subject: `New enquiry from ${name} — INFYNUX`,
         html: `
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +90,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
         <!-- Header -->
         <tr>
           <td style="background:linear-gradient(135deg,rgba(0,229,255,0.12),rgba(123,47,190,0.12));padding:36px 40px 28px;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0 0 4px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#00E5FF;">INFYNEX — Incoming Transmission</p>
+            <p style="margin:0 0 4px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#00E5FF;">INFYNUX — Incoming Transmission</p>
             <h1 style="margin:0;font-size:26px;font-weight:700;color:#FFFFFF;">New Contact Request</h1>
           </td>
         </tr>
@@ -118,7 +118,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
         <!-- Footer -->
         <tr>
           <td style="padding:20px 40px 32px;text-align:center;font-size:11px;color:#334155;border-top:1px solid rgba(255,255,255,0.05);">
-            INFYNEX &middot; Nagapattinam, Tamil Nadu, India &middot; ${ts} IST
+            INFYNUX &middot; Nagapattinam, Tamil Nadu, India &middot; ${ts} IST
           </td>
         </tr>
       </table>

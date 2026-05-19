@@ -15,8 +15,8 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About Us | INFYNEX" },
-      { name: "description", content: "Learn about the mission, values, and team behind INFYNEX, a global collective building futuristic digital experiences." },
+      { title: "About Us | INFYNUX" },
+      { name: "description", content: "Learn about the mission, values, and team behind INFYNUX, a global collective building futuristic digital experiences." },
     ],
   }),
 });
@@ -85,20 +85,20 @@ function AboutPage() {
               <div className="max-w-4xl mx-auto mb-32">
                 <div data-aos="fade-up" className="text-center">
                   <div className="inline-flex items-center gap-2.5 rounded-full bg-[#00E5FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#00E5FF] mb-6">
-                    <img src="/src/components/INfy_Logo.png" alt="INFYNEX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
+                    <img src="/src/components/INfy_Logo.png" alt="INFYNUX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
                     About Company
                   </div>
                   <h1 className="text-4xl sm:text-6xl font-bold font-display leading-tight mb-8">
-                    Welcome to <span className="text-gradient-cosmic">INFYNEX</span>
+                    Welcome to <span className="text-gradient-cosmic">INFYNUX</span>
                   </h1>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
-                    About INFYNEX: We are a software company in Nagapattinam and a dynamic Startup founded by young, ambitious minds and college students driven by innovation. We are proud to be an MSME and StartupTN registered enterprise, dedicated to delivering modern IT solutions that drive growth.
+                    About INFYNUX: We are a software company in Nagapattinam and a dynamic Startup founded by young, ambitious minds and college students driven by innovation. We are proud to be an MSME and StartupTN registered enterprise, dedicated to delivering modern IT solutions that drive growth.
                   </p>
                   <div className="flex flex-col items-center mb-10">
                     <ul className="space-y-4 text-left inline-block">
                       {[
-                        "INFYNEX is a software company in Nagapattinam",
-                        "About INFYNEX company leadership",
+                        "INFYNUX is a software company in Nagapattinam",
+                        "About INFYNUX company leadership",
                         "MSME & StartupTN Registered Enterprise",
                         "Web Development & ERP/CRM Solutions",
                         "Digital Marketing & SEO Optimization",
@@ -115,7 +115,7 @@ function AboutPage() {
                     </ul>
                   </div>
                   <p className="text-slate-400 text-sm italic mb-10 max-w-2xl mx-auto">
-                    Founded in <span className="text-[#00E5FF] font-bold">2025</span>, INFYNEX stands at the forefront of digital transformation — bringing the fresh perspective and high-energy of student innovation to businesses worldwide with professional IT services.
+                    Founded in <span className="text-[#00E5FF] font-bold">2025</span>, INFYNUX stands at the forefront of digital transformation — bringing the fresh perspective and high-energy of student innovation to businesses worldwide with professional IT services.
                   </p>
                   <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-8 py-4 text-sm font-bold text-[#0A0A0F] hover:scale-105 transition-all shadow-xl shadow-[#00E5FF]/20">
                     Get Started <ArrowRight className="h-4 w-4" />
@@ -127,7 +127,7 @@ function AboutPage() {
               <div className="max-w-4xl mx-auto py-20">
                 <div className="text-center mb-16">
                   <h2 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold font-display leading-tight">
-                    The Story of <span className="text-[#00E5FF]">INFYNEX</span>: From Student Dreams to Global Digital Agency
+                    The Story of <span className="text-[#00E5FF]">INFYNUX</span>: From Student Dreams to Global Digital Agency
                   </h2>
                 </div>
                 
@@ -136,10 +136,10 @@ function AboutPage() {
                     <h3 className="text-2xl font-bold mb-6 text-[#00E5FF]">Who We Are: A Legacy of Innovation in Nagapattinam</h3>
                     <div className="text-slate-400 text-sm leading-relaxed space-y-4">
                       <p>
-                        INFYNEX is not just another software company; we are a testament to the power of youth, ambition, and technical excellence. Founded in 2025 in the vibrant coastal town of Nagapattinam, Tamil Nadu, our journey began in the classrooms of local colleges. A group of passionate students, driven by a shared vision of bringing high-end digital solutions to local and global businesses, decided to challenge the status quo. What started as a collective of freelance developers has quickly evolved into an MSME and StartupTN registered enterprise known for its reliability and creative flair.
+                        INFYNUX is not just another software company; we are a testament to the power of youth, ambition, and technical excellence. Founded in 2025 in the vibrant coastal town of Nagapattinam, Tamil Nadu, our journey began in the classrooms of local colleges. A group of passionate students, driven by a shared vision of bringing high-end digital solutions to local and global businesses, decided to challenge the status quo. What started as a collective of freelance developers has quickly evolved into an MSME and StartupTN registered enterprise known for its reliability and creative flair.
                       </p>
                       <p>
-                        Our identity is deeply rooted in Nagapattinam. We believe that talent knows no geographical boundaries, and our mission is to put Nagapattinam on the global technology map. At INFYNEX, we combine the raw energy of student innovation with the disciplined execution of seasoned professionals. This unique blend allows us to approach problems from fresh angles while ensuring our solutions are robust, scalable, and secure.
+                        Our identity is deeply rooted in Nagapattinam. We believe that talent knows no geographical boundaries, and our mission is to put Nagapattinam on the global technology map. At INFYNUX, we combine the raw energy of student innovation with the disciplined execution of seasoned professionals. This unique blend allows us to approach problems from fresh angles while ensuring our solutions are robust, scalable, and secure.
                       </p>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ function AboutPage() {
                     <h3 className="text-2xl font-bold mb-6 text-[#A855F7]">Our Mission: Empowering Growth Through Technology</h3>
                     <div className="text-slate-400 text-sm leading-relaxed space-y-4">
                       <p>
-                        At INFYNEX in Nagapattinam, our mission is simple yet profound: to empower businesses of all sizes to thrive in the digital age. We understand that for many business owners in Tamil Nadu, the digital world can seem overwhelming. We are here to bridge that gap. We don't just provide services; we build strategic partnerships. Whether it's a small local shop in Nagapattinam looking to establish its first website or a large enterprise needing a complex ERP system, we provide the same level of dedication and technical precision.
+                        At INFYNUX in Nagapattinam, our mission is simple yet profound: to empower businesses of all sizes to thrive in the digital age. We understand that for many business owners in Tamil Nadu, the digital world can seem overwhelming. We are here to bridge that gap. We don't just provide services; we build strategic partnerships. Whether it's a small local shop in Nagapattinam looking to establish its first website or a large enterprise needing a complex ERP system, we provide the same level of dedication and technical precision.
                       </p>
                       <p>
                         We are committed to transparency, excellence, and social responsibility. As a student-led organization, we also aim to create a fertile ground for tech talent in Nagapattinam, providing opportunities for students to work on real-world projects and gain industry-standard experience right here in their hometown.
@@ -210,7 +210,7 @@ function HeroSection() {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] via-[#A855F7] to-[#FF007F]">Defy Digital Gravity</span>
         </h1>
         <p data-aos="fade-up" data-aos-delay="200" className="text-xl sm:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12">
-          INFYNEX is a global collective of designers, engineers, and strategists building the future of digital experiences that orbit beyond expectation.
+          INFYNUX is a global collective of designers, engineers, and strategists building the future of digital experiences that orbit beyond expectation.
         </p>
 
         <div data-aos="fade-up" data-aos-delay="300" className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mt-20">
@@ -413,7 +413,7 @@ function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 data-aos="fade-up" className="text-4xl sm:text-6xl font-bold font-display mb-6">Meet the Crew</h2>
-          <p data-aos="fade-up" data-aos-delay="100" className="text-slate-400 text-lg uppercase tracking-widest">The brilliant minds behind INFYNEX</p>
+          <p data-aos="fade-up" data-aos-delay="100" className="text-slate-400 text-lg uppercase tracking-widest">The brilliant minds behind INFYNUX</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">

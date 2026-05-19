@@ -5,10 +5,10 @@ export const Route = createFileRoute("/privacy")({
   component: PrivacyPolicy,
   head: () => ({
     meta: [
-      { title: "Privacy Policy | INFYNEX" },
-      { name: "description", content: "Learn how INFYNEX collects, uses, and protects your personal information. Your privacy is our priority." },
-      { property: "og:title", content: "Privacy Policy | INFYNEX" },
-      { property: "og:description", content: "Learn how INFYNEX collects, uses, and protects your personal information." },
+      { title: "Privacy Policy | INFYNUX" },
+      { name: "description", content: "Learn how INFYNUX collects, uses, and protects your personal information. Your privacy is our priority." },
+      { property: "og:title", content: "Privacy Policy | INFYNUX" },
+      { property: "og:description", content: "Learn how INFYNUX collects, uses, and protects your personal information." },
       { property: "og:url", content: "/privacy" },
     ],
     links: [{ rel: "canonical", href: "/privacy" }],
@@ -22,7 +22,7 @@ function PrivacyPolicy() {
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Introduction</h2>
           <p>
-            At INFYNEX, we are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+            At INFYNUX, we are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
           </p>
         </section>
 

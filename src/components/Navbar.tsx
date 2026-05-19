@@ -37,11 +37,11 @@ export function Navbar() {
           <Link to="/" className="flex items-center gap-2 group">
             <img
               src="/src/components/INfy_Logo.png"
-              alt="INFYNEX Logo"
+              alt="INFYNUX Logo"
               className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.45)] group-hover:scale-110 transition-transform duration-300"
             />
             <span className="font-display text-xl font-black tracking-[0.15em] uppercase" style={{ background: "linear-gradient(135deg, #D4AF37 0%, #F5E07A 40%, #D4AF37 70%, #A0793D 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", letterSpacing: "0.18em" }}>
-              INFYNEX
+              INFYNUX
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-8">

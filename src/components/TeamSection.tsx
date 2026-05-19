@@ -69,7 +69,7 @@ export function TeamSection() {
               Meet Our <span className="text-gradient-cyan">Experts</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              The creative minds and technical experts driving innovation at INFYNEX.
+              The creative minds and technical experts driving innovation at INFYNUX.
             </p>
           </motion.div>
         </div>

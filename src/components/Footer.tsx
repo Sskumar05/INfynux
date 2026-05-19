@@ -21,15 +21,15 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2.5 group">
               <img
                 src="/src/components/INfy_Logo.png"
-                alt="INFYNEX Logo"
+                alt="INFYNUX Logo"
                 className="h-11 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] group-hover:scale-110 transition-transform duration-300"
               />
               <span className="font-display text-2xl font-black uppercase tracking-[0.18em]" style={{ background: "linear-gradient(135deg, #D4AF37 0%, #F5E07A 40%, #D4AF37 70%, #A0793D 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                INFYNEX
+                INFYNUX
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              INFYNEX stands at the intersection of technology and creativity, delivering robust digital platforms that empower businesses worldwide.
+              INFYNUX stands at the intersection of technology and creativity, delivering robust digital platforms that empower businesses worldwide.
             </p>
             <div className="flex gap-3">
               {[
@@ -116,7 +116,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-widest text-muted-foreground">
-          <p>© {new Date().getFullYear()} INFYNEX. PRECISION ENGINEERED.</p>
+          <p>© {new Date().getFullYear()} INFYNUX. PRECISION ENGINEERED.</p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-[var(--cyan)] transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-[var(--cyan)] transition-colors">Terms</Link>

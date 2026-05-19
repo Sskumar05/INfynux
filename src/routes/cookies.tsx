@@ -5,10 +5,10 @@ export const Route = createFileRoute("/cookies")({
   component: CookiePolicy,
   head: () => ({
     meta: [
-      { title: "Cookie Policy | INFYNEX" },
-      { name: "description", content: "Learn about how INFYNEX uses cookies to enhance your experience. Transparency in tracking and data." },
-      { property: "og:title", content: "Cookie Policy | INFYNEX" },
-      { property: "og:description", content: "Learn about how INFYNEX uses cookies to enhance your experience." },
+      { title: "Cookie Policy | INFYNUX" },
+      { name: "description", content: "Learn about how INFYNUX uses cookies to enhance your experience. Transparency in tracking and data." },
+      { property: "og:title", content: "Cookie Policy | INFYNUX" },
+      { property: "og:description", content: "Learn about how INFYNUX uses cookies to enhance your experience." },
       { property: "og:url", content: "/cookies" },
     ],
     links: [{ rel: "canonical", href: "/cookies" }],
@@ -29,7 +29,7 @@ function CookiePolicy() {
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">How We Use Cookies</h2>
           <p>
-            INFYNEX uses cookies for several reasons. Some cookies are required for technical reasons in order for our website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other cookies enable us to track and target the interests of our users to enhance the experience on our site.
+            INFYNUX uses cookies for several reasons. Some cookies are required for technical reasons in order for our website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other cookies enable us to track and target the interests of our users to enhance the experience on our site.
           </p>
         </section>
 
