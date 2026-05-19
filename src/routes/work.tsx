@@ -15,6 +15,12 @@ import { BackToTop } from "../components/BackToTop";
 
 export const Route = createFileRoute("/work")({
   component: WorkPage,
+  head: () => ({
+    meta: [
+      { title: "Projects | INFYNEX" },
+      { name: "description", content: "Discover the signature projects and digital archive of advanced applications built with passion and precision by INFYNEX." },
+    ],
+  }),
 });
 
 interface GalleryItem {

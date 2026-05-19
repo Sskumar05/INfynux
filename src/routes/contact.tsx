@@ -15,8 +15,8 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact — Rubi Royals" },
-      { name: "description", content: "Get in touch with Rubi Royals. We respond within one earth-day." },
+      { title: "Contact | INFYNEX" },
+      { name: "description", content: "Get in touch with INFYNEX. We respond within one earth-day." },
     ],
   }),
 });

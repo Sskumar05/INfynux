@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles, Facebook, Youtube, Linkedin, Instagram, MapPin, Mail, Phone } from "lucide-react";
+import { Facebook, Youtube, Linkedin, Instagram, MapPin, Mail, Phone } from "lucide-react";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg
@@ -18,16 +18,18 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="relative h-10 w-10 rounded-lg bg-gradient-cosmic flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Sparkles className="h-6 w-6 text-white" />
-              </div>
-              <span className="font-display text-2xl font-bold tracking-tight">
-                Rubi <span className="text-gradient-cyan">Royals</span>
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <img
+                src="/src/components/INfy_Logo.png"
+                alt="INFYNEX Logo"
+                className="h-11 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] group-hover:scale-110 transition-transform duration-300"
+              />
+              <span className="font-display text-2xl font-black uppercase tracking-[0.18em]" style={{ background: "linear-gradient(135deg, #D4AF37 0%, #F5E07A 40%, #D4AF37 70%, #A0793D 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                INFYNEX
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Rubi Royals stands at the intersection of technology and creativity, delivering robust digital platforms that empower businesses worldwide.
+              INFYNEX stands at the intersection of technology and creativity, delivering robust digital platforms that empower businesses worldwide.
             </p>
             <div className="flex gap-3">
               {[
@@ -114,7 +116,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-widest text-muted-foreground">
-          <p>© {new Date().getFullYear()} RUBI ROYALS. PRECISION ENGINEERED.</p>
+          <p>© {new Date().getFullYear()} INFYNEX. PRECISION ENGINEERED.</p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-[var(--cyan)] transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-[var(--cyan)] transition-colors">Terms</Link>

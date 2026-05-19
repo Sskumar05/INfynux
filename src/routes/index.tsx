@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Rubi Royals" },
+      { title: "INFYNEX" },
       { name: "description", content: "Premium digital agency crafting futuristic brands, AI-driven platforms, and immersive experiences that defy gravity." },
-      { property: "og:title", content: "Rubi Royals " },
+      { property: "og:title", content: "INFYNEX" },
       { property: "og:description", content: "Premium digital agency crafting futuristic brands, AI-driven platforms, and immersive experiences." },
       { property: "og:url", content: "/" },
     ],
@@ -29,7 +29,7 @@ function Index() {
 
   useEffect(() => {
     AOS.init({ duration: 800, easing: "ease-out-cubic", once: true, offset: 60 });
-    const t = setTimeout(() => setLoaded(true), 600);
+    const t = setTimeout(() => setLoaded(true), 1200);
     const onMove = (e: MouseEvent) => {
       if (cursorRef.current) {
         cursorRef.current.style.transform = `translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
@@ -46,11 +46,28 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Loader */}
       <div
-        className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-700 ${loaded ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+        className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-all duration-1000 ${loaded ? "opacity-0 pointer-events-none scale-105" : "opacity-100"}`}
       >
-        <div className="relative">
-          <div className="h-16 w-16 rounded-full border-2 border-[var(--cyan)] border-t-transparent animate-spin" />
-          <div className="absolute inset-0 rounded-full animate-pulse-glow" />
+        <div className="flex flex-col items-center gap-6 animate-fade-in" style={{ animationDuration: "3s" }}>
+          <div className="relative">
+            {/* Ambient gold glow behind the logo */}
+            <div className="absolute -inset-4 rounded-full  opacity-25 blur-2xl animate-pulse" />
+            
+            {/* The high-end splash logo */}
+            <img
+              src="/src/components/INfy_Logo-Splash Screen.png"
+              alt="INFYNEX"
+              className="h-80 w-auto relative z-10 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all duration-500 hover:scale-105"
+            />
+          </div>
+          
+          {/* Subtle luxurious gold text label under logo */}
+          {/* <div className="flex flex-col items-center gap-2 relative z-10">
+            <span className="font-display text-lg font-black tracking-[0.3em] uppercase text-white" style={{ letterSpacing: "0.3em" }}>
+              INFYNEX
+            </span>
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
+          </div> */}
         </div>
       </div>
 
@@ -108,8 +125,8 @@ function Hero() {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div data-aos="fade-up" className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs uppercase tracking-widest text-[var(--cyan)] mb-8">
-          <span className="h-2 w-2 rounded-full bg-[var(--cyan)] animate-pulse" />
+        <div data-aos="fade-up" className="inline-flex items-center gap-2.5 rounded-full glass px-4 py-2 text-xs uppercase tracking-widest text-[var(--cyan)] mb-8">
+          <img src="/src/components/INfy_Logo.png" alt="INFYNEX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
           Powering Smart Solutions
         </div>
         <h1 data-aos="fade-up" data-aos-delay="100" className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-6">
@@ -118,7 +135,7 @@ function Hero() {
           Digital Solution.
         </h1>
         <p data-aos="fade-up" data-aos-delay="200" className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-          Rubi Royals transforms ideas into high-performance websites, intelligent applications, and next-generation digital products.
+          INFYNEX transforms ideas into high-performance websites, intelligent applications, and next-generation digital products.
         </p>
         <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col items-center justify-center gap-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -409,7 +426,7 @@ function WhyChooseUs() {
             Why Choose Us
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold font-display leading-tight mb-6">
-            Our Strategy for <span className="text-gradient-cosmic">Your Success</span> with Rubi Royals
+            Our Strategy for <span className="text-gradient-cosmic">Your Success</span> with INFYNEX
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             We combine technical expertise with a client-centric approach to deliver high-performance websites and digital products that make a real impact.
@@ -441,8 +458,8 @@ function WhyChooseUs() {
 /* ---------- TESTIMONIALS ---------- */
 function Testimonials() {
   const items = [
-    { name: "Kumar", role: "Learning Knights", text: "Creative and modern digital ideas tailored for business growth." },
-    { name: "Rajan", role: "Portfolio", text: "High-quality development with clean design and smooth performance." },
+    { name: "Rajan", role: "Learning Knights", text: "Creative and modern digital ideas tailored for business growth." },
+    { name: "Kumar", role: "Portfolio", text: "High-quality development with clean design and smooth performance." },
     { name: "Durga", role: "Virtual Study, Orbit Finance", text: " Reliable communication and continuous support throughout the project." },
   ];
   return (

@@ -86,6 +86,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "src/components/INfy_Logo.png",
+      },
     ],
   }),
   shellComponent: RootShell,

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Sparkles, ArrowRight, Sun, Moon } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 export function Navbar() {
@@ -35,11 +35,13 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative h-9 w-9 rounded-lg bg-gradient-cosmic flex items-center justify-center animate-pulse-glow">
-              <Sparkles className="h-5 w-5 text-white" />
-            </div>
-            <span className="font-display text-xl font-bold tracking-wider">
-              Rubi <span className="text-gradient-cyan">Royals</span>
+            <img
+              src="/src/components/INfy_Logo.png"
+              alt="INFYNEX Logo"
+              className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.45)] group-hover:scale-110 transition-transform duration-300"
+            />
+            <span className="font-display text-xl font-black tracking-[0.15em] uppercase" style={{ background: "linear-gradient(135deg, #D4AF37 0%, #F5E07A 40%, #D4AF37 70%, #A0793D 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", letterSpacing: "0.18em" }}>
+              INFYNEX
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-8">

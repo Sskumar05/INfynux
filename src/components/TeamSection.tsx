@@ -18,28 +18,28 @@ const team: TeamMember[] = [
     name: "YogeshWaran",
     role: "Founder & CEO",
     description: "Visionary leader driving innovation, business growth, strategic excellence, and future-ready digital transformation.",
-    image: "src/components/Yogesh.png",
+    image: "/src/components/Yogesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Govindarajan",
     role: "Brand & Marketing Strategist",
     description: "Crafting impactful brand identities, strategic campaigns, customer engagement, and long-term business growth.",
-    image: "src/components/Govind.png",
+    image: "/src/components/Govind.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Shathis Kumar",
     role: "Lead Developer",
     description: "Building scalable, secure, high-performance applications using modern technologies and advanced development architecture.",
-    image: "src/components/shathis.png",
+    image: "/src/components/shathis.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Rajesh",
     role: "UI/UX Designer",
     description: "Designing intuitive, visually stunning, user-centered interfaces with seamless experiences and modern creative aesthetics.",
-    image: "src/components/Rajesh.png",
+    image: "/src/components/Rajesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
   }
 ];
@@ -69,7 +69,7 @@ export function TeamSection() {
               Meet Our <span className="text-gradient-cyan">Experts</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              The creative minds and technical experts driving innovation at Rubi Royals.
+              The creative minds and technical experts driving innovation at INFYNEX.
             </p>
           </motion.div>
         </div>

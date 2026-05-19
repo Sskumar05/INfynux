@@ -5,10 +5,10 @@ export const Route = createFileRoute("/terms")({
   component: TermsConditions,
   head: () => ({
     meta: [
-      { title: "Terms & Conditions | Rubi Royals" },
-      { name: "description", content: "Read the terms and conditions for using the Rubi Royals website and services. Understanding our mutual agreement." },
-      { property: "og:title", content: "Terms & Conditions | Rubi Royals" },
-      { property: "og:description", content: "Read the terms and conditions for using the Rubi Royals website and services." },
+      { title: "Terms & Conditions | INFYNEX" },
+      { name: "description", content: "Read the terms and conditions for using the INFYNEX website and services. Understanding our mutual agreement." },
+      { property: "og:title", content: "Terms & Conditions | INFYNEX" },
+      { property: "og:description", content: "Read the terms and conditions for using the INFYNEX website and services." },
       { property: "og:url", content: "/terms" },
     ],
     links: [{ rel: "canonical", href: "/terms" }],
@@ -29,14 +29,14 @@ function TermsConditions() {
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Intellectual Property</h2>
           <p>
-            The website and its original content, features, and functionality are owned by Rubi Royals and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws. This includes all logos, designs, text, graphics, and code.
+            The website and its original content, features, and functionality are owned by INFYNEX and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws. This includes all logos, designs, text, graphics, and code.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Services</h2>
           <p>
-            Rubi Royals provides digital agency services including web development, UI/UX design, and AI integrations. The specific scope of work, timelines, and pricing for these services are governed by separate service agreements entered into between Rubi Royals and its clients.
+            INFYNEX provides digital agency services including web development, UI/UX design, and AI integrations. The specific scope of work, timelines, and pricing for these services are governed by separate service agreements entered into between INFYNEX and its clients.
           </p>
         </section>
 
@@ -49,14 +49,14 @@ function TermsConditions() {
             <li>Provide accurate and complete information when requested</li>
             <li>Maintain the confidentiality of any account credentials</li>
             <li>Use the website in compliance with all applicable laws and regulations</li>
-            <li>Respect the intellectual property rights of Rubi Royals and third parties</li>
+            <li>Respect the intellectual property rights of INFYNEX and third parties</li>
           </ul>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Limitation of Liability</h2>
           <p>
-            In no event shall Rubi Royals, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.
+            In no event shall INFYNEX, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.
           </p>
         </section>
 
@@ -77,7 +77,7 @@ function TermsConditions() {
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Changes to Terms</h2>
           <p>
-            Rubi Royals reserves the right to modify these terms from time to time at our sole discretion. Therefore, you should review these page periodically. When we change the terms in a material manner, we will notify you that material changes have been made to the terms. Your continued use of the website or our service after any such change constitutes your acceptance of the new terms.
+            INFYNEX reserves the right to modify these terms from time to time at our sole discretion. Therefore, you should review these page periodically. When we change the terms in a material manner, we will notify you that material changes have been made to the terms. Your continued use of the website or our service after any such change constitutes your acceptance of the new terms.
           </p>
         </section>
 
