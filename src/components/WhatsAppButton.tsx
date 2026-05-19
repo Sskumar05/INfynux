@@ -8,7 +8,7 @@ export const WhatsAppButton = () => {
         <Tooltip delayDuration={300}>
           <TooltipTrigger asChild>
             <motion.a
-              href="https://wa.me/919944911273"
+              href="https://wa.me/917010850923"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ scale: 0, opacity: 0, y: 20 }}
