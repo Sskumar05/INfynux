@@ -55,7 +55,7 @@ function Index() {
             
             {/* The high-end splash logo */}
             <img
-              src="/src/components/INfy_Logo-Splash Screens.png"
+              src="/src/components/INfynux-Logo-Splash Screen.png"
               alt="INFYNUX"
               className="h-80 w-auto relative z-10 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all duration-500 hover:scale-105"
             />
@@ -126,7 +126,7 @@ function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div data-aos="fade-up" className="inline-flex items-center gap-2.5 rounded-full glass px-4 py-2 text-xs uppercase tracking-widest text-[var(--cyan)] mb-8">
-          <img src="/src/components/INfy_Logo.png" alt="INFYNUX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
+          <img src="/src/components/INfynux-Logo.png" alt="INFYNUX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
           Powering Smart Solutions
         </div>
         <h1 data-aos="fade-up" data-aos-delay="100" className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-6">

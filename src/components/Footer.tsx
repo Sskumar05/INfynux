@@ -20,7 +20,7 @@ export function Footer() {
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2.5 group">
               <img
-                src="/src/components/INfy_Logo.png"
+                src="/src/components/INfynux-Logo.png"
                 alt="INFYNUX Logo"
                 className="h-11 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] group-hover:scale-110 transition-transform duration-300"
               />
