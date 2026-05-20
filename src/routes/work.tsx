@@ -230,7 +230,7 @@ function WorkPage() {
             {/* Header */}
             <div className="text-center max-w-2xl mx-auto mb-16">
               <div data-aos="fade-up" className="inline-flex items-center gap-2 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/20 px-4 py-1.5 text-xs uppercase tracking-widest text-[#00E5FF] mb-6 animate-pulse">
-                <ImageIcon className="h-4 w-4" /> Telemetry Archive
+                <img src="/INfynux-Logo.png" alt="INFYNUX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />Telemetry Archive
               </div>
               
               <h2 data-aos="fade-up" data-aos-delay="100" className="text-4xl sm:text-5xl font-bold mb-6">
