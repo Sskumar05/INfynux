@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import AOS from "aos";
 import {
@@ -115,7 +115,7 @@ function AboutPage() {
                     </ul>
                   </div>
                   <p className="text-slate-400 text-sm italic mb-10 max-w-2xl mx-auto">
-                    Founded in <span className="text-[#00E5FF] font-bold">2025</span>, INFYNUX stands at the forefront of digital transformation â€” bringing the fresh perspective and high-energy of student innovation to businesses worldwide with professional IT services.
+                    Founded in <span className="text-[#00E5FF] font-bold">2025</span>, INFYNUX stands at the forefront of digital transformation &mdash; bringing the fresh perspective and high-energy of student innovation to businesses worldwide with professional IT services.
                   </p>
                   <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-8 py-4 text-sm font-bold text-[#0A0A0F] hover:scale-105 transition-all shadow-xl shadow-[#00E5FF]/20">
                     Get Started <ArrowRight className="h-4 w-4" />
@@ -324,7 +324,7 @@ function MissionVisionSection() {
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold font-display mb-6">Our Mission</h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              To empower organizations with digital tools that defy traditional constraints. We bridge the gap between imagination and execution, delivering software that doesn't just workâ€”it propels our clients toward their ultimate potential.
+              To empower organizations with digital tools that defy traditional constraints. We bridge the gap between imagination and execution, delivering software that doesn't just work&mdash;it propels our clients toward their ultimate potential.
             </p>
           </div>
           <div data-aos="fade-left" className="bg-[#0D0D15]/80 backdrop-blur-xl border border-white/5 rounded-3xl p-12 lg:mt-12">

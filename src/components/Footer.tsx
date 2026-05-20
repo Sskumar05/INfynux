@@ -1,4 +1,4 @@
-﻿import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { Facebook, Youtube, Linkedin, Instagram, MapPin, Mail, Phone } from "lucide-react";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -116,7 +116,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-widest text-muted-foreground">
-          <p>Â© {new Date().getFullYear()} INFYNUX. PRECISION ENGINEERED.</p>
+          <p>&copy; {new Date().getFullYear()} INFYNUX. PRECISION ENGINEERED.</p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-[var(--cyan)] transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-[var(--cyan)] transition-colors">Terms</Link>
@@ -139,7 +139,7 @@ function FooterCol({ title, items }: { title: string; items: {label: string, to:
         {items.map((i) => (
           <li key={i.label} className="group">
             <Link to={i.to} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[var(--cyan)] transition-all">
-              <span className="text-[var(--cyan)] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">â†’</span>
+              <span className="text-[var(--cyan)] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">&rarr;</span>
               {i.label}
             </Link>
           </li>
