@@ -426,7 +426,7 @@ function WhyChooseUs() {
             Why Choose Us
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold font-display leading-tight mb-6">
-            Our Strategy for <span className="text-gradient-cosmic">Your Success</span> with INFYNUX
+            Our Strategy for <span className="text-gradient-cosmic">Your Success</span> with INfynux
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             We combine technical expertise with a client-centric approach to deliver high-performance websites and digital products that make a real impact.

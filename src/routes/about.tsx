@@ -89,7 +89,7 @@ function AboutPage() {
                     About Company
                   </div>
                   <h1 className="text-4xl sm:text-6xl font-bold font-display leading-tight mb-8">
-                    Welcome to <span className="text-gradient-cosmic">INFYNUX</span>
+                    Welcome to <span className="text-gradient-cosmic">INfynux</span>
                   </h1>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
                     About INFYNUX: We are a software company in Nagapattinam and a dynamic Startup founded by young, ambitious minds and college students driven by innovation. We are proud to be an MSME and StartupTN registered enterprise, dedicated to delivering modern IT solutions that drive growth.
@@ -115,7 +115,7 @@ function AboutPage() {
                     </ul>
                   </div>
                   <p className="text-slate-400 text-sm italic mb-10 max-w-2xl mx-auto">
-                    Founded in <span className="text-[#00E5FF] font-bold">2025</span>, INFYNUX stands at the forefront of digital transformation &mdash; bringing the fresh perspective and high-energy of student innovation to businesses worldwide with professional IT services.
+                    Founded in <span className="text-[#00E5FF] font-bold">2025</span>, INfynux stands at the forefront of digital transformation &mdash; bringing the fresh perspective and high-energy of student innovation to businesses worldwide with professional IT services.
                   </p>
                   <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-8 py-4 text-sm font-bold text-[#0A0A0F] hover:scale-105 transition-all shadow-xl shadow-[#00E5FF]/20">
                     Get Started <ArrowRight className="h-4 w-4" />
