@@ -135,7 +135,7 @@ function Hero() {
           Digital Solution.
         </h1>
         <p data-aos="fade-up" data-aos-delay="200" className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-          INFYNUX transforms ideas into high-performance websites, intelligent applications, and next-generation digital products.
+          INfynux transforms ideas into high-performance websites, intelligent applications, and next-generation digital products.
         </p>
         <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col items-center justify-center gap-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

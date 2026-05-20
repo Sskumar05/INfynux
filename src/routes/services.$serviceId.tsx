@@ -32,7 +32,7 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Smartphone, title: "Responsive Perfection", desc: "Seamless experiences across mobile, tablet, and desktop viewports." }
     ],
     tech: ["React.js", "Node.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "AWS"],
-    pricing: "Custom quotes based on project complexity. Starts from $2,500.",
+    // pricing: "Custom quotes based on project complexity. Starts from $2,500.",
     faqs: [
       { q: "How long does a typical project take?", a: "Most projects launch within 6-12 weeks depending on scope." },
       { q: "Do you provide maintenance?", a: "Yes, we offer monthly maintenance and security update packages." },
@@ -60,7 +60,7 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Smartphone, title: "Mobile-First Design", desc: "Ensuring seamless experiences across all device types and sizes." }
     ],
     tech: ["Figma", "Adobe Creative Suite", "Spline (3D)", "Framer Motion"],
-    pricing: "Design-only projects start at $1,500.",
+    // pricing: "Design-only projects start at $1,500.",
     faqs: [
       { q: "Do you provide developer handoff?", a: "Yes, we provide complete Figma files with documentation for your dev team." },
       { q: "How many revisions do you offer?", a: "We include 3 major rounds of revisions to ensure the final design perfectly aligns with your vision and business goals." },
@@ -89,7 +89,7 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Smartphone, title: "Device-Level Access", desc: "Direct hardware integrations (Camera, GPS, Bluetooth, Push Notifications)." }
     ],
     tech: ["React Native", "Flutter", "TypeScript", "Node.js", "Firebase", "AWS"],
-    pricing: "Custom quotes based on product scope. Starts from $4,000.",
+    // pricing: "Custom quotes based on product scope. Starts from $4,000.",
     faqs: [
       { q: "Do you build for both iOS and Android?", a: "Yes, we utilize modern cross-platform frameworks to build highly performant apps for both iOS and Android from a single shared codebase." },
       { q: "Can you help publish the app to the app stores?", a: "Absolutely. We handle the entire deployment process, including preparing metadata, setting up developer accounts, and clearing the approval pipelines." },
@@ -116,7 +116,7 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: ShieldCheck, title: "Ethics & Compliance", desc: "Ensuring AI models are unbiased and data usage is fully compliant." }
     ],
     tech: ["Python", "PyTorch", "OpenAI API", "Pinecone (Vector DB)", "LangChain"],
-    pricing: "Consultation and POCs starting at $3,000.",
+    // pricing: "Consultation and POCs starting at $3,000.",
     faqs: [
       { q: "Is our data secure?", a: "Yes, we use enterprise-grade privacy layers to ensure your data stays yours." },
       { q: "How long does it take to integrate AI?", a: "A basic integration can take 2-4 weeks, while custom-trained models or complex agents may take 2-3 months." },
@@ -143,7 +143,7 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Zap, title: "Serverless Optimization", desc: "Reducing overhead costs with efficient event-driven functions." }
     ],
     tech: ["AWS", "Google Cloud", "Docker", "Kubernetes", "Terraform"],
-    pricing: "Monthly infrastructure management starts at $500.",
+    // pricing: "Monthly infrastructure management starts at $500.",
     faqs: [
       { q: "Which cloud provider do you recommend?", a: "It depends on your needs, but we specialize in AWS and Google Cloud." },
       { q: "Will there be downtime during migration?", a: "We use zero-downtime migration strategies, ensuring your services stay live while we transition your data." },
@@ -170,7 +170,7 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: HeartHandshake, title: "Market Positioning", desc: "Defining where your brand sits in the competitive landscape." }
     ],
     tech: ["Adobe Illustrator", "InDesign", "Photoshop", "After Effects"],
-    pricing: "Brand identity packages start at $2,000.",
+    // pricing: "Brand identity packages start at $2,000.",
     faqs: [
       { q: "Do you provide brand guidelines?", a: "Yes, we provide a complete Brand Bible for your internal team." },
       { q: "How long does the branding process take?", a: "A comprehensive brand identity project typically takes 4-6 weeks from research to final delivery." },
@@ -197,7 +197,7 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Sparkles, title: "Content Strategy", desc: "High-value blog posts and copy that drives organic growth." }
     ],
     tech: ["Google Ads", "Meta Ads", "Ahrefs", "Google Analytics 4", "Mailchimp"],
-    pricing: "Monthly management starts at $1,000 + ad spend.",
+    // pricing: "Monthly management starts at $1,000 + ad spend.",
     faqs: [
       { q: "How soon will I see results?", a: "SEO takes months, but paid ads can show results within days." },
       { q: "Do you guarantee a specific ROI?", a: "While we can't guarantee exact sales, we provide detailed projections and focus on continuous optimization." },
@@ -346,10 +346,10 @@ function ServiceDetailsPage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-12 p-6 rounded-2xl bg-[var(--cyan)]/5 border border-[var(--cyan)]/20">
+                {/* <div className="mt-12 p-6 rounded-2xl bg-[var(--cyan)]/5 border border-[var(--cyan)]/20">
                   <div className="text-xs uppercase tracking-widest text-slate-500 mb-2 font-bold">Pricing Highlight</div>
                   <div className="text-xl font-bold text-white">{data.pricing}</div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
