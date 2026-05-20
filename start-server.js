@@ -10,7 +10,14 @@ app.use('/*', serveStatic({ root: './dist/client' }));
 
 // 2. Route all other requests to the TanStack Start SSR fetch handler
 app.all('*', async (c) => {
-  return await serverModule.fetch(c.req.raw, c.env, c.executionCtx);
+  // In Node.js, c.executionCtx throws an error since there is no execution context
+  let ctx;
+  try {
+    ctx = c.executionCtx;
+  } catch (e) {
+    ctx = undefined;
+  }
+  return await serverModule.fetch(c.req.raw, c.env, ctx);
 });
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
