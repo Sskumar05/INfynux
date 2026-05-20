@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Twitter, Linkedin, Github, ExternalLink } from "lucide-react";
 
 interface TeamMember {
@@ -18,28 +18,28 @@ const team: TeamMember[] = [
     name: "YogeshWaran",
     role: "Founder & CEO",
     description: "Visionary leader driving innovation, business growth, strategic excellence, and future-ready digital transformation.",
-    image: "/src/components/Yogesh.png",
+    image: "/Yogesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Govindarajan",
     role: "Brand & Marketing Strategist",
     description: "Crafting impactful brand identities, strategic campaigns, customer engagement, and long-term business growth.",
-    image: "/src/components/Govind.png",
+    image: "/Govind.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Shathis Kumar",
     role: "Lead Developer",
     description: "Building scalable, secure, high-performance applications using modern technologies and advanced development architecture.",
-    image: "/src/components/shathis.png",
+    image: "/shathis.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Rajesh",
     role: "UI/UX Designer",
     description: "Designing intuitive, visually stunning, user-centered interfaces with seamless experiences and modern creative aesthetics.",
-    image: "/src/components/Rajesh.png",
+    image: "/Rajesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
   }
 ];

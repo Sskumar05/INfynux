@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import {
@@ -55,7 +55,7 @@ function Index() {
             
             {/* The high-end splash logo */}
             <img
-              src="/src/components/INfynux-Logo-Splash Screen.png"
+              src="/INfynux-Logo-Splash Screen.png"
               alt="INFYNUX"
               className="h-80 w-auto relative z-10 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all duration-500 hover:scale-105"
             />
@@ -126,7 +126,7 @@ function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div data-aos="fade-up" className="inline-flex items-center gap-2.5 rounded-full glass px-4 py-2 text-xs uppercase tracking-widest text-[var(--cyan)] mb-8">
-          <img src="/src/components/INfynux-Logo.png" alt="INFYNUX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
+          <img src="/INfynux-Logo.png" alt="INFYNUX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
           Powering Smart Solutions
         </div>
         <h1 data-aos="fade-up" data-aos-delay="100" className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-6">
@@ -173,7 +173,7 @@ function Hero() {
             <div className="rounded-2xl bg-gradient-to-br from-[var(--cyan)]/10 via-[var(--purple-glow)]/10 to-[var(--pink-glow)]/10 p-8 sm:p-12">
               <div className="grid grid-cols-3 gap-6 text-left">
                 {[
-                  { k: "Studios", v: "NYC · Tokyo · Berlin" },
+                  { k: "Studios", v: "NYC Â· Tokyo Â· Berlin" },
                   { k: "Awards", v: "27 in 2024" },
                   { k: "Status", v: "In Orbit" },
                 ].map((s) => (
@@ -275,21 +275,21 @@ function PortfolioSummary() {
    {
       cat: "Web App",
       title: "Learning knights",
-      img: "src/components/Learning knights.png",
+      img: "/Learning knights.png",
       // desc: "An enterprise-grade decentralized AI orchestration system. Powers autonomous agents, real-time quantum compute routing, and neural-mesh communication pipelines."
       url: "https://learning-knights.vercel.app/"
     },
     {
       cat: "WebSite",
       title: "Virtual Study",
-      img: "src/components/Virtual study.png",
+      img: "/Virtual study.png",
       // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
       url: "https://virtual-study-finder.netlify.app/home"
     },
        {
       cat: "Web App",
       title: "Rajesh Portfolio",
-      img: "src/components/Rajesh Portfolio.png",
+      img: "/Rajesh Portfolio.png",
       // desc: "A premium wealth management platform featuring algorithmic trading dashboards, cross-border digital asset settlements, and real-time portfolio analytics.",
       url: "https://rajeshv2004.github.io/RAJESHV-PORTFOLIO/"
     }

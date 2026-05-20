@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import AOS from "aos";
 import { 
@@ -45,8 +45,8 @@ const SERVICES_DATA: Record<string, any> = {
     title: "UI/UX Design",
     icon: Palette,
     heading: "Designing Interfaces That Feel Inevitable",
-    intro: "UI/UX design is about more than just colors and fonts—it's about understanding human behavior and creating frictionless paths for your users to achieve their goals.",
-    why: "A great design reduces churn, increases conversion, and builds deep emotional trust with your audience. We specialize in 'Antigravity' design—interfaces that feel light, fast, and futuristic.",
+    intro: "UI/UX design is about more than just colors and fontsâ€”it's about understanding human behavior and creating frictionless paths for your users to achieve their goals.",
+    why: "A great design reduces churn, increases conversion, and builds deep emotional trust with your audience. We specialize in 'Antigravity' designâ€”interfaces that feel light, fast, and futuristic.",
     process: [
       { name: "User Research", desc: "Deep diving into user personas and competitor landscapes." },
       { name: "Wireframing", desc: "Low-fidelity blueprints to map out functionality and flow." },

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import AOS from "aos";
 import { Code2, Palette, Brain, Cloud, Sparkles, Megaphone, ArrowUpRight, Smartphone, AlignJustify, AlignCenter } from "lucide-react";

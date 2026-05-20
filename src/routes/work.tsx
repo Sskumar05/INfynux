@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import { 
@@ -92,21 +92,21 @@ function WorkPage() {
     {
       cat: "Web App",
       title: "Learning knights",
-      img: "src/components/Learning knights.png",
+      img: "/Learning knights.png",
       // desc: "An enterprise-grade decentralized AI orchestration system. Powers autonomous agents, real-time quantum compute routing, and neural-mesh communication pipelines."
       url: "https://learning-knights.vercel.app/"
     },
     {
       cat: "WebSite",
       title: "Virtual Study",
-      img: "src/components/Virtual study.png",
+      img: "/Virtual study.png",
       // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
       url: "https://virtual-study-finder.netlify.app/home"
     },
     {
       cat: "Web App",
       title: "Rajesh Portfolio",
-      img: "src/components/Rajesh Portfolio.png",
+      img: "/Rajesh Portfolio.png",
       // desc: "A premium wealth management platform featuring algorithmic trading dashboards, cross-border digital asset settlements, and real-time portfolio analytics.",
       url: "https://rajeshv2004.github.io/RAJESHV-PORTFOLIO/"
     },

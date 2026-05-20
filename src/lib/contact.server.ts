@@ -1,7 +1,7 @@
-import { createServerFn } from "@tanstack/react-start";
+﻿import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
-// ─── Validation Schema (shared with client for inline errors) ────────────────
+// â”€â”€â”€ Validation Schema (shared with client for inline errors) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100),
   email: z.string().email("Please enter a valid email address"),
@@ -13,18 +13,18 @@ export const contactSchema = z.object({
 
 export type ContactInput = z.infer<typeof contactSchema>;
 
-// ─── Server Function ─────────────────────────────────────────────────────────
-// Runs ONLY on the server — RESEND_API_KEY never reaches the browser bundle.
+// â”€â”€â”€ Server Function â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Runs ONLY on the server â€” RESEND_API_KEY never reaches the browser bundle.
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator((raw: ContactInput) => {
-    // Parse & validate — throws a ZodError (serialised to 400) on failure
+    // Parse & validate â€” throws a ZodError (serialised to 400) on failure
     return contactSchema.parse(raw);
   })
   .handler(async ({ data }) => {
     const { name, email, message } = data;
 
-    // ── 1. Save to Supabase ─────────────────────────────────────────────────
-    // Use import.meta.env — Vite statically injects VITE_* vars into both
+    // â”€â”€ 1. Save to Supabase â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // Use import.meta.env â€” Vite statically injects VITE_* vars into both
     // client and server bundles; process.env is NOT available in CF Workers.
     const supabaseUrl = import.meta.env["VITE_SUPABASE_URL"] as string | undefined;
     const supabaseKey = import.meta.env["VITE_SUPABASE_ANON_KEY"] as string | undefined;
@@ -54,12 +54,12 @@ export const submitContactForm = createServerFn({ method: "POST" })
       );
     }
 
-    // ── 2. Send email via Resend ────────────────────────────────────────────
+    // â”€â”€ 2. Send email via Resend â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const resendKey = import.meta.env["VITE_RESEND_API_KEY"] as string | undefined;
     const fromEmail = (import.meta.env["VITE_RESEND_FROM_EMAIL"] as string | undefined) ?? "onboarding@resend.dev";
 
     if (!resendKey) {
-      // DB insert succeeded — log the missing config but don't fail the user
+      // DB insert succeeded â€” log the missing config but don't fail the user
       console.error(
         "[Contact] RESEND_API_KEY is not set. Email not sent, but submission was saved."
       );
@@ -78,7 +78,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
         from: `INFYNUX <${fromEmail}>`,
         to: ["yogeshwarandofficial@gmail.com"],
         reply_to: email,
-        subject: `New enquiry from ${name} — INFYNUX`,
+        subject: `New enquiry from ${name} â€” INFYNUX`,
         html: `
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +90,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
         <!-- Header -->
         <tr>
           <td style="background:linear-gradient(135deg,rgba(0,229,255,0.12),rgba(123,47,190,0.12));padding:36px 40px 28px;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <p style="margin:0 0 4px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#00E5FF;">INFYNUX — Incoming Transmission</p>
+            <p style="margin:0 0 4px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#00E5FF;">INFYNUX â€” Incoming Transmission</p>
             <h1 style="margin:0;font-size:26px;font-weight:700;color:#FFFFFF;">New Contact Request</h1>
           </td>
         </tr>
@@ -132,7 +132,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
     if (!emailRes.ok) {
       const errBody = await emailRes.json().catch(() => ({}));
       console.error("[Resend error]", emailRes.status, errBody);
-      // Submission is already saved — don't fail the user
+      // Submission is already saved â€” don't fail the user
       return { ok: true, emailSent: false };
     }
 

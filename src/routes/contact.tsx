@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import { useForm } from "react-hook-form";
@@ -68,7 +68,7 @@ function ContactPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
 
-              {/* ── Left column — info ─────────────────────────────────────── */}
+              {/* â”€â”€ Left column â€” info â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
               <div data-aos="fade-up">
                 <h1 className="text-4xl sm:text-6xl font-bold mb-6">
                   Let's <span className="text-gradient-cyan">connect</span>.
@@ -107,7 +107,7 @@ function ContactPage() {
                 </ul>
               </div>
 
-              {/* ── Right column — form ────────────────────────────────────── */}
+              {/* â”€â”€ Right column â€” form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
               <form
                 data-aos="fade-up"
                 data-aos-delay="120"
@@ -169,7 +169,7 @@ function ContactPage() {
                   <textarea
                     id="message"
                     rows={5}
-                    placeholder="Tell us about the mission…"
+                    placeholder="Tell us about the missionâ€¦"
                     disabled={isSubmitting}
                     {...register("message")}
                     className={`mt-2 w-full rounded-lg bg-white/5 border px-4 py-3 outline-none transition-colors resize-none disabled:opacity-50 ${
@@ -192,12 +192,12 @@ function ContactPage() {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      Transmitting…
+                      Transmittingâ€¦
                     </>
                   ) : submitted ? (
                     <>
                       <CheckCircle2 className="h-4 w-4" />
-                      Transmitted ✓
+                      Transmitted âœ“
                     </>
                   ) : (
                     <>

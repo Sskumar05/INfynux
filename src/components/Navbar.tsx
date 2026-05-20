@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
@@ -36,7 +36,7 @@ export function Navbar() {
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <img
-              src="/src/components/INfynux-Logo.png"
+              src="/INfynux-Logo.png"
               alt="INFYNUX Logo"
               className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.45)] group-hover:scale-110 transition-transform duration-300"
             />

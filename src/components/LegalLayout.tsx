@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+﻿import { ReactNode, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home, Shield, FileText, Cookie } from "lucide-react";
 import { Navbar } from "./Navbar";
