@@ -10,7 +10,8 @@
     "start": "node start-server.js",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "vercel-build": "vite build"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",

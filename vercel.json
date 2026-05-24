@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/start-server.js"
+    }
+  ],
+  "functions": {
+    "start-server.js": {
+      "runtime": "nodejs20.x"
+    }
+  }
+}
