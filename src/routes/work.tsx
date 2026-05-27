@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import { 
@@ -168,7 +168,7 @@ function WorkPage() {
                   key={p.title}
                   data-aos="fade-up"
                   data-aos-delay={i * 120}
-                  className="group relative overflow-hidden rounded-3xl gradient-border hover-lift aspect-[4/5] w-full cursor-pointer"
+                  className="group relative overflow-hidden rounded-3xl border border-white hover-lift aspect-[4/5] w-full cursor-pointer"
                 >
                   {/* Background Image Container */}
                   <div className="absolute inset-0 overflow-hidden">

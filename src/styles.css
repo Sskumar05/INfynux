@@ -72,9 +72,9 @@
   --gradient-purple: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%);
   --gradient-cosmic: linear-gradient(135deg, #00B4D8 0%, #7C3AED 50%, #DB2777 100%);
 
-  --shadow-cyan: 0 0 40px rgba(0, 180, 216, 0.2);
-  --shadow-purple: 0 0 40px rgba(124, 58, 237, 0.2);
-  --shadow-glow: 0 0 60px rgba(0, 180, 216, 0.15), 0 0 120px rgba(124, 58, 237, 0.1);
+  --shadow-cyan: 0 0 25px rgba(0, 180, 216, 0.12);
+  --shadow-purple: 0 0 25px rgba(124, 58, 237, 0.12);
+  --shadow-glow: 0 0 30px rgba(0, 180, 216, 0.08), 0 0 60px rgba(124, 58, 237, 0.05);
 }
 
 .dark {
@@ -107,9 +107,9 @@
   --gradient-purple: linear-gradient(135deg, #A855F7 0%, #FF007F 100%);
   --gradient-cosmic: linear-gradient(135deg, #00E5FF 0%, #A855F7 50%, #FF007F 100%);
 
-  --shadow-cyan: 0 0 40px rgba(0, 229, 255, 0.4);
-  --shadow-purple: 0 0 40px rgba(168, 85, 247, 0.4);
-  --shadow-glow: 0 0 60px rgba(0, 229, 255, 0.3), 0 0 120px rgba(168, 85, 247, 0.2);
+  --shadow-cyan: 0 0 25px rgba(0, 229, 255, 0.18);
+  --shadow-purple: 0 0 25px rgba(168, 85, 247, 0.18);
+  --shadow-glow: 0 0 30px rgba(0, 229, 255, 0.12), 0 0 60px rgba(168, 85, 247, 0.08);
 }
 
 @layer base {
@@ -224,7 +224,7 @@
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
   }
   .hover-lift:hover {
-    transform: translateY(-6px) scale(1.02);
+    transform: translateY(-4px) scale(1.01);
     box-shadow: var(--shadow-glow);
   }
 
