@@ -279,12 +279,12 @@ function PortfolioSummary() {
       // desc: "An enterprise-grade decentralized AI orchestration system. Powers autonomous agents, real-time quantum compute routing, and neural-mesh communication pipelines."
       url: "https://learning-knights.vercel.app/"
     },
-    {
+   {
       cat: "WebSite",
-      title: "Virtual Study",
-      img: "/Virtual study.png",
+      title: "Geethan Mobiles",
+      img: "/geethan_img.png",
       // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
-      url: "https://virtual-study-finder.netlify.app/home"
+      url: "https://geethan-mobiles.onrender.com/"
     },
        {
       cat: "Web App",
