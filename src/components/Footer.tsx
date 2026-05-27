@@ -97,7 +97,7 @@ export function Footer() {
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
                   <Mail className="h-5 w-5 text-[var(--cyan)]" />
                 </div>
-                <span className="text-sm text-muted-foreground pt-2">yogeshwarandofficial@gmail.com</span>
+                <span className="text-sm text-muted-foreground pt-2">support@infynuxsolutions.in</span>
               </li>
               <li className="flex items-start gap-4 group">
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">

@@ -83,7 +83,7 @@ function ContactPage() {
                     </div>
                     <div>
                       <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Email Us</div>
-                      <div className="font-medium">yogeshwarandofficial@gmail.com</div>
+                      <div className="font-medium">support@infynuxsolutions.in</div>
                     </div>
                   </li>
                   <li className="flex items-center gap-4">
