@@ -194,7 +194,7 @@
     background: var(--color-popover);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--color-cyan);
+    border: 1px solid var(--color-border);
   }
 
   .glow-cyan { box-shadow: var(--shadow-cyan); }
