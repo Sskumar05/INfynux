@@ -98,10 +98,10 @@ function WorkPage() {
     },
     {
       cat: "WebSite",
-      title: "Virtual Study",
-      img: "/Virtual study.png",
+      title: "Geethan Mobiles",
+      img: "/geethan_img.png",
       // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
-      url: "https://virtual-study-finder.netlify.app/home"
+      url: "https://geethan-mobiles.onrender.com/"
     },
     {
       cat: "Web App",
