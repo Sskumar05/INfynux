@@ -91,7 +91,7 @@ export function Footer() {
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
                   <MapPin className="h-5 w-5 text-[var(--cyan)]" />
                 </div>
-                <span className="text-sm text-muted-foreground pt-2">Nagapattinam, Tamil Nadu, India</span>
+                <span className="text-sm text-muted-foreground pt-2">Thiruvarur, Tamil Nadu, India</span>
               </li>
               <li className="flex items-start gap-4 group">
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
@@ -103,7 +103,7 @@ export function Footer() {
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
                   <WhatsAppIcon className="h-5 w-5 text-[var(--cyan)]" />
                 </div>
-                <span className="text-sm text-muted-foreground pt-2">+91 8248978136</span>
+                <span className="text-sm text-muted-foreground pt-2">+91 7010850923</span>
               </li>
               <li className="flex items-start gap-4 group">
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
