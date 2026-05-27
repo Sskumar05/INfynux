@@ -168,7 +168,7 @@ function WorkPage() {
                   key={p.title}
                   data-aos="fade-up"
                   data-aos-delay={i * 120}
-                  className="group relative overflow-hidden rounded-3xl border border-white hover-lift aspect-[4/5] w-full cursor-pointer"
+                  className="group relative overflow-hidden rounded-3xl hover-lift aspect-[4/5] w-full cursor-pointer"
                 >
                   {/* Background Image Container */}
                   <div className="absolute inset-0 overflow-hidden">
@@ -270,7 +270,7 @@ function WorkPage() {
                   <div
                     key={item.id}
                     onClick={() => setLightboxIndex(origIndex)}
-                    className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#07070F] aspect-square cursor-pointer hover:shadow-2xl hover:shadow-[var(--cyan)]/10 hover:border-[#00E5FF]/20 transition-all duration-500"
+                    className="group relative overflow-hidden rounded-2xl bg-[#07070F] aspect-square cursor-pointer hover:shadow-2xl hover:shadow-[var(--cyan)]/10 transition-all duration-500"
                   >
                     {/* Image */}
                     <img
@@ -367,11 +367,11 @@ function WorkPage() {
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="max-h-[75vh] max-w-full rounded-2xl border border-white/10 shadow-2xl object-contain"
+                  className="max-h-[75vh] max-w-full rounded-2xl shadow-2xl object-contain"
                 />
                 
                 {/* Image details footer */}
-                <div className="w-full max-w-3xl mt-6 flex justify-between items-center text-left bg-black/60 border border-white/5 rounded-2xl p-5 backdrop-blur-md">
+                <div className="w-full max-w-3xl mt-6 flex justify-between items-center text-left bg-black/60 rounded-2xl p-5 backdrop-blur-md">
                   <div>
                     <span className="inline-block rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/20 px-3 py-0.5 text-[9px] uppercase tracking-widest text-[#00E5FF] font-display mb-2">
                       {item.cat}
