@@ -71,15 +71,72 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "INFYNUX" },
-      { name: "description", content: "INFYNUX - Elevating Digital Experiences" },
-      { name: "author", content: "INFYNUX" },
-      { property: "og:title", content: "INFYNUX" },
-      { property: "og:description", content: "INFYNUX - Elevating Digital Experiences" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@INFYNUX" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+      {
+        title:
+          "INFYNUX Solutions | Web Development & Software Company in Thiruvarur",
+      },
+      {
+        name: "description",
+        content:
+          "INFYNUX Solutions provides Web Development, App Development, UI/UX Design, AI Integration and Cloud Solutions in Thiruvarur, Nagapattinam and across Tamil Nadu.",
+      },
+      {
+        name: "keywords",
+        content:
+          "INFYNUX, Web Development Company Thiruvarur, Software Company Nagapattinam, App Development, UI UX Design, AI Integration, Cloud Solutions",
+      },
+      {
+        name: "author",
+        content: "INFYNUX Solutions",
+      },
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        property: "og:title",
+        content:
+          "INFYNUX Solutions | Web Development & Software Company in Thiruvarur",
+      },
+      {
+        property: "og:description",
+        content:
+          "Professional Web Development, App Development, UI/UX Design, AI Integration and Cloud Solutions.",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: "https://infynuxsolutions.in",
+      },
+      {
+        property: "og:image",
+        content: "https://infynuxsolutions.in/INfynux-Logo.png",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content:
+          "INFYNUX Solutions | Web Development & Software Company in Thiruvarur",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Professional Web Development, App Development, UI/UX Design, AI Integration and Cloud Solutions.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://infynuxsolutions.in/INfynux-Logo.png",
+      },
     ],
     links: [
       {
@@ -91,8 +148,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "image/png",
         href: "/INfynux-Logo.png",
       },
+      {
+        rel: "canonical",
+        href: "https://infynuxsolutions.in/",
+      },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -102,27 +164,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      {/* <head>
-        <HeadContent />
-      </head> */}
       <head>
         <HeadContent />
+
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-914JR0V325"
-        >
-        </script>
+        />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-914JR0V325');
-      `,
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-914JR0V325');
+            `,
           }}
         />
       </head>
+
       <body>
         {children}
         <Scripts />
