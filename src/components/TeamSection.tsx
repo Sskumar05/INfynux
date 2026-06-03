@@ -21,16 +21,23 @@ const team: TeamMember[] = [
     image: "/Yogesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
+   {
+    name: "Hairish",
+    role: "Chief Operating Officer",
+    description: "Responsible for overseeing the organization's day-to-day operations, managing teams, and ensuring the successful execution of business strategies.",
+    image: "/Harish.png",
+    socials: { twitter: "", linkedin: "", github: "" }
+  },
   {
     name: "Govindarajan",
-    role: "Managing Director",
+    role: "Chief Business Officer",
     description: "Crafting impactful brand identities, strategic campaigns, customer engagement, and long-term business growth.",
     image: "/Govind.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Shathis Kumar",
-    role: "Lead Developer",
+    role: "Chief Technology Officer",
     description: "Building scalable, secure, high-performance applications using modern technologies and advanced development architecture.",
     image: "/shathis.png",
     socials: { twitter: "", linkedin: "", github: "" }
