@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "INFYNUX, Web Development Company Thiruvarur, Software Company Nagapattinam, App Development, UI UX Design, AI Integration, Cloud Solutions",
+          "INFYNUX Solutions, INFYNUX, Web Development Company Thiruvarur, Software Company Thiruvarur, Software Company Nagapattinam, Web Design Company Tamil Nadu, App Development Company, UI UX Design, AI Integration, Cloud Solutions, IT Company Thiruvarur, IT Company Nagapattinam",
       },
       {
         name: "author",
