@@ -44,7 +44,7 @@ const team: TeamMember[] = [
   },
   {
     name: "Rajesh",
-    role: "Cheif Marketing Offcier",
+    role: "Chief Marketing Offcier",
     description: "Designing intuitive, visually stunning, user-centered interfaces with seamless experiences and modern creative aesthetics.",
     image: "/Rajesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
