@@ -22,7 +22,7 @@ const team: TeamMember[] = [
     socials: { twitter: "", linkedin: "", github: "" }
   },
    {
-    name: "Hairish",
+    name: "Harish Vendhan",
     role: "Chief Operating Officer",
     description: "Responsible for overseeing the organization's day-to-day operations, managing teams, and ensuring the successful execution of business strategies.",
     image: "/Harish.png",
@@ -44,7 +44,7 @@ const team: TeamMember[] = [
   },
   {
     name: "Rajesh",
-    role: "Designer & Video Editor",
+    role: "Cheif Marketing Offcier",
     description: "Designing intuitive, visually stunning, user-centered interfaces with seamless experiences and modern creative aesthetics.",
     image: "/Rajesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
