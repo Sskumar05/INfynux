@@ -16,13 +16,13 @@ interface TeamMember {
 const team: TeamMember[] = [
   {
     name: "YogeshWaran",
-    role: "Founder",
+    role: "Founder & CEO",
     description: "Visionary leader driving innovation, business growth, strategic excellence, and future-ready digital transformation.",
     image: "/Yogesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
    {
-    name: "Hairish",
+    name: "Harish Vendhan",
     role: "Chief Operating Officer",
     description: "Responsible for overseeing the organization's day-to-day operations, managing teams, and ensuring the successful execution of business strategies.",
     image: "/Harish.png",
@@ -44,7 +44,7 @@ const team: TeamMember[] = [
   },
   {
     name: "Rajesh",
-    role: "Designer & Video Editor",
+    role: "Chief Marketing Offcier",
     description: "Designing intuitive, visually stunning, user-centered interfaces with seamless experiences and modern creative aesthetics.",
     image: "/Rajesh.png",
     socials: { twitter: "", linkedin: "", github: "" }
