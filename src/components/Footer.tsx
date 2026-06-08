@@ -34,9 +34,9 @@ export function Footer() {
             <div className="flex gap-3">
               {[
                 { Icon: Youtube, href: "#" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: Instagram, href: "#" },
-                { Icon: WhatsAppIcon, href: "https://wa.me/919944911273" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/company/infynux-solutions/" },
+                { Icon: Instagram, href: "https://www.instagram.com/infynuxsolutions/" },
+                { Icon: WhatsAppIcon, href: "https://wa.me/917010850923" },
               ].map((social, i) => (
                 <a
                   key={i}
