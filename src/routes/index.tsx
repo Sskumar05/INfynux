@@ -13,10 +13,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "INFYNUX" },
-      { name: "description", content: "Premium digital agency crafting futuristic brands, AI-driven platforms, and immersive experiences that defy gravity." },
-      { property: "og:title", content: "INFYNUX" },
-      { property: "og:description", content: "Premium digital agency crafting futuristic brands, AI-driven platforms, and immersive experiences." },
+      { title: "Infynux Solutions | Best Web Development & Software Company in Thiruvarur, Nagapattinam" },
+      { name: "description", content: "Infynux Solutions is a leading web development company in Thiruvarur and Nagapattinam offering website development, app development, UI/UX design, AI integration and cloud solutions." },
+      { name: "keywords", content: "web development company thiruvarur, software company nagapattinam, website design thiruvarur, app development company tamil nadu, ui ux design company, ai integration services, cloud solutions." },
+      { property: "og:title", content: "Infynux Solutions | Web Development Company in Thiruvarur & Nagapattinam" },
+      { property: "og:description", content: "Infynux Solutions is a leading web development company in Thiruvarur and Nagapattinam offering website development, app development, UI/UX design, AI integration and cloud solutions." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -52,7 +53,7 @@ function Index() {
           <div className="relative">
             {/* Ambient gold glow behind the logo */}
             <div className="absolute -inset-4 rounded-full  opacity-25 blur-2xl animate-pulse" />
-            
+
             {/* The high-end splash logo */}
             <img
               src="/INfynux-Logo-Splash Screen.png"
@@ -60,7 +61,7 @@ function Index() {
               className="h-80 w-auto relative z-10 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all duration-500 hover:scale-105"
             />
           </div>
-          
+
           {/* Subtle luxurious gold text label under logo */}
           {/* <div className="flex flex-col items-center gap-2 relative z-10">
             <span className="font-display text-lg font-black tracking-[0.3em] uppercase text-white" style={{ letterSpacing: "0.3em" }}>
@@ -90,6 +91,7 @@ function Index() {
           <Testimonials />
           <CTA />
           <ContactSummary />
+          <FAQSection/>
         </main>
         <Footer />
         <BackToTop />
@@ -130,12 +132,12 @@ function Hero() {
           Powering Smart Solutions
         </div>
         <h1 data-aos="fade-up" data-aos-delay="100" className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-6">
-          Crafting <span className="text-gradient-cosmic">Powerful</span>
+          <span className="text-gradient-cosmic">Software Solutions</span>
           <br />
-          Digital Solution.
+          for Modern Businesses.
         </h1>
         <p data-aos="fade-up" data-aos-delay="200" className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-          INfynux transforms ideas into high-performance websites, intelligent applications, and next-generation digital products.
+          Infynux Solutions is a leading software company in Thiruvarur and Nagapattinam providing web development, mobile app development, UI/UX design, AI integration, SEO and cloud solutions for startups, businesses and enterprises.
         </p>
         <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col items-center justify-center gap-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -147,10 +149,10 @@ function Hero() {
               Explore Universe
             </a>
           </div>
-          
-          <a 
-            href="https://wa.me/919944911273" 
-            target="_blank" 
+
+          <a
+            href="https://wa.me/919944911273"
+            target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-[#25D366] hover:text-[#128C7E] transition-all"
           >
@@ -220,17 +222,16 @@ function TrustedBy() {
 /* ---------- SERVICES SUMMARY ---------- */
 function ServicesSummary() {
   const services = [
-    { id: "web-development", icon: Code2, title: "Web Development", desc: "Modern digital applications engineered for speed, precision, and scalability." },
-    { id: "ui-ux-design", icon: Palette, title: "UI/UX Design", desc: "Seamless user experiences designed with precision and innovation." },
-    { id: "app-development", icon: Smartphone, title: "App Development", desc: "Premium mobile and cross-platform applications engineered for native performance." },
-    // { id: "ai-integrations", icon: Brain, title: "AI Integrations", desc: "AI-powered solutions crafted to deliver measurable business value." },
+    { id: "web-development", icon: Code2, title: "Web Development", desc: "Professional website development services including business websites, ecommerce stores, portfolio websites and custom web applications." },
+    { id: "ui-ux-design", icon: Palette, title: "UI/UX Design", desc: "Modern UI/UX design services focused on user experience, conversion optimization and brand identity." },
+    { id: "app-development", icon: Smartphone, title: "App Development", desc: "Android, iOS and cross-platform mobile app development services for startups and businesses." },
   ];
   return (
     <section id="services" className="py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 data-aos="fade-up" className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-            We Transform Ideas Into <span className="text-gradient-cyan">Digital Success</span>
+            Our <span className="text-gradient-cyan">IT Services</span>
           </h2>
           <p data-aos="fade-up" data-aos-delay="100" className="text-muted-foreground text-lg">
             We deliver innovative websites, intelligent applications, and scalable technology solutions tailored for modern businesses.
@@ -244,9 +245,8 @@ function ServicesSummary() {
               params={{ serviceId: s.id }}
               data-aos="fade-up"
               data-aos-delay={i * 100}
-              className={`gradient-border rounded-2xl p-8 hover-lift group cursor-pointer block ${
-                i === 3 ? "lg:col-start-2" : ""
-              }`}
+              className={`gradient-border rounded-2xl p-8 hover-lift group cursor-pointer block ${i === 3 ? "lg:col-start-2" : ""
+                }`}
             >
               <div className="h-14 w-14 rounded-xl bg-gradient-cyan/10 border border-[var(--cyan)]/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
                 <s.icon className="h-7 w-7 text-[var(--cyan)]" />
@@ -272,21 +272,21 @@ function ServicesSummary() {
 /* ---------- PORTFOLIO SUMMARY ---------- */
 function PortfolioSummary() {
   const projects: Array<{ cat: string; title: string; img: string; desc?: string; url?: string }> = [
-   {
+    {
       cat: "Web App",
       title: "Learning knights",
       img: "/Learning knights.png",
       // desc: "An enterprise-grade decentralized AI orchestration system. Powers autonomous agents, real-time quantum compute routing, and neural-mesh communication pipelines."
       url: "https://learning-knights.vercel.app/"
     },
-   {
+    {
       cat: "WebSite",
       title: "Geethan Mobiles",
       img: "/geethan_img.png",
       // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
       url: "https://geethan-mobiles.onrender.com/"
     },
-       {
+    {
       cat: "Web App",
       title: "Rajesh Portfolio",
       img: "/Rajesh Portfolio.png",
@@ -300,7 +300,7 @@ function PortfolioSummary() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <h2 data-aos="fade-up" className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-              Signature  <span className="text-gradient-cosmic">Projects</span>
+              Successful <span className="text-gradient-cosmic">Projects</span>
             </h2>
             <p data-aos="fade-up" data-aos-delay="100" className="text-muted-foreground text-lg max-w-xl">
               Showcasing our finest work built with passion and precision.
@@ -332,17 +332,17 @@ function PortfolioSummary() {
                   {p.cat}
                 </span>
                 <h3 className="text-2xl font-semibold mb-2">{p.title}</h3>
-                 <div className="mt-2">
-                        <a 
-                          href={p.url || "#"}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#00E5FF]/30 hover:bg-[#00E5FF]/10 px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-[#00E5FF] hover:scale-105 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-[#00E5FF]/15"
-                        >
-                          Explore Project <ArrowUpRight className="h-3.5 w-3.5" />
-                        </a>
-                      </div>
+                <div className="mt-2">
+                  <a
+                    href={p.url || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 hover:border-[#00E5FF]/30 hover:bg-[#00E5FF]/10 px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-[#00E5FF] hover:scale-105 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-[#00E5FF]/15"
+                  >
+                    Explore Project <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -419,6 +419,7 @@ function WhyChooseUs() {
   ];
 
   return (
+    <>
     <section className="py-28 relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div data-aos="fade-up" className="text-center mb-16">
@@ -426,13 +427,13 @@ function WhyChooseUs() {
             Why Choose Us
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold font-display leading-tight mb-6">
-            Our Strategy for <span className="text-gradient-cosmic">Your Success</span> with INfynux
+            Our Strategy for <span className="text-gradient-cosmic">Your Success</span> with Infynux
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             We combine technical expertise with a client-centric approach to deliver high-performance websites and digital products that make a real impact.
           </p>
         </div>
-        
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((f, i) => (
             <div key={i} data-aos="fade-up" data-aos-delay={i * 100} className="flex flex-col items-center text-center p-8 rounded-3xl glass border border-white/5 hover:border-[#00E5FF]/30 transition-all group">
@@ -452,8 +453,12 @@ function WhyChooseUs() {
         </div>
       </div>
     </section>
+
+</>
   );
 }
+
+
 
 /* ---------- TESTIMONIALS ---------- */
 function Testimonials() {
@@ -509,16 +514,87 @@ function CTA() {
   return null;
 }
 
+/* ---------- FAQ SECTION ---------- */
+function FAQSection() {
+  const faqs = [
+    {
+      q: "Which is the best web development company in Thiruvarur?",
+      a: "Infynux Solutions provides professional website development, software development and mobile app development services for businesses and startups."
+    },
+    {
+      q: "Do you provide mobile app development services?",
+      a: "Yes. We build Android, iOS and cross-platform mobile applications tailored to your business needs."
+    },
+    {
+      q: "Do you offer UI/UX design services?",
+      a: "Yes. We create modern, user-friendly and conversion-focused UI/UX designs for websites and applications."
+    },
+    {
+      q: "Do you serve clients in Nagapattinam?",
+      a: "Yes. We provide web development, app development and digital solutions across Thiruvarur, Nagapattinam and Tamil Nadu."
+    }
+  ];
+
+  return (
+    <>
+
+<section className="py-20">
+  <div className="max-w-5xl mx-auto px-4 text-center">
+    <h2 className="text-3xl sm:text-3xl font-bold font-display leading-tight mb-6">
+            Software Company in <span className="text-gradient-cosmic">Thiruvarur & Nagapattinam</span>
+          </h2>
+
+    <p className="text-muted-foreground">
+      Infynux Solutions provides website development,
+      mobile app development, UI/UX design, cloud solutions,
+      AI integration and digital transformation services
+      across Thiruvarur, Nagapattinam and Tamil Nadu.
+    </p>
+  </div>
+</section>
+
+    <section className="py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12">
+          Frequently <span className="text-gradient-cosmic">Asked</span> Questions
+        </h2>
+
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="gradient-border rounded-2xl p-6"
+            >
+              <h3 className="text-xl font-semibold mb-3">
+                {faq.q}
+              </h3>
+
+              <p className="text-muted-foreground">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+  
+    </>
+  );
+}
+
 /* ---------- CONTACT SUMMARY ---------- */
 function ContactSummary() {
   return (
     <section id="contact" className="py-28">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold mb-6">
-          Let's <span className="text-gradient-cyan">connect</span>.
+          Contact <span className="text-gradient-cyan">Infynux Solutions</span>.
         </h2>
         <p data-aos="fade-up" data-aos-delay="100" className="text-muted-foreground text-xl mb-10 max-w-2xl mx-auto">
-          Tell us about your mission. We respond within one earth-day to help you defy digital gravity.
+          Looking for a web development company in Thiruvarur or Nagapattinam? Contact Infynux Solutions today for website development, mobile apps and digital solutions.
         </p>
         <a href="/contact" data-aos="fade-up" data-aos-delay="200" className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-10 py-5 font-semibold text-[#001018] hover:scale-105 transition-transform shadow-xl shadow-[var(--cyan)]/30">
           Send a Message <Send className="h-4 w-4" />

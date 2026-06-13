@@ -21,7 +21,7 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2.5 group">
               <img
                 src="/INfynux-Logo.png"
-                alt="INFYNUX Logo"
+                alt="Infynux Solutions Web Development Company Thiruvarur & Nagapattinam"
                 className="h-11 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] group-hover:scale-110 transition-transform duration-300"
               />
               <span className="font-display text-2xl font-black uppercase tracking-[0.18em]" style={{ background: "linear-gradient(135deg, #D4AF37 0%, #F5E07A 40%, #D4AF37 70%, #A0793D 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
@@ -29,7 +29,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              INFYNUX stands at the intersection of technology and creativity, delivering robust digital platforms that empower businesses worldwide.
+              Infynux Solutions is a global software development company providing web development, mobile app development, UI/UX design, AI integration, and cloud solutions. We help startups, businesses, and organizations worldwide transform ideas into powerful digital products.
             </p>
             <div className="flex gap-3">
               {[
@@ -57,28 +57,28 @@ export function Footer() {
             </div> */}
           </div>
 
-          <FooterCol 
-            title="Company" 
+          <FooterCol
+            title="Company"
             items={[
-              {label: "Home", to: "/"},
-              {label: "About", to: "/about"},  
-              {label: "Services", to: "/services"}, 
-              {label: "Projects", to: "/work"}, 
-              {label: "Contact", to: "/contact"}
-            ]} 
+              { label: "Home", to: "/" },
+              { label: "About", to: "/about" },
+              { label: "Services", to: "/services" },
+              { label: "Projects", to: "/work" },
+              { label: "Contact", to: "/contact" }
+            ]}
           />
-          
-          <FooterCol 
-            title="Services" 
+
+          <FooterCol
+            title="Services"
             items={[
-              {label: "Web Development", to: "/services/web-development"}, 
-              {label: "UI/UX Design", to: "/services/ui-ux-design"}, 
-              {label: "App Development", to: "/services/app-development"},
-              {label: "AI Integration", to: "/services/ai-integrations"}, 
-              {label: "Cloud Solutions", to: "/services/cloud-solutions"}, 
-              {label: "Branding", to: "/services/branding"},
-              {label: "Digital Marketing", to: "/services/digital-marketing"}
-            ]} 
+              { label: "Web Development", to: "/services/web-development" },
+              { label: "UI/UX Design", to: "/services/ui-ux-design" },
+              { label: "App Development", to: "/services/app-development" },
+              { label: "AI Integration", to: "/services/ai-integrations" },
+              { label: "Cloud Solutions", to: "/services/cloud-solutions" },
+              { label: "Branding", to: "/services/branding" },
+              { label: "Digital Marketing", to: "/services/digital-marketing" }
+            ]}
           />
 
           <div className="space-y-6">
@@ -91,7 +91,7 @@ export function Footer() {
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
                   <MapPin className="h-5 w-5 text-[var(--cyan)]" />
                 </div>
-                <span className="text-sm text-muted-foreground pt-2">Thiruvarur, Tamil Nadu, India</span>
+                <span className="text-sm text-muted-foreground pt-2">Thiruvarur, Tamil Nadu 610001, India</span>
               </li>
               <li className="flex items-start gap-4 group">
                 <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
@@ -115,6 +115,12 @@ export function Footer() {
           </div>
         </div>
 
+        <div className="text-center text-sm text-muted-foreground mb-6">
+          <p>
+            Web Development • Mobile App Development • UI/UX Design • AI Integration • Cloud Solutions
+          </p>
+        </div>
+
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-widest text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} INFYNUX. PRECISION ENGINEERED.</p>
           <div className="flex gap-8">
@@ -128,7 +134,7 @@ export function Footer() {
   );
 }
 
-function FooterCol({ title, items }: { title: string; items: {label: string, to: string}[] }) {
+function FooterCol({ title, items }: { title: string; items: { label: string, to: string }[] }) {
   return (
     <div className="space-y-6">
       <div className="relative inline-block">

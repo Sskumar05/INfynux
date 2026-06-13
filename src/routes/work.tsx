@@ -155,7 +155,7 @@ function WorkPage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
               <div>
                 <h1 data-aos="fade-up" className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
-                  Signature <span className="text-gradient-cosmic">Projects</span>
+                  Successful <span className="text-gradient-cosmic">Projects</span>
                 </h1>
                 <p data-aos="fade-up" data-aos-delay="100" className="text-muted-foreground text-xl max-w-xl">
                   Showcasing our finest work built with passion and precision.

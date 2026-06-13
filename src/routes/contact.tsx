@@ -101,7 +101,7 @@ function ContactPage() {
                     </div>
                     <div>
                       <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Visit Us</div>
-                      <div className="font-medium">Nagapattinam, Tamil Nadu, India</div>
+                      <div className="font-medium">Thiruvarur, Tamil Nadu 610001, India</div>
                     </div>
                   </li>
                 </ul>

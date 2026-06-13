@@ -56,7 +56,7 @@ function AboutPage() {
 
       {/* Grid Pattern Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20" 
-           style={{ backgroundImage: "linear-gradient(rgba(0,229,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.05) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+          style={{ backgroundImage: "linear-gradient(rgba(0,229,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.05) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
 
       <div className="relative z-10">
         <Navbar />
@@ -85,14 +85,14 @@ function AboutPage() {
               <div className="max-w-4xl mx-auto mb-32">
                 <div data-aos="fade-up" className="text-center">
                   <div className="inline-flex items-center gap-2.5 rounded-full bg-[#00E5FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#00E5FF] mb-6">
-                    <img src="/INfynux-Logo.png" alt="INFYNUX" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
+                    <img src="/INfynux-Logo.png" alt="Infynux Solutions Web Development Company Thiruvarur & Nagapattinam" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
                     About Company
                   </div>
                   <h1 className="text-4xl sm:text-6xl font-bold font-display leading-tight mb-8">
-                    Welcome to <span className="text-gradient-cosmic">INfynux</span>
+                    Welcome to <span className="text-gradient-cosmic">Infynux</span>
                   </h1>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
-                    About INFYNUX: We are a software company in Nagapattinam and a dynamic Startup founded by young, ambitious minds and college students driven by innovation. We are proud to be an MSME and StartupTN registered enterprise, dedicated to delivering modern IT solutions that drive growth.
+                    About Infynux: We are a software company in Nagapattinam and a dynamic Startup founded by young, ambitious minds and college students driven by innovation. We are proud to be an MSME and StartupTN registered enterprise, dedicated to delivering modern IT solutions that drive growth.
                   </p>
                   <div className="flex flex-col items-center mb-10">
                     <ul className="space-y-4 text-left inline-block">
@@ -127,7 +127,7 @@ function AboutPage() {
               <div className="max-w-4xl mx-auto py-20">
                 <div className="text-center mb-16">
                   <h2 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold font-display leading-tight">
-                    The Story of <span className="text-[#00E5FF]">INFYNUX</span>: From Student Dreams to Global Digital Agency
+                    The Story of <span className="text-[#00E5FF]">Infynux</span>: From Student Dreams to Global Digital Agency
                   </h2>
                 </div>
                 

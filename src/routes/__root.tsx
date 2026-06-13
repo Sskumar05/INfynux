@@ -183,39 +183,68 @@ function RootShell({ children }: { children: React.ReactNode }) {
           }}
         />
 
-      <script
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "INFYNUX Solutions",
+              alternateName: "INFYNUX",
+              url: "https://infynuxsolutions.in",
+              logo: "https://infynuxsolutions.in/INfynux-Logo.png",
+              description:
+                "INFYNUX Solutions provides Web Development, App Development, UI/UX Design, AI Integration and Cloud Solutions.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Thiruvarur",
+                addressRegion: "Tamil Nadu",
+                addressCountry: "IN",
+              },
+              areaServed: [
+                "Thiruvarur",
+                "Nagapattinam",
+                "Tamil Nadu",
+                "India"
+              ],
+              sameAs: [
+                "https://www.instagram.com/infynuxsolutions",
+                "https://www.linkedin.com/company/infynux"
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                availableLanguage: ["English", "Tamil"]
+              }
+            }),
+          }}
+        />
+
+<script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
     __html: JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "SoftwareCompany",
       name: "INFYNUX Solutions",
-      alternateName: "INFYNUX",
       url: "https://infynuxsolutions.in",
-      logo: "https://infynuxsolutions.in/INfynux-Logo.png",
-      description:
-        "INFYNUX Solutions provides Web Development, App Development, UI/UX Design, AI Integration and Cloud Solutions.",
+      telephone: "+917010850923",
+      image: "https://infynuxsolutions.in/INfynux-Logo.png",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Thiruvarur",
         addressRegion: "Tamil Nadu",
-        addressCountry: "IN",
+        addressCountry: "India",
       },
       areaServed: [
         "Thiruvarur",
         "Nagapattinam",
         "Tamil Nadu",
-        "India"
       ],
       sameAs: [
         "https://www.instagram.com/infynuxsolutions",
         "https://www.linkedin.com/company/infynux"
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer support",
-        availableLanguage: ["English", "Tamil"]
-      }
+      ]
     }),
   }}
 />
