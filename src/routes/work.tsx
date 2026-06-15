@@ -74,19 +74,19 @@ function WorkPage() {
     {
       cat: "Web App",
       title: "Learning knights",
-      img: "/Learning knights.png",
+      img: "/public/Learning knights.png",
       url: "https://learning-knights.vercel.app/"
     },
     {
       cat: "Web App",
       title: "Siddhar Temple",
-      img: "/image4.png",
+      img: "/public/image4.png",
       url: "https://siddhar-temple-g6ox.onrender.com/"
     },
     {
       cat: "WebSite",
       title: "Live Wire",
-      img: "/image3.png",
+      img: "/public/image3.png",
       url: "https://cadpoint.onrender.com/"
     }
   ];
