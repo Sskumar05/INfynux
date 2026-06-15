@@ -137,7 +137,7 @@ function WorkPage() {
                       className="h-full w-full object-cover opacity-60 group-hover:opacity-85 group-hover:scale-105 transition-all duration-700"
                     />
                     {/* Deep gradient overlay for premium readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
                   </div>
 
                   {/* Card Content Overlay */}

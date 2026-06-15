@@ -275,19 +275,19 @@ function PortfolioSummary() {
        {
       cat: "Web App",
       title: "Learning knights",
-      img: "/Learning knights.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510580/image2_i5rssc.png",
       url: "https://learning-knights.vercel.app/"
     },
     {
       cat: "Web App",
       title: "Siddhar Temple",
-      img: "/image4.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510603/image4_psfgyx.png",
       url: "https://siddhar-temple-g6ox.onrender.com/"
     },
     {
       cat: "WebSite",
       title: "Live Wire",
-      img: "/image3.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png",
       url: "https://cadpoint.onrender.com/"
     }
   ];
