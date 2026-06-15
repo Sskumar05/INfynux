@@ -34,19 +34,19 @@ const DEFAULT_GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "gal-1",
     cat: "Web App",
-    title: "Neural Mesh Routing",
+    title: "",
     img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510576/image1_y0f50m.png"
   },
   {
     id: "gal-2",
     cat: "Mobile App",
-    title: "Helix Visual Guidelines",
+    title: "",
     img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510580/image2_i5rssc.png"
   },
   {
     id: "gal-3",
     cat: "Web App",
-    title: "Orbit Algorithmic Trader",
+    title: "",
     img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png"
   }
 //  {
@@ -147,9 +147,9 @@ function WorkPage() {
                         {p.cat}
                       </span> */}
                       
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-[var(--cyan)] transition-colors duration-300">
+                      {/* <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-[var(--cyan)] transition-colors duration-300">
                         {p.title}
-                      </h3>
+                      </h3> */}
                       
                       {p.desc && (
                         <p className="text-sm text-slate-300/90 leading-relaxed mb-6 line-clamp-3">
