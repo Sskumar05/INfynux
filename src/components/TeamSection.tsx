@@ -18,35 +18,35 @@ const team: TeamMember[] = [
     name: "YogeshWaran",
     role: "Founder & CEO",
     description: "Visionary leader driving innovation, business growth, strategic excellence, and future-ready digital transformation.",
-    image: "/Yogesh.png",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510640/Yogesh_m9qoeo.jpg",
     socials: { twitter: "", linkedin: "", github: "" }
   },
    {
     name: "Harish Vendhan",
     role: "Chief Operating Officer",
     description: "Responsible for overseeing the organization's day-to-day operations, managing teams, and ensuring the successful execution of business strategies.",
-    image: "/Harish.png",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510659/Harish_veljfq.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Govindarajan",
     role: "Chief Business Officer",
     description: "Crafting impactful brand identities, strategic campaigns, customer engagement, and long-term business growth.",
-    image: "/Govind.png",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510648/Govind_h9yhpq.jpg",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Shathis Kumar",
     role: "Chief Technology Officer",
     description: "Building scalable, secure, high-performance applications using modern technologies and advanced development architecture.",
-    image: "/shathis.png",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510635/shathis_hyc6xk.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
     name: "Rajesh",
     role: "Chief Marketing Offcier",
     description: "Designing intuitive, visually stunning, user-centered interfaces with seamless experiences and modern creative aesthetics.",
-    image: "/Rajesh.png",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510629/Rajesh_cjgf70.png",
     socials: { twitter: "", linkedin: "", github: "" }
   }
 ];

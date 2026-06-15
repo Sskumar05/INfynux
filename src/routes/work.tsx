@@ -35,19 +35,19 @@ const DEFAULT_GALLERY_ITEMS: GalleryItem[] = [
     id: "gal-1",
     cat: "Web App",
     title: "Neural Mesh Routing",
-    img: "/public/image1.png"
+    img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510576/image1_y0f50m.png"
   },
   {
     id: "gal-2",
     cat: "Mobile App",
     title: "Helix Visual Guidelines",
-    img: "/public/image2.png"
+    img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510580/image2_i5rssc.png"
   },
   {
     id: "gal-3",
     cat: "Web App",
     title: "Orbit Algorithmic Trader",
-    img: "/public/image3.png"
+    img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png"
   }
 //  {
 //     id: "gal-4",
@@ -74,19 +74,19 @@ function WorkPage() {
     {
       cat: "Web App",
       title: "Learning knights",
-      img: "/public/Learning knights.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510580/image2_i5rssc.png",
       url: "https://learning-knights.vercel.app/"
     },
     {
       cat: "Web App",
       title: "Siddhar Temple",
-      img: "/public/image4.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510603/image4_psfgyx.png",
       url: "https://siddhar-temple-g6ox.onrender.com/"
     },
     {
       cat: "WebSite",
       title: "Live Wire",
-      img: "/public/image3.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png",
       url: "https://cadpoint.onrender.com/"
     }
   ];

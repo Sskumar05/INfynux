@@ -56,7 +56,7 @@ function Index() {
 
             {/* The high-end splash logo */}
             <img
-              src="/INfynux-Logo-Splash Screen.png"
+              src="https://res.cloudinary.com/dhjupdyus/image/upload/v1781511082/INfynux-Logo-Splash_Screen_v0bmjl.png"
               alt="INFYNUX"
               className="h-80 w-auto relative z-10 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all duration-500 hover:scale-105"
             />
