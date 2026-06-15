@@ -272,26 +272,23 @@ function ServicesSummary() {
 /* ---------- PORTFOLIO SUMMARY ---------- */
 function PortfolioSummary() {
   const projects: Array<{ cat: string; title: string; img: string; desc?: string; url?: string }> = [
-    {
+       {
       cat: "Web App",
       title: "Learning knights",
       img: "/Learning knights.png",
-      // desc: "An enterprise-grade decentralized AI orchestration system. Powers autonomous agents, real-time quantum compute routing, and neural-mesh communication pipelines."
       url: "https://learning-knights.vercel.app/"
     },
     {
-      cat: "WebSite",
-      title: "Geethan Mobiles",
-      img: "/geethan_img.png",
-      // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
-      url: "https://geethan-mobiles.onrender.com/"
+      cat: "Web App",
+      title: "Siddhar Temple",
+      img: "/image4.png",
+      url: "https://siddhar-temple-g6ox.onrender.com/"
     },
     {
-      cat: "Web App",
-      title: "Rajesh Portfolio",
-      img: "/Rajesh Portfolio.png",
-      // desc: "A premium wealth management platform featuring algorithmic trading dashboards, cross-border digital asset settlements, and real-time portfolio analytics.",
-      url: "https://rajeshv2004.github.io/RAJESHV-PORTFOLIO/"
+      cat: "WebSite",
+      title: "Live Wire",
+      img: "/image3.png",
+      url: "https://cadpoint.onrender.com/"
     }
   ];
   return (
@@ -328,9 +325,9 @@ function PortfolioSummary() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <span className="inline-block rounded-full glass px-3 py-1 text-[10px] uppercase tracking-widest text-[var(--cyan)] mb-3">
+                {/* <span className="inline-block rounded-full glass px-3 py-1 text-[10px] uppercase tracking-widest text-[var(--cyan)] mb-3">
                   {p.cat}
-                </span>
+                </span> */}
                 <h3 className="text-2xl font-semibold mb-2">{p.title}</h3>
                 <div className="mt-2">
                   <a
@@ -382,8 +379,8 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
 
 function Stats() {
   const stats = [
-    { v: 2, suf: "+", label: "Successful Projects" },
-    { v: 80, suf: "%", label: "Rating" },
+    { v: 3, suf: "+", label: "Successful Projects" },
+    { v: 95, suf: "%", label: "Rating" },
     { v: 2, suf: "+", label: "Years Of Experience" },
     { v: 24, suf: "/7", label: "Client Support" },
   ];

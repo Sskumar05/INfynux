@@ -75,22 +75,19 @@ function WorkPage() {
       cat: "Web App",
       title: "Learning knights",
       img: "/Learning knights.png",
-      // desc: "An enterprise-grade decentralized AI orchestration system. Powers autonomous agents, real-time quantum compute routing, and neural-mesh communication pipelines."
       url: "https://learning-knights.vercel.app/"
     },
     {
-      cat: "WebSite",
-      title: "Geethan Mobiles",
-      img: "/geethan_img.png",
-      // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
-      url: "https://geethan-mobiles-9t3r.onrender.com"
+      cat: "Web App",
+      title: "Siddhar Temple",
+      img: "/image4.png",
+      url: "https://siddhar-temple-g6ox.onrender.com/"
     },
     {
-      cat: "Web App",
-      title: "Rajesh Portfolio",
-      img: "/Rajesh Portfolio.png",
-      // desc: "A premium wealth management platform featuring algorithmic trading dashboards, cross-border digital asset settlements, and real-time portfolio analytics.",
-      url: "https://rajeshv2004.github.io/RAJESHV-PORTFOLIO/"
+      cat: "WebSite",
+      title: "Live Wire",
+      img: "/image3.png",
+      url: "https://cadpoint.onrender.com/"
     }
   ];
 
@@ -146,9 +143,9 @@ function WorkPage() {
                   {/* Card Content Overlay */}
                   <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
                     <div>
-                      <span className="inline-block rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/20 px-3.5 py-1 text-[10px] uppercase tracking-widest text-[#00E5FF] font-display mb-4">
+                      {/* <span className="inline-block rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/20 px-3.5 py-1 text-[10px] uppercase tracking-widest text-[#00E5FF] font-display mb-4">
                         {p.cat}
-                      </span>
+                      </span> */}
                       
                       <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-[var(--cyan)] transition-colors duration-300">
                         {p.title}
