@@ -40,10 +40,10 @@ function ServicesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <h1 data-aos="fade-up" className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-white">
-                Core <span className="text-gradient-cyan">Services</span>
+                Our <span className="text-gradient-cyan">IT Services</span>
               </h1>
               <p data-aos="fade-up" data-aos-delay="100" className="text-muted-foreground text-xl">
-                Transforming visionary ideas into powerful digital solutions.
+              We deliver innovative websites, intelligent applications, and scalable technology solutions tailored for modern businesses.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

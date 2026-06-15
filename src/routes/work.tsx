@@ -33,51 +33,33 @@ interface GalleryItem {
 const DEFAULT_GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "gal-1",
-    cat: "AI Platform",
+    cat: "Web App",
     title: "Neural Mesh Routing",
-    img: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80"
+    img: "/public/image1.png"
   },
-  // {
-  //   id: "gal-2",
-  //   cat: "Brand Identity",
-  //   title: "Helix Visual Guidelines",
-  //   img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80"
-  // },
+  {
+    id: "gal-2",
+    cat: "Mobile App",
+    title: "Helix Visual Guidelines",
+    img: "/public/image2.png"
+  },
   {
     id: "gal-3",
     cat: "Web App",
     title: "Orbit Algorithmic Trader",
-    img: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?w=800&q=80"
-  },
+    img: "/public/image3.png"
+  }
+//  {
+//     id: "gal-4",
+//     cat: "Mobile App",
+//     title: "App name",
+//     img: "/public/image3.png"
+//   }
   // {
-  //   id: "gal-4",
-  //   cat: "Metaverse",
-  //   title: "Nova Virtual Real Estate",
-  //   img: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&q=80"
-  // },
-  {
-    id: "gal-5",
-    cat: "Mobile App",
-    title: "Pulse Preventative Biometrics",
-    img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80"
-  },
-  {
-    id: "gal-6",
-    cat: "Dashboard",
-    title: "Flux Analytics Streamer",
-    img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80"
-  },
-  {
-    id: "gal-7",
-    cat: "AI Platform",
-    title: "Nebula Quantum Core",
-    img: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80"
-  },
-  // {
-  //   id: "gal-8",
-  //   cat: "Dashboard",
-  //   title: "Holographic Telemetry",
-  //   img: "https://images.unsplash.com/photo-1551288049-bbbda5366392?w=800&q=80"
+  //   id: "gal-5",
+  //   cat: "Mobile App",
+  //   title: "Pulse Preventative Biometrics",
+  //   img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80"
   // }
 ];
 
@@ -101,7 +83,7 @@ function WorkPage() {
       title: "Geethan Mobiles",
       img: "/geethan_img.png",
       // desc: "Complete rebranding, visual ecosystem design, and custom 3D web experience for a global biotech research conglomerate pioneering genetic mapping."
-      url: "https://geethan-mobiles.onrender.com/"
+      url: "https://geethan-mobiles-9t3r.onrender.com"
     },
     {
       cat: "Web App",
@@ -109,28 +91,7 @@ function WorkPage() {
       img: "/Rajesh Portfolio.png",
       // desc: "A premium wealth management platform featuring algorithmic trading dashboards, cross-border digital asset settlements, and real-time portfolio analytics.",
       url: "https://rajeshv2004.github.io/RAJESHV-PORTFOLIO/"
-    },
-    // {
-    //   cat: "Metaverse",
-    //   title: "Nova City",
-    //   img: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=900&q=80",
-    //   desc: "A high-fidelity immersive virtual reality cityscape. Engineered for real-time spatial networking, digital real-estate trading, and social spatial integration.",
-    //   url: "https://nova-city.vercel.app/"
-    // },
-    // {
-    //   cat: "Mobile App",
-    //   title: "Pulse Health",
-    //   img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80",
-    //   desc: "Telehealth app leveraging biometric sensor data from smartwear. Provides machine learning-driven preventative diagnostics and instant practitioner access.",
-    //   url: "https://pulse-health.vercel.app/"
-    // },
-    // {
-    //   cat: "Dashboard",
-    //   title: "Flux Analytics",
-    //   img: "https://images.unsplash.com/photo-1551288049-bbbda5366392?w=900&q=80",
-    //   desc: "A high-throughput telemetry analytics suite mapping IoT sensor streams. Features predictive error prevention models and seamless cloud database syncing.",
-    //   url: "https://flux-analytics.vercel.app/"
-    // }
+    }
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");
@@ -288,7 +249,7 @@ function WorkPage() {
                         </span>
                       </div>
                       
-                      <div className="flex justify-between items-end">
+                      {/* <div className="flex justify-between items-end">
                         <div>
                           <h4 className="text-sm font-bold text-white mb-1">
                             {item.title}
@@ -300,7 +261,7 @@ function WorkPage() {
                         <div className="h-8 w-8 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF]">
                           <Maximize2 className="h-3.5 w-3.5" />
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 );
