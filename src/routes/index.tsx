@@ -282,13 +282,13 @@ function PortfolioSummary() {
       cat: "Web App",
       title: "Siddhar Temple",
       img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510603/image4_psfgyx.png",
-      url: "https://siddhar-temple-g6ox.onrender.com/"
+      url: "https://siddhar-temple-owuq.onrender.com/"
     },
     {
       cat: "WebSite",
       title: "Live Wire",
       img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png",
-      url: "https://cadpoint.onrender.com/"
+      url: "https://cadpoint-eqp5.onrender.com/"
     }
   ];
   return (
