@@ -79,15 +79,15 @@ function WorkPage() {
     },
     {
       cat: "Web App",
-      title: "Siddhar Temple",
+      title: "Korrakar Siddhar",
       img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510603/image4_psfgyx.png",
-      url: "https://siddhar-temple-owuq.onrender.com/"
+      url: "https://korakkarsiddhar.in/"
     },
     {
       cat: "WebSite",
       title: "Live Wire",
       img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png",
-      url: "https://cadpoint-eqp5.onrender.com/"
+      url: "https://cadpoint-bvug.onrender.com/"
     }
   ];
 
