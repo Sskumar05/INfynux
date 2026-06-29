@@ -11,6 +11,9 @@ export const WhatsAppButton = () => {
               href="https://wa.me/917010850923"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                window.fbq('track', 'Contact');
+              }}
               initial={{ scale: 0, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{
@@ -19,7 +22,7 @@ export const WhatsAppButton = () => {
                 damping: 20,
                 delay: 1.5,
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.1,
                 rotate: 5,
                 transition: { duration: 0.2 }
@@ -41,10 +44,10 @@ export const WhatsAppButton = () => {
                 }}
                 className="absolute inset-0 rounded-full bg-[#25D366]"
               />
-              
+
               {/* Internal glow */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
-              
+
               {/* WhatsApp Icon */}
               <svg
                 viewBox="0 0 24 24"
