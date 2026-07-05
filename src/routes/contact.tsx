@@ -41,10 +41,23 @@ function ContactPage() {
   const onSubmit = async (data: ContactInput) => {
     try {
       await submitContactForm({ data });
+
+      // Track Meta Pixel Lead event
+      try {
+        if (typeof window !== "undefined" && typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === "function") {
+          (window as Window & { fbq: (...args: unknown[]) => void }).fbq("track", "Lead", {
+            content_name: "Contact Form",
+            content_category: "Inquiry",
+          });
+        }
+      } catch {
+        // Pixel tracking is non-critical — swallow errors
+      }
+
       setSubmitted(true);
       toast.success("Message transmitted!", {
-        description: "We'll respond within one earth-day.",
-        duration: 5000,
+        description: "We'll respond within one earth-day. Check your inbox for a confirmation.",
+        duration: 6000,
       });
       reset();
       setTimeout(() => setSubmitted(false), 4000);

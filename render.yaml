@@ -1,13 +1,19 @@
 services:
   - type: web
-    name: ruby-royals
+    name: infynux
     env: node
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
         value: 20
+      # Supabase — set these in Render Dashboard → Environment
       - key: VITE_SUPABASE_URL
         sync: false
       - key: VITE_SUPABASE_ANON_KEY
         sync: false
+      # Resend email — set these in Render Dashboard → Environment
+      - key: VITE_RESEND_API_KEY
+        sync: false
+      - key: VITE_RESEND_FROM_EMAIL
+        value: onboarding@resend.dev

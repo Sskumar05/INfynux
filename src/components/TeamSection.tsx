@@ -21,11 +21,11 @@ const team: TeamMember[] = [
     image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510640/Yogesh_m9qoeo.jpg",
     socials: { twitter: "", linkedin: "", github: "" }
   },
-   {
-    name: "Harish Vendhan",
-    role: "Chief Operating Officer",
-    description: "Responsible for overseeing the organization's day-to-day operations, managing teams, and ensuring the successful execution of business strategies.",
-    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510659/Harish_veljfq.png",
+  {
+    name: "Shathis Kumar",
+    role: "Chief Technology Officer",
+    description: "Building scalable, secure, high-performance applications using modern technologies and advanced development architecture.",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510635/shathis_hyc6xk.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
@@ -36,19 +36,19 @@ const team: TeamMember[] = [
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {
-    name: "Shathis Kumar",
-    role: "Chief Technology Officer",
-    description: "Building scalable, secure, high-performance applications using modern technologies and advanced development architecture.",
-    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510635/shathis_hyc6xk.png",
-    socials: { twitter: "", linkedin: "", github: "" }
-  },
-  {
     name: "Rajesh",
-    role: "Chief Marketing Offcier",
+    role: "Chief Marketing Officer",
     description: "Designing intuitive, visually stunning, user-centered interfaces with seamless experiences and modern creative aesthetics.",
     image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510629/Rajesh_cjgf70.png",
     socials: { twitter: "", linkedin: "", github: "" }
-  }
+  },
+  {
+    name: "Harish Vendhan",
+    role: "Chief Operating Officer",
+    description: "Responsible for overseeing the organization's day-to-day operations, managing teams, and ensuring the successful execution of business strategies.",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510659/Harish_veljfq.png",
+    socials: { twitter: "", linkedin: "", github: "" }
+  },
 ];
 
 export function TeamSection() {
