@@ -9,7 +9,8 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { BackToTop } from "../components/BackToTop";
 import { TeamSection } from "../components/TeamSection";
-import { submitContactForm, contactSchema, type ContactInput } from "../lib/contact.server";
+import { supabase } from "../lib/supabase";
+import { contactSchema, type ContactInput } from "../lib/contact";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -40,23 +41,41 @@ function ContactPage() {
 
   const onSubmit = async (data: ContactInput) => {
     try {
-      await submitContactForm({ data });
+      // ── Insert directly into Supabase using the official JS client ──────────
+      const { error } = await supabase
+        .from("contact_inquiries")
+        .insert([
+          {
+            name: data.name,
+            email: data.email,
+            message: data.message,
+          },
+        ]);
 
-      // Track Meta Pixel Lead event
+      if (error) {
+        // Surface the Supabase error message to the user
+        throw new Error(error.message);
+      }
+
+      // ── Non-critical: Meta Pixel Lead event ─────────────────────────────────
       try {
-        if (typeof window !== "undefined" && typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === "function") {
+        if (
+          typeof window !== "undefined" &&
+          typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === "function"
+        ) {
           (window as Window & { fbq: (...args: unknown[]) => void }).fbq("track", "Lead", {
             content_name: "Contact Form",
             content_category: "Inquiry",
           });
         }
       } catch {
-        // Pixel tracking is non-critical — swallow errors
+        // Pixel tracking is non-critical — swallow silently
       }
 
+      // ── Success flow ─────────────────────────────────────────────────────────
       setSubmitted(true);
       toast.success("Message transmitted!", {
-        description: "We'll respond within one earth-day. Check your inbox for a confirmation.",
+        description: "We'll respond within one earth-day.",
         duration: 6000,
       });
       reset();
