@@ -50,11 +50,11 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            {/* <div className="flex items-center gap-4 pt-4 opacity-70 grayscale hover:grayscale-0 transition-all">
-              <div className="h-8 w-16 bg-muted rounded flex items-center justify-center text-[10px] font-bold">MSME</div>
-              <div className="h-8 w-20 bg-muted rounded flex items-center justify-center text-[10px] font-bold">StartupTN</div>
-              <div className="h-8 w-8 bg-muted rounded-full flex items-center justify-center text-[10px] font-bold">L</div>
-            </div> */}
+            <div className="flex items-center gap-4 pt-4 opacity-70 grayscale hover:grayscale-0 transition-all">
+              <div className="h-8 flex items-center justify-center ">MSME Registered</div><br />
+              <div className="h-8 flex items-center justify-center ">StartupTN</div>
+              {/* <div className="h-8 w-8 bg-muted rounded-full flex items-center justify-center text-[10px] font-bold">L</div> */}
+            </div>
           </div>
 
           <FooterCol
@@ -122,7 +122,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-widest text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} INFYNUX. PRECISION ENGINEERED.</p>
+          <p>&copy; {new Date().getFullYear()} INFYNUXSOLUTIONS. PRECISION ENGINEERED.</p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-[var(--cyan)] transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-[var(--cyan)] transition-colors">Terms</Link>
