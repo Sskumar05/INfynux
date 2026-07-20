@@ -87,7 +87,7 @@ function WorkPage() {
       cat: "WebSite",
       title: "Live Wire",
       img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png",
-      url: "https://cadpoint-bvug.onrender.com/"
+      url: "https://caddxpertai.in/"
     }
   ];
 
