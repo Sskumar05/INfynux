@@ -248,7 +248,7 @@ function ContactPage() {
           </div>
         </section>
 
-        <TeamSection />
+        
       </main>
       <Footer />
       <BackToTop />

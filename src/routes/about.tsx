@@ -10,6 +10,8 @@ import {
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { BackToTop } from "../components/BackToTop";
+import { TeamSection } from "../components/TeamSection";
+
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -64,8 +66,18 @@ function AboutPage() {
         <main className="pt-24">
           <section className="py-20 relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              {/* SECTION: Top Cards (Vision, Mission, Values) */}
-              <div className="grid md:grid-cols-3 gap-8 mb-32">
+
+              {/* SECTION: Welcome Section */}
+              <div className=" max-w-4xl mx-auto mb-32">
+                <div data-aos="fade-up" className="text-center">
+                  {/* <div className="inline-flex items-center gap-2.5 rounded-full bg-[#00E5FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#00E5FF] mb-6">
+                    <img src="/INfynux-Logo.png" alt="Infynux Solutions Web Development Company Thiruvarur & Nagapattinam" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
+                    About Company
+                  </div> */}
+                  <h1 className="text-4xl sm:text-6xl font-bold font-display leading-tight mb-8">
+                    Welcome to <span className="text-gradient-cosmic">Infynux</span>
+                  </h1>
+                       <div className="grid md:grid-cols-3 gap-8 mb-32">
                 {[
                   { title: "Our Vision", desc: "To be the global leader in digital transformation, empowering businesses through cutting-edge technology and innovative solutions.", icon: Eye, color: "bg-blue-500" },
                   { title: "Our Mission", desc: "We deliver exceptional software products and strategic digital services that drive growth, efficiency, and scalability for our clients.", icon: Lightbulb, color: "bg-purple-500" },
@@ -81,17 +93,9 @@ function AboutPage() {
                 ))}
               </div>
 
-              {/* SECTION: Welcome Section */}
-              <div className="max-w-4xl mx-auto mb-32">
-                <div data-aos="fade-up" className="text-center">
-                  <div className="inline-flex items-center gap-2.5 rounded-full bg-[#00E5FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#00E5FF] mb-6">
-                    <img src="/INfynux-Logo.png" alt="Infynux Solutions Web Development Company Thiruvarur & Nagapattinam" className="h-4 w-auto object-contain drop-shadow-[0_0_4px_rgba(212,175,55,0.4)]" />
-                    About Company
-                  </div>
-                  <h1 className="text-4xl sm:text-6xl font-bold font-display leading-tight mb-8">
-                    Welcome to <span className="text-gradient-cosmic">Infynux</span>
-                  </h1>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
+                      {/* SECTION: Top Cards (Vision, Mission, Values) */}
+        
+                 <p className="mt-[-9%] text-slate-400 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
                     About Infynux: We are a software company in Nagapattinam and a dynamic Startup founded by young, ambitious minds and college students driven by innovation. We are proud to be an MSME and StartupTN registered enterprise, dedicated to delivering modern IT solutions that drive growth.
                   </p>
                   <div className="flex flex-col items-center mb-10">
@@ -114,17 +118,19 @@ function AboutPage() {
                       ))}
                     </ul>
                   </div>
-                  <p className="text-slate-400 text-sm italic mb-10 max-w-2xl mx-auto">
+
+
+              <p className="text-slate-400 text-sm italic mb-10 max-w-2xl mx-auto">
                     Founded in <span className="text-[#00E5FF] font-bold">2025</span>, INfynux stands at the forefront of digital transformation &mdash; bringing the fresh perspective and high-energy of student innovation to businesses worldwide with professional IT services.
                   </p>
-                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-8 py-4 text-sm font-bold text-[#0A0A0F] hover:scale-105 transition-all shadow-xl shadow-[#00E5FF]/20">
+                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-8 py-4 text-sm font-bold text-[#0A0A0F] hover:scale-105 transition-all shadow-xl shadow-[#00E5FF]/20 ">
                     Get Started <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>
 
               {/* SECTION: The Story */}
-              <div className="max-w-4xl mx-auto py-20">
+              <div className="max-w-4xl mx-auto py-5">
                 <div className="text-center mb-16">
                   <h2 data-aos="fade-up" className="text-4xl sm:text-5xl font-bold font-display leading-tight">
                     The Story of <span className="text-[#00E5FF]">Infynux</span>: From Student Dreams to Global Digital Agency
@@ -183,7 +189,7 @@ function AboutPage() {
             </div>
           </section>
         </main>
-
+        <TeamSection />
         <Footer />
         <BackToTop />
       </div>
@@ -399,8 +405,8 @@ function Counter({ end, suffix }: { end: number; suffix: string }) {
   return <span>{count}{suffix}</span>;
 }
 
-/* ---------- TEAM ---------- */
-function TeamSection() {
+/* ---------- TEAM (old/unused placeholder - kept for reference) ---------- */
+function OldTeamSection() {
   const team = [
     { name: "Nova Prime", role: "Founder & Creative Director", icon: Sparkles, bio: "Pioneer in cosmic design systems and cognitive user interfaces." },
     { name: "Alex Quantum", role: "Head of Engineering", icon: Code2, bio: "Building high-velocity platforms that scale beyond traditional limits." },
@@ -409,7 +415,7 @@ function TeamSection() {
   ];
 
   return (
-    <section className="py-28 bg-[#0D0D15]/50">
+    <section className="mt-50% py-20 bg-[#0D0D15]/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 data-aos="fade-up" className="text-4xl sm:text-6xl font-bold font-display mb-6">Meet the Crew</h2>
@@ -508,5 +514,6 @@ function CTASection() {
         </div>
       </div>
     </section>
+    
   );
 }

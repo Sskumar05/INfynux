@@ -53,7 +53,7 @@ const team: TeamMember[] = [
 
 export function TeamSection() {
   return (
-    <section className="py-28 relative overflow-hidden bg-background">
+    <section className="py-5 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl pointer-events-none opacity-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--cyan)]/20 blur-[120px] rounded-full animate-float" />
