@@ -71,12 +71,7 @@ function WorkPage() {
   }, []);
 
   const projects: Array<{ cat: string; title: string; img: string; desc?: string; url?: string }> = [
-    {
-      cat: "Web App",
-      title: "Learning knights",
-      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510580/image2_i5rssc.png",
-      url: "https://learning-knights.vercel.app/"
-    },
+
     {
       cat: "Web App",
       title: "Korrakar Siddhar",
@@ -88,7 +83,13 @@ function WorkPage() {
       title: "Live Wire",
       img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png",
       url: "https://caddxpertai.in/"
-    }
+    },
+    {
+      cat: "Web App",
+      title: "Emirates Hotel",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1785233905/emirates_r7dw8j.png",
+      url: "https://emiratesinns.com/"
+    },
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");
