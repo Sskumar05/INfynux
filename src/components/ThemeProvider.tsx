@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "dark";
+type Theme = "light" | "dark";
 
 interface ThemeContextType {
   theme: Theme;
@@ -10,18 +10,18 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    // Force dark mode regardless of system preference or saved settings
-    document.documentElement.classList.add("dark");
-    document.documentElement.classList.remove("light");
-    document.documentElement.style.colorScheme = "dark";
-    localStorage.setItem("theme", "dark");
+    // Ensure light mode is set by default
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
+    document.documentElement.style.colorScheme = "light";
+    localStorage.setItem("theme", "light");
   }, []);
 
   const toggleTheme = () => {
-    // Theme switching is disabled to maintain the premium cosmic dark theme
+    // Keep disabled or implement actual toggle later
   };
 
   return (

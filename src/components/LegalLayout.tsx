@@ -1,4 +1,4 @@
-﻿import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home, Shield, FileText, Cookie } from "lucide-react";
 import { Navbar } from "./Navbar";
@@ -93,7 +93,8 @@ export function LegalLayout({ children, title, lastUpdated, icon }: LegalLayoutP
             <h3 className="text-xl font-bold mb-2">Have questions about our legal policies?</h3>
             <p className="text-muted-foreground mb-6">Our team is here to help you understand how we protect your data and rights.</p>
             <Link 
-              to="/contact" 
+              to="/" 
+              hash="contact"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-6 py-3 text-sm font-semibold text-[#001018] hover:scale-105 transition-transform"
             >
               Contact Support

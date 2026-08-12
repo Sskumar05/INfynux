@@ -1,13 +1,13 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import AOS from "aos";
 import { 
   Code2, Palette, Brain, Cloud, Sparkles, Megaphone, 
-  ArrowRight, Check, Rocket, Globe, Database, ShieldCheck, Zap,
+  ArrowRight, Check, Globe, Database, ShieldCheck, Zap,
   Search, BarChart, Smartphone, Layers, Cpu, HeartHandshake
 } from "lucide-react";
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
+import { Header as Navbar } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
 import { BackToTop } from "../components/BackToTop";
 
 // Service Data Mapping
@@ -32,7 +32,6 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Smartphone, title: "Responsive Perfection", desc: "Seamless experiences across mobile, tablet, and desktop viewports." }
     ],
     tech: ["React.js", "Node.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "AWS"],
-    // pricing: "Custom quotes based on project complexity. Starts from $2,500.",
     faqs: [
       { q: "How long does a typical project take?", a: "Most projects launch within 6-12 weeks depending on scope." },
       { q: "Do you provide maintenance?", a: "Yes, we offer monthly maintenance and security update packages." },
@@ -46,7 +45,7 @@ const SERVICES_DATA: Record<string, any> = {
     icon: Palette,
     heading: "Designing Interfaces That Feel Inevitable",
     intro: "UI/UX design is about more than just colors and fonts-it's about understanding human behavior and creating frictionless paths for your users to achieve their goals.",
-    why: "A great design reduces churn, increases conversion, and builds deep emotional trust with your audience. We specialize in 'Antigravity' design-interfaces that feel light, fast, and futuristic.",
+    why: "A great design reduces churn, increases conversion, and builds deep emotional trust with your audience. We specialize in creating interfaces that feel light, fast, and professional.",
     process: [
       { name: "User Research", desc: "Deep diving into user personas and competitor landscapes." },
       { name: "Wireframing", desc: "Low-fidelity blueprints to map out functionality and flow." },
@@ -56,11 +55,10 @@ const SERVICES_DATA: Record<string, any> = {
     features: [
       { icon: Layers, title: "Design Systems", desc: "Reusable components for consistent brand identity." },
       { icon: HeartHandshake, title: "User-Centricity", desc: "Every pixel is placed with intent based on research." },
-      { icon: Sparkles, title: "Modern Aesthetics", desc: "Glassmorphism, gradients, and micro-animations." },
+      { icon: Sparkles, title: "Modern Aesthetics", desc: "Clean typography, subtle shadows, and micro-animations." },
       { icon: Smartphone, title: "Mobile-First Design", desc: "Ensuring seamless experiences across all device types and sizes." }
     ],
     tech: ["Figma", "Adobe Creative Suite", "Spline (3D)", "Framer Motion"],
-    // pricing: "Design-only projects start at $1,500.",
     faqs: [
       { q: "Do you provide developer handoff?", a: "Yes, we provide complete Figma files with documentation for your dev team." },
       { q: "How many revisions do you offer?", a: "We include 3 major rounds of revisions to ensure the final design perfectly aligns with your vision and business goals." },
@@ -89,7 +87,6 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Smartphone, title: "Device-Level Access", desc: "Direct hardware integrations (Camera, GPS, Bluetooth, Push Notifications)." }
     ],
     tech: ["React Native", "Flutter", "TypeScript", "Node.js", "Firebase", "AWS"],
-    // pricing: "Custom quotes based on product scope. Starts from $4,000.",
     faqs: [
       { q: "Do you build for both iOS and Android?", a: "Yes, we utilize modern cross-platform frameworks to build highly performant apps for both iOS and Android from a single shared codebase." },
       { q: "Can you help publish the app to the app stores?", a: "Absolutely. We handle the entire deployment process, including preparing metadata, setting up developer accounts, and clearing the approval pipelines." },
@@ -116,7 +113,6 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: ShieldCheck, title: "Ethics & Compliance", desc: "Ensuring AI models are unbiased and data usage is fully compliant." }
     ],
     tech: ["Python", "PyTorch", "OpenAI API", "Pinecone (Vector DB)", "LangChain"],
-    // pricing: "Consultation and POCs starting at $3,000.",
     faqs: [
       { q: "Is our data secure?", a: "Yes, we use enterprise-grade privacy layers to ensure your data stays yours." },
       { q: "How long does it take to integrate AI?", a: "A basic integration can take 2-4 weeks, while custom-trained models or complex agents may take 2-3 months." },
@@ -143,7 +139,6 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Zap, title: "Serverless Optimization", desc: "Reducing overhead costs with efficient event-driven functions." }
     ],
     tech: ["AWS", "Google Cloud", "Docker", "Kubernetes", "Terraform"],
-    // pricing: "Monthly infrastructure management starts at $500.",
     faqs: [
       { q: "Which cloud provider do you recommend?", a: "It depends on your needs, but we specialize in AWS and Google Cloud." },
       { q: "Will there be downtime during migration?", a: "We use zero-downtime migration strategies, ensuring your services stay live while we transition your data." },
@@ -170,7 +165,6 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: HeartHandshake, title: "Market Positioning", desc: "Defining where your brand sits in the competitive landscape." }
     ],
     tech: ["Adobe Illustrator", "InDesign", "Photoshop", "After Effects"],
-    // pricing: "Brand identity packages start at $2,000.",
     faqs: [
       { q: "Do you provide brand guidelines?", a: "Yes, we provide a complete Brand Bible for your internal team." },
       { q: "How long does the branding process take?", a: "A comprehensive brand identity project typically takes 4-6 weeks from research to final delivery." },
@@ -197,7 +191,6 @@ const SERVICES_DATA: Record<string, any> = {
       { icon: Sparkles, title: "Content Strategy", desc: "High-value blog posts and copy that drives organic growth." }
     ],
     tech: ["Google Ads", "Meta Ads", "Ahrefs", "Google Analytics 4", "Mailchimp"],
-    // pricing: "Monthly management starts at $1,000 + ad spend.",
     faqs: [
       { q: "How soon will I see results?", a: "SEO takes months, but paid ads can show results within days." },
       { q: "Do you guarantee a specific ROI?", a: "While we can't guarantee exact sales, we provide detailed projections and focus on continuous optimization." },
@@ -208,7 +201,7 @@ const SERVICES_DATA: Record<string, any> = {
   }
 };
 
-export const Route = createFileRoute("/services/$serviceId")({
+export const Route = createFileRoute("/services_/$serviceId")({
   component: ServiceDetailsPage,
   head: () => ({
     meta: [
@@ -229,10 +222,10 @@ function ServiceDetailsPage() {
 
   if (!data) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background text-white">
+      <div className="min-h-screen flex items-center justify-center bg-[var(--color-ink)] text-[var(--color-paper)]">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Service Not Found</h1>
-          <Link to="/services" className="text-[var(--cyan)] hover:underline">Back to Services</Link>
+          <Link to="/" hash="services" className="text-[var(--color-gold)] hover:underline">Back to Services</Link>
         </div>
       </div>
     );
@@ -241,42 +234,36 @@ function ServiceDetailsPage() {
   const Icon = data.icon;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[var(--color-ink)] text-[var(--color-paper)] font-body">
       <Navbar />
       
-      <main className="pt-32">
+      <main className="pt-0">
         {/* Hero Section */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-20 right-[10%] h-96 w-96 rounded-full bg-[var(--cyan)]/10 blur-[120px] animate-pulse" />
-            <div className="absolute bottom-10 left-[5%] h-[500px] w-[500px] rounded-full bg-purple-500/10 blur-[150px] animate-float" />
-          </div>
-
+        <section className="pt-40 pb-24 relative bg-[#0B0B0C] border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div data-aos="fade-right">
-                <div className="inline-flex items-center gap-2 rounded-full bg-[var(--cyan)]/10 border border-[var(--cyan)]/20 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[var(--cyan)] mb-8">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-gold)] mb-8">
                   <Icon className="h-4 w-4" /> {data.title}
                 </div>
-                <h1 className="text-4xl sm:text-6xl font-bold font-display leading-tight mb-8 text-white">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-[var(--color-paper)] tracking-tight">
                   {data.heading}
                 </h1>
-                <p className="text-xl text-slate-400 leading-relaxed mb-10">
+                <p className="text-lg sm:text-xl text-white/60 leading-relaxed mb-10">
                   {data.intro}
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-8 py-4 text-sm font-bold text-[#0A0A0F] hover:scale-105 transition-all shadow-xl shadow-[#00E5FF]/20">
+                  <Link to="/" hash="contact" className="interactive-btn inline-flex items-center gap-2 rounded-xl bg-[var(--color-gold)] px-8 py-3.5 text-base font-semibold text-[var(--color-ink)] hover:bg-[var(--color-gold)]/90 transition-all shadow-sm">
                     Get Started <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <a href="#process" className="inline-flex items-center gap-2 rounded-full glass border border-white/15 px-8 py-4 text-sm font-bold text-white hover:border-[var(--cyan)] transition-all">
+                  <a href="#process" className="interactive-btn inline-flex items-center gap-2 rounded-xl bg-transparent border border-[var(--color-gold-dim)] px-8 py-3.5 text-base font-semibold text-[var(--color-paper)] hover:border-[var(--color-gold-dim)] hover:text-[var(--color-gold)] transition-all">
                     Our Process
                   </a>
                 </div>
               </div>
               <div data-aos="fade-left" className="relative group hidden lg:block">
-                <div className="absolute inset-0 bg-[var(--cyan)]/10 blur-[80px] rounded-full group-hover:bg-[var(--cyan)]/20 transition-all" />
-                <div className="relative glass rounded-[40px] p-12 border border-white/10 shadow-2xl flex items-center justify-center">
-                  <Icon className="h-48 w-48 text-[var(--cyan)] animate-pulse-glow" />
+                <div className="relative bg-white/5 rounded-2xl p-8 md:p-20 flex items-center justify-center border border-white/10 shadow-sm backdrop-blur-sm">
+                  <Icon className="h-48 w-48 text-white/20" />
                 </div>
               </div>
             </div>
@@ -284,29 +271,29 @@ function ServiceDetailsPage() {
         </section>
 
         {/* Why This Matters */}
-        <section className="py-24 border-y border-white/5 bg-slate-900/20">
+        <section className="py-24 bg-[var(--color-ink)] border-b border-[var(--color-hairline)]">
           <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 data-aos="fade-up" className="text-3xl font-bold mb-8 text-white font-display">Why It Matters</h2>
-            <p data-aos="fade-up" data-aos-delay="100" className="text-slate-400 text-lg leading-relaxed italic">
+            <h2 data-aos="fade-up" className="text-3xl font-bold mb-8 text-[var(--color-paper)] tracking-tight">Why It Matters</h2>
+            <p data-aos="fade-up" data-aos-delay="100" className="text-[var(--color-text-muted-dark)] text-xl leading-relaxed italic font-serif">
               "{data.why}"
             </p>
           </div>
         </section>
 
         {/* Features Grid */}
-        <section className="py-28">
+        <section className="py-32 bg-[var(--color-ink)] border-b border-[var(--color-hairline)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-              <h2 data-aos="fade-up" className="text-4xl font-bold font-display text-white">Core Features</h2>
+              <h2 data-aos="fade-up" className="text-3xl font-bold text-[var(--color-paper)] tracking-tight">Core Features</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {data.features.map((f: any, i: number) => (
-                <div key={i} data-aos="fade-up" data-aos-delay={i * 100} className="glass rounded-2xl p-8 hover:border-[var(--cyan)]/30 transition-all">
-                  <div className="h-12 w-12 rounded-xl bg-[var(--cyan)]/10 flex items-center justify-center mb-6">
-                    <f.icon className="h-6 w-6 text-[var(--cyan)]" />
+                <div key={i} data-aos="fade-up" data-aos-delay={i * 100} className="bg-[#0B0B0C] border border-[#222224] rounded-2xl shadow-sm hover:border-[var(--color-gold-dim)] transition-all p-8 group">
+                  <div className="h-12 w-12 rounded-xl bg-[var(--color-ink)] border border-[var(--color-gold-dim)] group-hover:border-[var(--color-gold-dim)] flex items-center justify-center mb-6 transition-colors">
+                    <f.icon className="h-5 w-5 text-[var(--color-gold)] group-hover:scale-110 transition-transform" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{f.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{f.desc}</p>
+                  <h3 className="text-xl font-bold text-[var(--color-paper)] mb-3">{f.title}</h3>
+                  <p className="text-sm text-[var(--color-text-muted-dark)] leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -314,60 +301,57 @@ function ServiceDetailsPage() {
         </section>
 
         {/* Workflow/Process */}
-        <section id="process" className="py-28 bg-[#0D0D15]/50 relative">
+        <section id="process" className="py-32 bg-[var(--color-ink)] relative border-b border-[var(--color-hairline)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="grid lg:grid-cols-2 gap-20 items-start">
               <div data-aos="fade-right">
-                <h2 className="text-4xl font-bold font-display text-white mb-10">Our Strategic Workflow</h2>
-                <div className="space-y-8">
+                <h2 className="text-3xl font-bold text-[var(--color-paper)] mb-12 tracking-tight">Our Strategic Workflow</h2>
+                <div className="space-y-12">
                   {data.process.map((p: any, i: number) => (
-                    <div key={i} className="flex gap-6 relative">
+                    <div key={i} className="flex gap-8 relative">
                       <div className="flex flex-col items-center">
-                        <div className="h-10 w-10 rounded-full bg-gradient-cosmic flex items-center justify-center text-white font-bold text-sm shrink-0 z-10">
+                        <div className="h-10 w-10 rounded-xl bg-[var(--color-gold)] flex items-center justify-center text-[var(--color-ink)] font-bold text-sm shrink-0 z-10 shadow-sm">
                           {i + 1}
                         </div>
-                        {i < data.process.length - 1 && <div className="w-px h-full bg-white/10 absolute top-10" />}
+                        {i < data.process.length - 1 && <div className="w-px h-full bg-border-subtle absolute top-10" />}
                       </div>
-                      <div className="pb-8">
-                        <h3 className="text-xl font-bold text-white mb-2">{p.name}</h3>
-                        <p className="text-slate-400 text-sm leading-relaxed">{p.desc}</p>
+                      <div className="pb-2 pt-1">
+                        <h3 className="text-lg font-bold text-[var(--color-paper)] mb-2">{p.name}</h3>
+                        <p className="text-[var(--color-text-muted-dark)] text-sm leading-relaxed">{p.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div data-aos="fade-left" className="bg-[#0A0A0F] rounded-3xl border border-white/5 p-8 lg:p-12">
-                <h3 className="text-2xl font-bold text-white mb-8">Technologies Used</h3>
-                <div className="grid grid-cols-2 gap-4">
+              <div data-aos="fade-left" className="bg-[#0B0B0C] border border-[#222224] rounded-2xl shadow-sm hover:border-[var(--color-gold-dim)] transition-all p-6 sm:p-10 lg:p-14 sticky top-32">
+                <h3 className="text-2xl font-bold text-[var(--color-paper)] mb-10 tracking-tight">Technologies Used</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {data.tech.map((t: string) => (
-                    <div key={t} className="flex items-center gap-3 glass px-4 py-3 rounded-xl border-white/5">
-                      <div className="h-2 w-2 rounded-full bg-[var(--cyan)]" />
-                      <span className="text-sm font-medium text-slate-300">{t}</span>
+                    <div key={t} className="flex items-center gap-4 bg-[var(--color-ink)] px-5 py-4 rounded-xl border border-[var(--color-gold-dim)] shadow-sm transition-all hover:border-[var(--color-gold-dim)]">
+                      <div className="h-2 w-2 rounded-full bg-[var(--color-gold)]" />
+                      <span className="text-sm font-semibold text-[var(--color-paper)]">{t}</span>
                     </div>
                   ))}
                 </div>
-                {/* <div className="mt-12 p-6 rounded-2xl bg-[var(--cyan)]/5 border border-[var(--cyan)]/20">
-                  <div className="text-xs uppercase tracking-widest text-slate-500 mb-2 font-bold">Pricing Highlight</div>
-                  <div className="text-xl font-bold text-white">{data.pricing}</div>
-                </div> */}
               </div>
             </div>
           </div>
         </section>
 
         {/* FAQs */}
-        <section className="py-28">
+        <section className="py-32 bg-[var(--color-ink)]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 data-aos="fade-up" className="text-4xl font-bold font-display text-white">Common Questions</h2>
+            <div className="text-center mb-20">
+              <h2 data-aos="fade-up" className="text-3xl font-bold text-[var(--color-paper)] tracking-tight">Common Questions</h2>
             </div>
             <div className="space-y-6">
               {data.faqs.map((faq: any, i: number) => (
-                <div key={i} data-aos="fade-up" data-aos-delay={i * 100} className="glass rounded-2xl p-8 border border-white/5">
-                  <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-3">
-                    <Check className="h-5 w-5 text-[var(--cyan)]" /> {faq.q}
+                <div key={i} data-aos="fade-up" data-aos-delay={i * 100} className="bg-[#0B0B0C] border border-[#222224] rounded-2xl shadow-sm hover:border-[var(--color-gold-dim)] transition-all p-8">
+                  <h3 className="text-lg font-bold text-[var(--color-paper)] mb-4 flex items-start gap-4">
+                    <Check className="h-5 w-5 text-[var(--color-gold)] shrink-0 mt-0.5" /> 
+                    <span>{faq.q}</span>
                   </h3>
-                  <p className="text-slate-400 leading-relaxed text-sm ml-8">
+                  <p className="text-[var(--color-text-muted-dark)] leading-relaxed text-sm ml-9">
                     {faq.a}
                   </p>
                 </div>
@@ -382,3 +366,4 @@ function ServiceDetailsPage() {
     </div>
   );
 }
+
