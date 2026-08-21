@@ -28,66 +28,70 @@ export function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out backdrop-blur-[12px] [-webkit-backdrop-filter:blur(12px)] ${
         scrolled 
-          ? "bg-[#FBF9F4]/95 backdrop-blur-sm border-b border-[#E4E0D5] py-4" 
-          : "bg-transparent py-6"
+          ? "bg-[rgba(0,0,0,0.15)] border-b border-[#E4E0D5]/20 py-2" 
+          : "bg-transparent py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between relative">
         
         {/* Left: Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <img
-            src="/INfynux-Logo.png"
-            alt="Infynux Solutions"
-            className="h-6 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-          />
-          <span className="font-sans text-xl font-extrabold uppercase tracking-tighter text-[#191919]">
-            INFYNUX
-          </span>
-        </Link>
+        <div className="flex-1 flex justify-start z-10">
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src="/INfynux-Logo.png"
+              alt="Infynux Solutions"
+              className="h-5 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+            <span className="font-sans text-lg font-extrabold uppercase tracking-tighter text-white">
+              INFYNUX
+            </span>
+          </Link>
+        </div>
 
         {/* Center: Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-10">
+        <nav className="hidden md:flex items-center space-x-7 absolute left-1/2 -translate-x-1/2 z-0">
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className="relative font-sans text-[11px] font-bold uppercase tracking-[0.15em] text-[#191919] group py-2"
-              activeProps={{ className: "text-[#191919]" }}
+              className="relative font-sans text-[12px] md:text-[13px] font-medium uppercase tracking-[0.08em] text-white/90 group py-2 transition-colors duration-300 hover:text-[#D4AF37]"
+              activeProps={{ className: "text-[#D4AF37]" }}
             >
-              <span className="relative z-10 group-hover:text-[#5A5A5A] transition-colors duration-300">
+              <span className="relative z-10">
                 {link.label}
               </span>
               {/* Subtle gold indicator on hover */}
               <motion.span 
-                className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#D4AF37] group-hover:w-full transition-all duration-300 ease-out"
+                className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#D4AF37] group-hover:w-full transition-all duration-300 ease-out"
               />
             </Link>
           ))}
         </nav>
 
         {/* Right: CTA */}
-        <div className="hidden md:block">
+        <div className="flex-1 justify-end hidden md:flex z-10">
           <Link
             to="/"
             hash="contact"
-            className="group flex items-center gap-2 bg-[#111111] px-6 py-3 font-sans text-[11px] font-bold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#111111]"
+            className="group flex items-center gap-2 bg-[#D4AF37] px-5 py-2 rounded-full font-sans text-[11px] font-medium uppercase tracking-[0.08em] text-[#111111] transition-all duration-300 hover:bg-white"
           >
             Let's Talk
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden p-2 text-[#191919]"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex-1 flex justify-end md:hidden z-10">
+          <button
+            className="p-2 text-[#191919]"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Dropdown */}

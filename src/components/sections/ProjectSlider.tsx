@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 const SLIDE_DATA = [
   {
@@ -47,54 +46,89 @@ const SLIDE_DATA = [
 ];
 
 export function ProjectSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const interactTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Triple the data to ensure smooth infinite scrolling by resetting the scroll position
+  const extendedData = [...SLIDE_DATA, ...SLIDE_DATA, ...SLIDE_DATA];
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % SLIDE_DATA.length);
-    }, 3500);
-    return () => clearInterval(timer);
-  }, []);
+    const el = scrollRef.current;
+    if (!el) return;
 
-  const getCardStyle = (index: number) => {
-    const total = SLIDE_DATA.length;
-    const diff = (index - currentIndex + total) % total;
-    const half = Math.floor(total / 2);
+    let animationFrameId: number;
+    let lastTime = performance.now();
+    const speed = 0.05; // Pixels per ms for auto-scroll
 
-    let offset = diff;
-    if (offset > half) offset -= total;
+    const scrollLoop = (time: number) => {
+      const delta = time - lastTime;
+      lastTime = time;
 
-    const isCenter = offset === 0;
+      if (!isHovered && !isInteracting) {
+        el.scrollLeft += speed * delta;
 
-    // Spread them out horizontally, scale them down, and stack them behind
-    const x = offset * 110;
-    const scale = isCenter ? 1 : 1 - Math.abs(offset) * 0.15;
-    const zIndex = 20 - Math.abs(offset);
-    const opacity = Math.abs(offset) > 2 ? 0 : 1;
-    const brightness = isCenter ? 1 : 0.4;
+        // The exact width of one original set of cards
+        const setWidth = el.scrollWidth / 3;
+        
+        // Loop back seamlessly when scrolling past the first copied set
+        if (el.scrollLeft >= setWidth * 1.5) {
+          el.scrollLeft -= setWidth;
+        }
+      }
+      animationFrameId = requestAnimationFrame(scrollLoop);
+    };
 
-    return { x, scale, zIndex, opacity, filter: `brightness(${brightness})` };
+    animationFrameId = requestAnimationFrame(scrollLoop);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isHovered, isInteracting]);
+
+  const handleInteraction = () => {
+    setIsInteracting(true);
+    if (interactTimeoutRef.current) {
+      clearTimeout(interactTimeoutRef.current);
+    }
+    interactTimeoutRef.current = setTimeout(() => {
+      setIsInteracting(false);
+    }, 2500); // Resume auto-scroll after a few seconds of no interaction
   };
 
   return (
-    <div className="relative w-full max-w-[600px] h-[450px] flex items-center justify-center perspective-[1000px] lg:-ml-12 mt-8 lg:mt-0">
-      {SLIDE_DATA.map((slide, i) => {
-        const { x, scale, zIndex, opacity, filter } = getCardStyle(i);
-        return (
-          <motion.div
-            key={slide.id}
-            initial={false}
-            animate={{
-              x,
-              scale,
-              zIndex,
-              opacity,
-              filter,
-            }}
-            transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-            className="absolute w-[300px] h-[440px] bg-[#0B0B0C] border border-[#222224] cursor-pointer group flex flex-col justify-between p-4 shadow-2xl"
-            onClick={() => setCurrentIndex(i)}
-            style={{ originY: 0.5 }}
+    <section className="w-full bg-[#0B0B0C] py-24 border-b border-[#222224] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-12">
+        <h2 className="font-display font-bold text-4xl sm:text-5xl text-white tracking-tight">
+          Our Services
+        </h2>
+        <div className="w-12 h-1 bg-[var(--color-gold)] mt-6"></div>
+      </div>
+
+      <div 
+        className="relative w-full h-[450px] flex items-center overflow-hidden"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+      {/* Edge Gradients for Smooth Fade-in/out */}
+      <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#0B0B0C] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#0B0B0C] to-transparent z-10 pointer-events-none" />
+
+      <div
+        ref={scrollRef}
+        onScroll={handleInteraction}
+        onTouchStart={handleInteraction}
+        onWheel={handleInteraction}
+        className="flex flex-row gap-6 overflow-x-auto hide-scrollbar py-4 px-4 w-full h-full"
+        style={{
+          scrollSnapType: (isInteracting || isHovered) ? 'x mandatory' : 'none',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        {extendedData.map((slide, idx) => (
+          <div
+            key={`${slide.id}-${idx}`}
+            className="flex-shrink-0 w-[300px] h-[420px] bg-[#0B0B0C] border border-[#222224] cursor-pointer group flex flex-col justify-between p-4 shadow-2xl transition-transform duration-300"
+            style={{ scrollSnapAlign: 'start' }}
           >
             {/* Top Barcode / Metadata Header */}
             <div className="flex justify-between items-start mb-4">
@@ -123,9 +157,15 @@ export function ProjectSlider() {
                 {slide.desc}
               </p>
             </div>
-          </motion.div>
-        );
-      })}
-    </div>
+          </div>
+        ))}
+      </div>
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+      </div>
+    </section>
   );
 }
