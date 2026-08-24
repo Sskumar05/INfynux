@@ -13,10 +13,8 @@ export function Hero() {
         muted
         playsInline
         preload="auto"
-        poster="/hero-bg-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover object-top scale-[1.35] origin-top pointer-events-none"
       >
-        <source src="/hero-bg.webm" type="video/webm" />
         <source src="/hero-bg.mp4" type="video/mp4" />
         <source src="/hero-bg-fallback.mp4" type="video/mp4" />
       </video>

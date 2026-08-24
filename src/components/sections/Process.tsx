@@ -168,10 +168,12 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
 
   return (
     <div className="relative w-full py-10 md:py-16 flex group">
+      {/* Mobile background alternating */}
+      <div className={`absolute inset-0 z-[-2] md:hidden ${isLeft ? 'bg-[var(--color-ink)]' : 'bg-[#e9e1c2]'}`} />
       
-      {/* Trunk Segment (Absolute Center) */}
+      {/* Trunk Segment - Left on mobile, Center on desktop */}
       <svg 
-        className="absolute top-0 bottom-0 left-1/2 w-10 h-full -translate-x-1/2 z-0"
+        className="absolute top-0 bottom-0 left-8 md:left-1/2 w-10 h-full -translate-x-1/2 z-0"
         preserveAspectRatio="none"
         viewBox="0 0 40 100"
         style={trunkStyle}
@@ -179,8 +181,50 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
         <path d={trunkPath} fill="url(#trunk-grad)" />
       </svg>
 
-      {/* Left Branch & Content (Dark Side) - Shown for all on mobile, only even on desktop */}
-      <div className={`w-1/2 pr-4 md:pr-16 lg:pr-24 justify-end relative ${!isLeft ? 'flex md:hidden' : 'flex'}`}>
+      {/* MOBILE LAYOUT (Full width, unified left-trunk style) */}
+      <div className="flex md:hidden flex-col w-full px-6 relative z-10 pl-24">
+        <div className="relative w-12 h-12 mb-4 shrink-0" style={appleStyle}>
+          {/* Branch connecting Trunk (left-8/32px) to Apple (pl-24/96px). Width = 64px (w-16) */}
+          <svg 
+            className="absolute right-full bottom-0 w-16 h-12 z-[-1] overflow-visible" 
+            preserveAspectRatio="none" 
+            viewBox="0 0 100 100"
+            style={branchStyleRight}
+          >
+            <g transform="scale(-1, 1) translate(-100, 0)">
+              <path d="M 100,10 C 60,10 30,95 0,95 L 0,100 C 30,100 60,25 100,25 Z" fill="url(#trunk-grad)" />
+              <path d="M 60,40 Q 50,20 40,10 Q 55,25 65,45 Z" fill="url(#trunk-grad)" />
+              <path d="M 30,80 Q 20,60 10,50 Q 25,65 35,85 Z" fill="url(#trunk-grad)" />
+              <use href="#leaf" x="40" y="10" transform="rotate(-30 40 10) scale(0.6)" />
+              <use href="#leaf" x="10" y="50" transform="rotate(-60 10 50) scale(0.5)" />
+              <use href="#leaf" x="70" y="30" transform="rotate(-15 70 30) scale(0.7)" />
+            </g>
+          </svg>
+          <div 
+            className="absolute inset-0 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-shadow duration-500 bg-[#3d2d0c]" 
+            style={{ backgroundImage: 'radial-gradient(circle at 30% 30%, var(--color-gold) 0%, #8a7019 60%, #4a3610 100%)' }}
+          />
+          <div className={`absolute inset-0 rounded-full border-2 pointer-events-none ${isLeft ? 'border-white/30' : 'border-black/30'}`} />
+          <span className="absolute inset-0 flex items-center justify-center font-mono text-base font-bold text-white pointer-events-none">
+            {stage.num}
+          </span>
+        </div>
+
+        <div className="flex flex-col text-left" style={textStyle}>
+          <span className="font-mono text-[11px] text-[var(--color-gold)] tracking-[0.25em] uppercase font-bold mb-2">
+            STAGE {stage.num}
+          </span>
+          <h3 className={`font-display font-bold text-3xl mb-3 tracking-tight ${isLeft ? 'text-white' : 'text-[var(--color-ink)]'}`}>
+            {stage.title}
+          </h3>
+          <p className={`font-body text-sm leading-relaxed ${isLeft ? 'text-white/70' : 'text-[var(--color-text-muted-dark)]'}`}>
+            {stage.desc}
+          </p>
+        </div>
+      </div>
+
+      {/* DESKTOP LAYOUT - Left Branch (Dark Side) */}
+      <div className={`hidden md:flex w-1/2 pr-16 lg:pr-24 justify-end relative ${!isLeft ? 'md:hidden' : ''}`}>
         <div className="flex flex-col md:flex-row items-end md:items-center gap-2 md:gap-8 w-full justify-end relative z-10 pl-2 md:pl-0">
           <div className="order-2 md:order-1 flex flex-col items-end text-right w-full" style={textStyle}>
             <span className="font-mono text-[11px] md:text-xs text-[var(--color-gold)] tracking-[0.25em] uppercase font-bold mb-1 md:mb-3">
@@ -222,8 +266,8 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
         </div>
       </div>
 
-      {/* Right Branch & Content (Cream Side) - Hidden on mobile, shown on desktop for odd stages */}
-      <div className={`w-1/2 pl-4 md:pl-16 lg:pl-24 justify-start relative ${!isLeft ? 'hidden md:flex' : 'hidden'}`}>
+      {/* DESKTOP LAYOUT - Right Branch (Cream Side) */}
+      <div className={`hidden md:flex w-1/2 pl-16 lg:pl-24 justify-start relative ${isLeft ? 'md:hidden' : ''}`}>
         <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8 w-full justify-start relative z-10 pr-2 md:pr-0">
           <div className="order-1 shrink-0 relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center mb-3 md:mb-0" style={appleStyle}>
             
@@ -292,8 +336,8 @@ export function Process() {
     <section id="approach" className="relative w-full bg-[#e9e1c2] overflow-hidden" ref={containerRef}>
       <TreeDefs />
       
-      {/* Split Background (Left: Dark, Right: Cream) */}
-      <div className="absolute inset-0 flex z-0 pointer-events-none">
+      {/* Split Background (Left: Dark, Right: Cream) - Desktop Only */}
+      <div className="absolute inset-0 z-0 pointer-events-none hidden md:flex">
         <div className="w-1/2 h-full bg-[var(--color-ink)]" />
         <div className="w-1/2 h-full bg-[#e9e1c2]" />
       </div>
@@ -303,25 +347,31 @@ export function Process() {
       {/* Header with Perfect Clipping for High Contrast on both sides */}
       <div className="relative z-10 pt-24 md:pt-32 pb-16 max-w-5xl mx-auto">
         <div className="relative px-6">
-          <div className="opacity-0 pointer-events-none">
+          {/* Mobile visible header (Cream background defaults to dark text) */}
+          <div className="md:hidden text-[var(--color-ink)]">
             <HeaderContent />
           </div>
-          <div className="absolute top-0 left-0 w-full h-full text-white px-6" style={{ clipPath: 'inset(0 50% 0 0)' }}>
+          {/* Desktop split headers */}
+          <div className="hidden md:block absolute top-0 left-0 w-full h-full text-white px-6" style={{ clipPath: 'inset(0 50% 0 0)' }}>
             <HeaderContent />
           </div>
-          <div className="absolute top-0 left-0 w-full h-full text-[var(--color-ink)] px-6" style={{ clipPath: 'inset(0 0 0 50%)' }}>
+          <div className="hidden md:block absolute top-0 left-0 w-full h-full text-[var(--color-ink)] px-6" style={{ clipPath: 'inset(0 0 0 50%)' }}>
+            <HeaderContent />
+          </div>
+          {/* Hidden layout element for sizing */}
+          <div className="opacity-0 pointer-events-none hidden md:block">
             <HeaderContent />
           </div>
         </div>
       </div>
 
       {/* Tree Timeline Container */}
-      <div className="relative max-w-5xl mx-auto px-0 md:px-6 pb-24 md:pb-32 z-10 flex flex-col items-center">
+      <div className="relative max-w-5xl mx-auto px-0 md:px-6 pb-24 md:pb-32 z-10 flex flex-col md:items-center">
         
         {/* Canopy Silhouette */}
         <svg 
           viewBox="0 0 100 100" 
-          className="w-32 h-32 md:w-48 md:h-48 absolute top-0 mt-32 md:mt-48 z-0 overflow-visible"
+          className="w-32 h-32 md:w-48 md:h-48 absolute top-0 mt-32 md:mt-48 z-0 overflow-visible left-8 md:left-1/2 -translate-x-1/2"
           style={canopyStyle}
         >
           {/* Base trunk coming up to support the crown */}
@@ -338,7 +388,7 @@ export function Process() {
           <use href="#leaf" x="50" y="0" transform="rotate(0 50 0) scale(1.5)" />
         </svg>
 
-        <div className="flex flex-col w-full relative z-10 pt-64 md:pt-32">
+        <div className="flex flex-col w-full relative z-10 pt-48 md:pt-32">
           {stages.map((stage, i) => (
             <StageRow key={i} stage={stage} i={i} isTreeVisible={isSectionInView} />
           ))}
@@ -347,7 +397,7 @@ export function Process() {
         {/* Base Roots */}
         <svg 
           viewBox="0 0 100 100" 
-          className="w-24 h-24 md:w-32 md:h-32 absolute bottom-0 mb-8 md:mb-16 z-0 overflow-visible"
+          className="w-24 h-24 md:w-32 md:h-32 absolute bottom-0 mb-8 md:mb-16 z-0 overflow-visible left-8 md:left-1/2 -translate-x-1/2"
           style={rootsStyle}
         >
           <path d="M 40,0 C 40,30 20,70 0,90 C 10,95 30,70 50,20 Z" fill="url(#trunk-grad)" />
