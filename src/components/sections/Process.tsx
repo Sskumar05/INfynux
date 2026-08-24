@@ -210,7 +210,7 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
           </span>
         </div>
 
-        <div className="flex flex-col text-left" style={textStyle}>
+        <div className="flex flex-col text-left pr-12" style={textStyle}>
           <span className="font-mono text-[11px] text-[var(--color-gold)] tracking-[0.25em] uppercase font-bold mb-2">
             STAGE {stage.num}
           </span>
@@ -224,9 +224,10 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
       </div>
 
       {/* DESKTOP LAYOUT - Left Branch (Dark Side) */}
-      <div className={`hidden md:flex w-1/2 pr-16 lg:pr-24 justify-end relative ${!isLeft ? 'md:hidden' : ''}`}>
-        <div className="flex flex-col md:flex-row items-end md:items-center gap-2 md:gap-8 w-full justify-end relative z-10 pl-2 md:pl-0">
-          <div className="order-2 md:order-1 flex flex-col items-end text-right w-full" style={textStyle}>
+      <div className="hidden md:flex w-1/2 pr-16 lg:pr-24 justify-end relative">
+        {isLeft && (
+          <div className="flex flex-col md:flex-row items-end md:items-center gap-2 md:gap-8 w-full justify-end relative z-10 pl-2 md:pl-0">
+            <div className="order-2 md:order-1 flex flex-col items-end text-right w-full" style={textStyle}>
             <span className="font-mono text-[11px] md:text-xs text-[var(--color-gold)] tracking-[0.25em] uppercase font-bold mb-1 md:mb-3">
               STAGE {stage.num}
             </span>
@@ -264,12 +265,14 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
             </span>
           </div>
         </div>
+        )}
       </div>
 
       {/* DESKTOP LAYOUT - Right Branch (Cream Side) */}
-      <div className={`hidden md:flex w-1/2 pl-16 lg:pl-24 justify-start relative ${isLeft ? 'md:hidden' : ''}`}>
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8 w-full justify-start relative z-10 pr-2 md:pr-0">
-          <div className="order-1 shrink-0 relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center mb-3 md:mb-0" style={appleStyle}>
+      <div className="hidden md:flex w-1/2 pl-16 lg:pl-24 justify-start relative">
+        {!isLeft && (
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8 w-full justify-start relative z-10 pr-2 md:pr-0">
+            <div className="order-1 shrink-0 relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center mb-3 md:mb-0" style={appleStyle}>
             
             {/* Angled Branch SVG - Anchored to Apple */}
             <svg 
@@ -309,6 +312,7 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
             </p>
           </div>
         </div>
+        )}
       </div>
 
     </div>
