@@ -7,7 +7,7 @@ const leaders = [
   { name: "Harish Vendhan", role: "COO", img: "/Harish.png", linkedin: "https://www.linkedin.com/in/harish104/", note: "Overseeing operations & executing business strategies." },
   { name: "Rajesh", role: "CMO", img: "/Rajesh.png", linkedin: "https://www.linkedin.com/in/rajeshv2004/", note: "Designing intuitive & visually stunning user experiences." },
   { name: "Shathis Kumar", role: "CTO", img: "/shathis.png", linkedin: "https://www.linkedin.com/in/shathis-kumar-s-6b9137314/", note: "Building scalable & secure high-performance systems." },
-  { name: "Naveen", role: "Tech & Training Manager", img: "/naveen.png", linkedin: "https://www.linkedin.com/in/naveend2005/", note: "Leading technical training & team development." },
+  { name: "Naveen", role: "Tech & Training Manager", img: "/Naveen.png", linkedin: "https://www.linkedin.com/in/naveend2005/", note: "Leading technical training & team development." },
 ];
 
 export function Leaders() {
