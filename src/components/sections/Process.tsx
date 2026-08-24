@@ -179,40 +179,28 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
         <path d={trunkPath} fill="url(#trunk-grad)" />
       </svg>
 
-      {/* Left Branch & Content (Dark Side) */}
-      <div className="w-1/2 pr-4 md:pr-16 lg:pr-24 flex justify-end relative">
-        {isLeft && (
-          <>
-            <div className="flex flex-col md:flex-row items-end md:items-center gap-6 md:gap-8 w-full justify-end relative z-10 pl-6 md:pl-0">
-              <div className="order-2 md:order-1 flex flex-col items-end text-right w-full" style={textStyle}>
-                <span className="font-mono text-[11px] md:text-xs text-[var(--color-gold)] tracking-[0.25em] uppercase font-bold mb-3">
-                  STAGE {stage.num}
-                </span>
-                <h3 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-white tracking-tight">
-                  {stage.title}
-                </h3>
-                <p className="font-body text-sm md:text-lg text-white/70 leading-relaxed max-w-sm">
-                  {stage.desc}
-                </p>
-              </div>
-              <div className="order-1 md:order-2 shrink-0 relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center" style={appleStyle}>
-                <div 
-                  className="absolute inset-0 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.7)] transition-shadow duration-500" 
-                  style={{ backgroundImage: 'radial-gradient(circle at 30% 30%, var(--color-gold) 0%, #8a7019 60%, #4a3610 100%)', willChange: 'box-shadow' }}
-                />
-                <div className="absolute inset-0 rounded-full border-2 border-white/30 pointer-events-none" />
-                <span className="relative z-10 font-mono text-base md:text-lg lg:text-xl font-bold text-white pointer-events-none">
-                  {stage.num}
-                </span>
-              </div>
-            </div>
-
-            {/* Angled Branch SVG */}
+      {/* Left Branch & Content (Dark Side) - Shown for all on mobile, only even on desktop */}
+      <div className={`w-1/2 pr-4 md:pr-16 lg:pr-24 justify-end relative ${!isLeft ? 'flex md:hidden' : 'flex'}`}>
+        <div className="flex flex-col md:flex-row items-end md:items-center gap-2 md:gap-8 w-full justify-end relative z-10 pl-2 md:pl-0">
+          <div className="order-2 md:order-1 flex flex-col items-end text-right w-full" style={textStyle}>
+            <span className="font-mono text-[11px] md:text-xs text-[var(--color-gold)] tracking-[0.25em] uppercase font-bold mb-1 md:mb-3">
+              STAGE {stage.num}
+            </span>
+            <h3 className="font-display font-bold text-2xl md:text-4xl lg:text-5xl mb-2 md:mb-4 text-white tracking-tight">
+              {stage.title}
+            </h3>
+            <p className="font-body text-sm md:text-lg text-white/70 leading-relaxed max-w-sm">
+              {stage.desc}
+            </p>
+          </div>
+          <div className="order-1 md:order-2 shrink-0 relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center mb-3 md:mb-0" style={appleStyle}>
+            
+            {/* Angled Branch SVG - Anchored to Apple */}
             <svg 
-              className="absolute top-1/2 -translate-y-[calc(100%-24px)] md:-translate-y-[calc(100%-32px)] lg:-translate-y-[calc(100%-40px)] right-0 w-8 md:w-16 lg:w-24 h-12 md:h-16 lg:h-20 z-0 overflow-visible" 
+              className="absolute right-[-16px] md:right-[-64px] lg:right-[-96px] bottom-0 w-8 md:w-16 lg:w-24 h-12 md:h-16 lg:h-20 z-[-1] overflow-visible" 
               preserveAspectRatio="none" 
               viewBox="0 0 100 100"
-              style={branchStyle}
+              style={branchStyleLeft}
             >
               <path d="M 100,10 C 60,10 30,95 0,95 L 0,100 C 30,100 60,25 100,25 Z" fill="url(#trunk-grad)" />
               <path d="M 60,40 Q 50,20 40,10 Q 55,25 65,45 Z" fill="url(#trunk-grad)" />
@@ -221,20 +209,30 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
               <use href="#leaf" x="10" y="50" transform="rotate(-60 10 50) scale(0.5)" />
               <use href="#leaf" x="70" y="30" transform="rotate(-15 70 30) scale(0.7)" />
             </svg>
-          </>
-        )}
+
+            <div 
+              className="absolute inset-0 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.7)] transition-shadow duration-500 bg-[#3d2d0c]" 
+              style={{ backgroundImage: 'radial-gradient(circle at 30% 30%, var(--color-gold) 0%, #8a7019 60%, #4a3610 100%)', willChange: 'box-shadow' }}
+            />
+            <div className="absolute inset-0 rounded-full border-2 border-white/30 pointer-events-none" />
+            <span className="relative z-10 font-mono text-base md:text-lg lg:text-xl font-bold text-white pointer-events-none">
+              {stage.num}
+            </span>
+          </div>
+        </div>
       </div>
 
-      {/* Right Branch & Content (Cream Side) */}
-      <div className="w-1/2 pl-4 md:pl-16 lg:pl-24 flex justify-start relative">
-        {!isLeft && (
-          <>
-            {/* Angled Branch SVG */}
+      {/* Right Branch & Content (Cream Side) - Hidden on mobile, shown on desktop for odd stages */}
+      <div className={`w-1/2 pl-4 md:pl-16 lg:pl-24 justify-start relative ${!isLeft ? 'hidden md:flex' : 'hidden'}`}>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8 w-full justify-start relative z-10 pr-2 md:pr-0">
+          <div className="order-1 shrink-0 relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center mb-3 md:mb-0" style={appleStyle}>
+            
+            {/* Angled Branch SVG - Anchored to Apple */}
             <svg 
-              className="absolute top-1/2 -translate-y-[calc(100%-24px)] md:-translate-y-[calc(100%-32px)] lg:-translate-y-[calc(100%-40px)] left-0 w-8 md:w-16 lg:w-24 h-12 md:h-16 lg:h-20 z-0 overflow-visible" 
+              className="absolute left-[-16px] md:left-[-64px] lg:left-[-96px] bottom-0 w-8 md:w-16 lg:w-24 h-12 md:h-16 lg:h-20 z-[-1] overflow-visible" 
               preserveAspectRatio="none" 
               viewBox="0 0 100 100"
-              style={branchStyle}
+              style={branchStyleRight}
             >
               <g transform="scale(-1, 1) translate(-100, 0)">
                 <path d="M 100,10 C 60,10 30,95 0,95 L 0,100 C 30,100 60,25 100,25 Z" fill="url(#trunk-grad)" />
@@ -246,31 +244,27 @@ const StageRow = ({ stage, i, isTreeVisible }: { stage: typeof stages[0], i: num
               </g>
             </svg>
 
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 w-full justify-start relative z-10 pr-6 md:pr-0">
-              <div className="order-1 shrink-0 relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center" style={appleStyle}>
-                <div 
-                  className="absolute inset-0 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.7)] transition-shadow duration-500" 
-                  style={{ backgroundImage: 'radial-gradient(circle at 30% 30%, var(--color-gold) 0%, #8a7019 60%, #4a3610 100%)', willChange: 'box-shadow' }}
-                />
-                <div className="absolute inset-0 rounded-full border-2 border-black/30 pointer-events-none" />
-                <span className="relative z-10 font-mono text-base md:text-lg lg:text-xl font-bold text-white pointer-events-none">
-                  {stage.num}
-                </span>
-              </div>
-              <div className="order-2 flex flex-col items-start text-left w-full" style={textStyle}>
-                <span className="font-mono text-[11px] md:text-xs text-[var(--color-gold)] tracking-[0.25em] uppercase font-bold mb-3">
-                  STAGE {stage.num}
-                </span>
-                <h3 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4 text-[var(--color-ink)] tracking-tight">
-                  {stage.title}
-                </h3>
-                <p className="font-body text-sm md:text-lg text-[var(--color-text-muted-dark)] leading-relaxed max-w-sm">
-                  {stage.desc}
-                </p>
-              </div>
-            </div>
-          </>
-        )}
+            <div 
+              className="absolute inset-0 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.7)] transition-shadow duration-500 bg-[#3d2d0c]" 
+              style={{ backgroundImage: 'radial-gradient(circle at 30% 30%, var(--color-gold) 0%, #8a7019 60%, #4a3610 100%)', willChange: 'box-shadow' }}
+            />
+            <div className="absolute inset-0 rounded-full border-2 border-black/30 pointer-events-none" />
+            <span className="relative z-10 font-mono text-base md:text-lg lg:text-xl font-bold text-white pointer-events-none">
+              {stage.num}
+            </span>
+          </div>
+          <div className="order-2 flex flex-col items-start text-left w-full" style={textStyle}>
+            <span className="font-mono text-[11px] md:text-xs text-[var(--color-gold)] tracking-[0.25em] uppercase font-bold mb-1 md:mb-3">
+              STAGE {stage.num}
+            </span>
+            <h3 className="font-display font-bold text-2xl md:text-4xl lg:text-5xl mb-2 md:mb-4 text-[var(--color-ink)] tracking-tight">
+              {stage.title}
+            </h3>
+            <p className="font-body text-sm md:text-lg text-[var(--color-text-muted-dark)] leading-relaxed max-w-sm">
+              {stage.desc}
+            </p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -344,7 +338,7 @@ export function Process() {
           <use href="#leaf" x="50" y="0" transform="rotate(0 50 0) scale(1.5)" />
         </svg>
 
-        <div className="flex flex-col w-full relative z-10 pt-24 md:pt-32">
+        <div className="flex flex-col w-full relative z-10 pt-64 md:pt-32">
           {stages.map((stage, i) => (
             <StageRow key={i} stage={stage} i={i} isTreeVisible={isSectionInView} />
           ))}
