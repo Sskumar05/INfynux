@@ -16,7 +16,7 @@ import {
   ServiceCTA 
 } from "../components/services";
 
-export const Route = createFileRoute("/services/$serviceId")({
+export const Route = createFileRoute("/services_/$serviceId")({
   component: ServiceDetailPage,
 });
 
