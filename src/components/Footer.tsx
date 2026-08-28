@@ -14,21 +14,21 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 export function Footer() {
   return (
-    <footer className="dark bg-[#020617] border-t border-white/5 pt-20 pb-10 mt-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-12 mb-16">
-          <div className="space-y-6 col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2.5 group">
+    <footer className="bg-background border-t border-border pt-20 pb-10 mt-10 relative overflow-hidden">
+      <div className="site-container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="space-y-6 lg:col-span-1">
+            <Link to="/" className="flex items-center gap-2 group inline-flex">
               <img
                 src="/INfynux-Logo.png"
                 alt="Infynux Solutions Web Development Company Thiruvarur & Nagapattinam"
-                className="h-11 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] group-hover:scale-110 transition-transform duration-300"
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
-              <span className="font-display text-2xl font-black uppercase tracking-[0.18em]" style={{ background: "linear-gradient(135deg, #D4AF37 0%, #F5E07A 40%, #D4AF37 70%, #A0793D 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              <span className="font-display text-xl font-bold uppercase tracking-wide text-foreground">
                 INFYNUX
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Infynux Solutions is a global software development company providing web development, mobile app development, UI/UX design, AI integration, and cloud solutions. We help startups, businesses, and organizations worldwide transform ideas into powerful digital products.
             </p>
             <div className="flex gap-3">
@@ -44,16 +44,15 @@ export function Footer() {
                   target={social.href.startsWith("http") ? "_blank" : undefined}
                   rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label="social"
-                  className="h-10 w-10 rounded-lg glass flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all duration-300"
+                  className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-white transition-all duration-300"
                 >
                   <social.Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
-            <div className="flex items-center gap-4 pt-4 opacity-70 grayscale hover:grayscale-0 transition-all">
-              <div className="h-8 flex items-center justify-center ">MSME Registered</div><br />
-              <div className="h-8 flex items-center justify-center ">StartupTN</div>
-              {/* <div className="h-8 w-8 bg-muted rounded-full flex items-center justify-center text-[10px] font-bold">L</div> */}
+            <div className="flex items-center gap-4 pt-4 text-muted-foreground font-medium text-xs">
+              <div className="flex items-center justify-center">MSME Registered</div>
+              <div className="flex items-center justify-center">StartupTN</div>
             </div>
           </div>
 
@@ -81,33 +80,32 @@ export function Footer() {
             ]}
           />
 
-          <div className="space-y-6 col-span-2 md:col-span-1">
+          <div className="space-y-6 lg:col-span-1">
             <div className="relative inline-block">
-              <h4 className="font-display text-xl font-bold tracking-tight">Connect</h4>
-              <div className="absolute -bottom-2 left-0 w-8 h-1 bg-[var(--cyan)] rounded-full" />
+              <h4 className="font-display text-lg font-semibold text-foreground">Connect</h4>
             </div>
-            <ul className="space-y-4 pt-4">
+            <ul className="space-y-4 pt-2">
               <li className="flex items-start gap-4 group">
-                <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
-                  <MapPin className="h-5 w-5 text-[var(--cyan)]" />
+                <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                  <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <span className="text-sm text-muted-foreground pt-2">Thiruvarur, Tamil Nadu 610001, India</span>
               </li>
               <li className="flex items-start gap-4 group">
-                <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
-                  <Mail className="h-5 w-5 text-[var(--cyan)]" />
+                <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                  <Mail className="h-5 w-5 text-primary" />
                 </div>
-                <span className="text-sm text-muted-foreground pt-2">support@infynuxsolutions.in</span>
+                <span className="text-sm text-muted-foreground pt-2 break-all sm:break-normal">support@infynuxsolutions.in</span>
               </li>
               <li className="flex items-start gap-4 group">
-                <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
-                  <WhatsAppIcon className="h-5 w-5 text-[var(--cyan)]" />
+                <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                  <WhatsAppIcon className="h-5 w-5 text-primary" />
                 </div>
                 <span className="text-sm text-muted-foreground pt-2">+91 7010850923</span>
               </li>
               <li className="flex items-start gap-4 group">
-                <div className="h-10 w-10 rounded-lg glass flex items-center justify-center shrink-0 group-hover:bg-gradient-cyan/10 transition-colors">
-                  <Phone className="h-5 w-5 text-[var(--cyan)]" />
+                <div className="h-10 w-10 rounded-lg bg-secondary flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                  <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <span className="text-sm text-muted-foreground pt-2">+91 7010850923</span>
               </li>
@@ -115,18 +113,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="text-center text-sm text-muted-foreground mb-6">
+        <div className="text-center text-sm font-medium text-muted-foreground mb-8">
           <p>
             Web Development • Mobile App Development • UI/UX Design • AI Integration • Cloud Solutions
           </p>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-widest text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} INFYNUXSOLUTIONS. PRECISION ENGINEERED.</p>
-          <div className="flex gap-8">
-            <Link to="/privacy" className="hover:text-[var(--cyan)] transition-colors">Privacy</Link>
-            <Link to="/terms" className="hover:text-[var(--cyan)] transition-colors">Terms</Link>
-            <Link to="/cookies" className="hover:text-[var(--cyan)] transition-colors">Cookies</Link>
+        <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6 text-[11px] font-semibold tracking-wider uppercase text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} INFYNUXSOLUTIONS. ALL RIGHTS RESERVED.</p>
+          <div className="flex gap-6">
+            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
+            <Link to="/cookies" className="hover:text-primary transition-colors">Cookies</Link>
           </div>
         </div>
       </div>
@@ -138,14 +136,13 @@ function FooterCol({ title, items }: { title: string; items: { label: string, to
   return (
     <div className="space-y-6">
       <div className="relative inline-block">
-        <h4 className="font-display text-xl font-bold tracking-tight">{title}</h4>
-        <div className="absolute -bottom-2 left-0 w-8 h-1 bg-[var(--cyan)] rounded-full" />
+        <h4 className="font-display text-lg font-semibold text-foreground">{title}</h4>
       </div>
-      <ul className="space-y-4 pt-4">
+      <ul className="space-y-4 pt-2">
         {items.map((i) => (
           <li key={i.label} className="group">
-            <Link to={i.to} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[var(--cyan)] transition-all">
-              <span className="text-[var(--cyan)] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">&rarr;</span>
+            <Link to={i.to} className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-all">
+              <span className="text-primary opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">&rarr;</span>
               {i.label}
             </Link>
           </li>

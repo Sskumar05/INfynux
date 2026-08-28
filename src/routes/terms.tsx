@@ -1,4 +1,4 @@
-﻿import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "../components/LegalLayout";
 
 export const Route = createFileRoute("/terms")({
@@ -20,28 +20,28 @@ function TermsConditions() {
     <LegalLayout title="Terms & Conditions" lastUpdated="May 16, 2026" icon="terms">
       <div className="space-y-12 text-muted-foreground leading-relaxed">
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">Website Usage</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Website Usage</h2>
           <p>
             By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services. Any participation in this service will constitute acceptance of this agreement.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">Intellectual Property</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Intellectual Property</h2>
           <p>
             The website and its original content, features, and functionality are owned by INFYNUX and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws. This includes all logos, designs, text, graphics, and code.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">Services</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Services</h2>
           <p>
             INFYNUX provides digital agency services including web development, UI/UX design, and AI integrations. The specific scope of work, timelines, and pricing for these services are governed by separate service agreements entered into between INFYNUX and its clients.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">User Responsibilities</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">User Responsibilities</h2>
           <p>
             As a user of this website, you agree to:
           </p>
@@ -54,14 +54,14 @@ function TermsConditions() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">Limitation of Liability</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Limitation of Liability</h2>
           <p>
             In no event shall INFYNUX, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the service.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">Prohibited Activities</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Prohibited Activities</h2>
           <p>
             You are specifically restricted from all of the following:
           </p>
@@ -75,14 +75,14 @@ function TermsConditions() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">Changes to Terms</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Changes to Terms</h2>
           <p>
             INFYNUX reserves the right to modify these terms from time to time at our sole discretion. Therefore, you should review these page periodically. When we change the terms in a material manner, we will notify you that material changes have been made to the terms. Your continued use of the website or our service after any such change constitutes your acceptance of the new terms.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-white mb-4">Contact Information</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Contact Information</h2>
           <p>
             If you have any questions about these Terms, please contact us at:
           </p>

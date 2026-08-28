@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Twitter, Linkedin, Github, ExternalLink } from "lucide-react";
 
 interface TeamMember {
@@ -40,6 +40,13 @@ const team: TeamMember[] = [
     role: "Chief Marketing Officer",
     description: "Designing intuitive, visually stunning, user-centered interfaces with seamless experiences and modern creative aesthetics.",
     image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510629/Rajesh_cjgf70.png",
+    socials: { twitter: "", linkedin: "", github: "" }
+  },
+  {
+    name: "Naveen",
+    role: "Tech & Traning Manager",
+    description: "Leading technical learning and training initiatives with industry expertise. Empowering learners with practical, career-focused skills.",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787934648/Naveen_1_d0rqe7.png",
     socials: { twitter: "", linkedin: "", github: "" }
   },
   {

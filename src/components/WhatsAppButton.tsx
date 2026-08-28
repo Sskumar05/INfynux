@@ -1,9 +1,9 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 
 export const WhatsAppButton = () => {
   return (
-    <div className="fixed bottom-25 right-6 z-[9999] flex items-center justify-center">
+    <div className="fixed bottom-6 right-4 sm:bottom-10 sm:right-6 md:bottom-16 md:right-8 z-[9999] flex items-center justify-center">
       <TooltipProvider>
         <Tooltip delayDuration={300}>
           <TooltipTrigger asChild>
@@ -59,8 +59,8 @@ export const WhatsAppButton = () => {
               </svg>
             </motion.a>
           </TooltipTrigger>
-          <TooltipContent side="left" className="mr-3 bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2">
-            <p className="text-sm font-semibold text-white">Chat with us</p>
+          <TooltipContent side="left" className="mr-3 bg-card dark:bg-black/80 backdrop-blur-md border border-border dark:border-white/10 px-4 py-2">
+            <p className="text-sm font-semibold text-foreground dark:text-white">Chat with us</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
