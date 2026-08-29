@@ -104,8 +104,8 @@ function HeroSection() {
                 <div className="absolute size-[60%] rounded-full border border-dashed border-purple-500/20 animate-[spin_30s_linear_infinite_reverse]" />
                 
                 {/* Center Badge */}
-                <div className="absolute size-32 rounded-[2rem] bg-card border border-border/50 shadow-2xl flex items-center justify-center overflow-hidden z-10 glass">
-                   <div className="text-4xl font-display font-black text-gradient"><img src="https://res.cloudinary.com/dhjupdyus/image/upload/v1787933035/INfynux-Logo_f2bote.png"/></div>
+                <div className="absolute size-35 flex items-center">
+                   <img src="https://res.cloudinary.com/dhjupdyus/image/upload/v1787983031/INfynux-Logo_djufod.png"/>
                 </div>
 
                 {/* Floating Stat Nodes */}
@@ -130,7 +130,7 @@ function HeroSection() {
                 <div className="absolute top-[20%] right-[-12%] animate-float" style={{ animationDelay: '1.5s' }}>
                    <div className="flex size-24 flex-col items-center justify-center rounded-2xl border border-emerald-500/30 bg-emerald-500/10 backdrop-blur-md text-emerald-400 shadow-lg shadow-emerald-500/10">
                      <span className="text-2xl font-black">98%</span>
-                     <span className="text-[10px] uppercase tracking-widest font-bold mt-1 text-emerald-400/80">Retention</span>
+                     <span className="text-[10px] uppercase tracking-widest font-bold mt-1 text-emerald-400/80">Rating</span>
                    </div>
                 </div>
              </div>
