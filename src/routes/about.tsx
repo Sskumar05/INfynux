@@ -635,11 +635,11 @@ function WorkingProcessSection() {
               <span className="text-[#3b82f6] text-[13px] tracking-widest font-bold uppercase">STEP 0{activeStep + 1}</span>
               <span className="text-gray-500 font-normal text-lg">•</span>
               <span>{steps[activeStep].title}</span>
-              {activeStep === 4 && (
+              {/* {activeStep === 4 && (
                 <span className="ml-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1e3a8a]/40 border border-[#1d4ed8]/30 text-[#60a5fa] text-[11px] font-semibold tracking-wide uppercase">
                   <Sparkles className="w-3.5 h-3.5" /> AI
                 </span>
-              )}
+              )} */}
             </h3>
             {steps[activeStep].desc && (
               <div className="text-gray-300 text-base md:text-[16px] leading-relaxed max-w-[700px] mb-8 font-normal">

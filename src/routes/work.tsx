@@ -117,12 +117,12 @@ function WorkPage() {
           <div className="site-container flex flex-col items-center text-center">
 
             {/* Top badge */}
-            <span
+            {/* <span
               data-aos="fade-up"
               className="glass inline-flex items-center rounded-full border border-border/60 px-5 py-1.5 text-sm font-medium text-foreground mb-8"
             >
               Selected Works &amp; Case Studies
-            </span>
+            </span> */}
 
             {/* Main heading */}
             <h1

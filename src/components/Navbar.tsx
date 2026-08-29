@@ -31,10 +31,10 @@ export function Navbar() {
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 lg:px-8 transition-all duration-300">
       <div className="w-full max-w-6xl relative">
       <div
-        className={`w-full transition-all duration-500 rounded-full border ${
+        className={`w-full transition-all duration-500 rounded-full border backdrop-blur-[20px] ${
           scrolled
-            ? "bg-white/90 dark:bg-card/90 backdrop-blur-xl border-gray-200/80 dark:border-border/80 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.08)] py-3 px-6"
-            : "bg-white dark:bg-card border-gray-200 dark:border-border shadow-sm py-4 px-8"
+            ? "bg-white/70 dark:bg-[rgba(15,23,42,0.65)] border-white/50 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] py-3 px-6"
+            : "bg-white/40 dark:bg-[rgba(15,23,42,0.55)] border-white/30 dark:border-white/5 shadow-sm dark:shadow-[0_4px_24px_rgba(0,0,0,0.2)] py-4 px-8"
         }`}
       >
         <nav className="flex items-center justify-between">
