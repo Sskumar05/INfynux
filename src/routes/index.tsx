@@ -1573,20 +1573,28 @@ function FAQSection() {
 
   const faqs = [
     {
-      q: "Which is the best web development company in Thiruvarur?",
-      a: "Infynux Solutions provides professional website development, software development and mobile app development services for businesses and startups in Thiruvarur, Nagapattinam and across Tamil Nadu.",
+      q: "What services does INFYNUX Solutions provide?",
+      a: "INFYNUX Solutions provides web development, mobile app development, custom software, AI solutions, product engineering, and digital marketing services.",
     },
     {
-      q: "Do you provide mobile app development services?",
-      a: "Yes. We build Android, iOS and cross-platform mobile applications tailored to your business needs using React Native and modern mobile frameworks.",
+      q: "Does INFYNUX Solutions work with startups and businesses?",
+      a: "Yes. We work with startups, growing businesses, and established companies to build scalable digital products and solutions.",
     },
     {
-      q: "Do you offer UI/UX design services?",
-      a: "Yes. We create modern, user-friendly and conversion-focused UI/UX designs for websites and applications that delight users and drive results.",
+      q: "Can INFYNUX Solutions build custom software for my business?",
+      a: "Yes. We create custom software tailored to your business requirements, workflows, goals, and future growth.",
     },
     {
-      q: "Do you serve clients in Nagapattinam?",
-      a: "Yes. We provide web development, app development and digital solutions across Thiruvarur, Nagapattinam and Tamil Nadu — and remotely to clients worldwide.",
+      q: "Do you provide AI and automation solutions?",
+      a: "Yes. We provide AI product development, AI integrations, AI agents, generative AI applications, and workflow automation solutions.",
+    },
+    {
+      q: "How does INFYNUX Solutions handle a new project?",
+      a: "We begin by understanding your requirements, followed by strategy, design, development, testing, and launch, with ongoing support when needed.",
+    },
+    {
+      q: "How can I start a project with INFYNUX Solutions?",
+      a: "Simply contact us through our enquiry form. Share your project requirements, and our team will get in touch to discuss the next steps.",
     },
   ];
 
@@ -1629,7 +1637,7 @@ function FAQSection() {
               letterSpacing: "-0.025em",
             }}
           >
-            Questions We Hear Every Day.{" "}
+            Questions You May Have.{" "}
             <span
               style={{
                 background: "linear-gradient(90deg, #818CF8 0%, #A78BFA 50%, #60A5FA 100%)",
@@ -1638,7 +1646,7 @@ function FAQSection() {
                 backgroundClip: "text",
               }}
             >
-              Answered Honestly.
+              Answers You Can Trust.
             </span>
           </h2>
           <p
@@ -1783,7 +1791,7 @@ function FAQSection() {
         </div>
 
         {/* SEO text block (preserved) */}
-        <div
+        {/* <div
           data-aos="fade-up"
           className="faq-divider border-t border-border dark:border-white/10"
           style={{
@@ -1829,7 +1837,7 @@ function FAQSection() {
             UI/UX design, cloud solutions, AI integration and digital transformation
             services across Thiruvarur, Nagapattinam and Tamil Nadu.
           </p>
-        </div>
+        </div> */}
 
       </div>
     </section>
