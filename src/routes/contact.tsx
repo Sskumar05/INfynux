@@ -14,6 +14,7 @@ import { Footer } from "../components/Footer";
 import { BackToTop } from "../components/BackToTop";
 import { supabase } from "../lib/supabase";
 import { contactSchema, type ContactInput } from "../lib/contact";
+import { sendEnquiryNotifications } from "../server-actions";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -1105,6 +1106,12 @@ function ContactPage() {
         .insert([{ name: data.name, email: data.email, message: data.message }]);
 
       if (error) throw new Error(error.message);
+
+      try {
+        await sendEnquiryNotifications({ data: { name: data.name, email: data.email, message: data.message } });
+      } catch (emailError) {
+        console.error("Failed to send notification emails:", emailError);
+      }
 
       try {
         if (

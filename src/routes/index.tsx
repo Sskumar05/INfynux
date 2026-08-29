@@ -44,7 +44,7 @@ function Index() {
           <img
             src="https://res.cloudinary.com/dhjupdyus/image/upload/v1781511082/INfynux-Logo-Splash_Screen_v0bmjl.png"
             alt="INFYNUX"
-            className="h-28 w-auto relative z-10 object-contain transition-transform duration-700 hover:scale-105"
+            className="h-60 w-auto relative z-10 object-contain transition-transform duration-700 hover:scale-105"
           />
         </div>
       </div>
@@ -130,7 +130,7 @@ function Hero() {
           
           <div className="flex flex-wrap items-center justify-center gap-2.5">
              <a
-              href="https://wa.me/919944911273"
+              href="https://wa.me/917010850923"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 sm:px-4 sm:py-3 glass hover:bg-secondary/50 transition-colors"
@@ -248,7 +248,7 @@ function TrustedBy() {
             margin: 0,
           }}
         >
-          TRUSTED BY TEAMS &amp; FOUNDERS ACROSS 15+ COUNTRIES
+          TRUSTED BY BUSINESSES AROUND THE WORLD
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { sendContactEmail } from '../../server-actions';
+import { sendEnquiryNotifications } from '../../server-actions';
 
 interface ContactFormData {
   name: string;
@@ -20,7 +20,7 @@ export function ContactForm() {
     setFeedback(null);
     
     try {
-      const result = await sendContactEmail({ data });
+      const result = await sendEnquiryNotifications({ data });
 
       if (result.success) {
         setFeedback({ type: 'success', text: 'MESSAGE PACKET SENT SUCCESSFULLY // EXPECT RESPONSE IN < 24 HOURS' });
