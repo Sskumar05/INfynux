@@ -173,8 +173,8 @@ function TrustedBy() {
     {
       name: "Emirates Inns",
       img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1785752258/Emirates_logopng_qpavp4.png",
-      country: "UAE",
-      flag: "🇦🇪",
+      country: "India",
+      flag: "IN",
       url: "https://emiratesinns.com/",
     },
     {
@@ -194,8 +194,8 @@ function TrustedBy() {
     {
       name: "Emirates Inns",
       img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1785752258/Emirates_logopng_qpavp4.png",
-      country: "UAE",
-      flag: "🇦🇪",
+      country: "India",
+      flag: "IN",
       url: "https://emiratesinns.com/",
     },
   ];
