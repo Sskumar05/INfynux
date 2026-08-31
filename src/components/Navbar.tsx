@@ -33,8 +33,8 @@ export function Navbar() {
       <div
         className={`w-full transition-all duration-500 rounded-full border backdrop-blur-[20px] ${
           scrolled
-            ? "bg-white/70 dark:bg-[rgba(15,23,42,0.65)] border-white/50 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.4)] py-3 px-6"
-            : "bg-white/40 dark:bg-[rgba(15,23,42,0.55)] border-white/30 dark:border-white/5 shadow-sm dark:shadow-[0_4px_24px_rgba(0,0,0,0.2)] py-4 px-8"
+            ? "bg-[#0a0a0f]/90 border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] py-1.5 px-6"
+            : "bg-[#0a0a0f]/60 border-white/10 shadow-sm py-2 px-8"
         }`}
       >
         <nav className="flex items-center justify-between">
@@ -44,7 +44,7 @@ export function Navbar() {
               alt="Infynux Solutions"
               className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-display text-lg md:text-xl font-bold tracking-[0.05em] uppercase text-gray-900 dark:text-white">
+            <span className="font-body text-[17px] font-bold tracking-tight text-white">
               INFYNUX
             </span>
           </Link>
@@ -55,8 +55,8 @@ export function Navbar() {
                 <div key={l.to} className="relative group">
                   <Link 
                     to={l.to} 
-                    className="text-[15px] font-medium text-gray-600 dark:text-muted-foreground hover:text-primary transition-colors py-6 flex items-center gap-1"
-                    activeProps={{ className: "text-primary font-semibold" }}
+                    className="text-[14px] font-medium text-[#a1a1aa] hover:text-white transition-colors py-2 flex items-center gap-1"
+                    activeProps={{ className: "text-white font-semibold" }}
                   >
                     {l.label} <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
                   </Link>
@@ -114,8 +114,8 @@ export function Navbar() {
                 <Link 
                   key={l.to} 
                   to={l.to} 
-                  className="text-[15px] font-medium text-gray-600 dark:text-muted-foreground hover:text-primary transition-colors"
-                  activeProps={{ className: "text-primary font-semibold" }}
+                  className="text-[14px] font-medium text-[#a1a1aa] hover:text-white transition-colors py-2 flex items-center gap-1"
+                  activeProps={{ className: "text-white font-semibold" }}
                 >
                   {l.label}
                 </Link>
@@ -133,9 +133,9 @@ export function Navbar() {
             </button>
             <Link
               to="/contact"
-              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-2.5 text-sm font-medium text-white transition-transform hover:scale-105 shadow-[0_4px_14px_0_rgba(91,108,249,0.39)]"
+              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 text-[14px] font-medium text-white transition-transform hover:scale-105 shadow-[0_4px_14px_0_rgba(79,70,229,0.39)]"
             >
-              Get in Touch <ArrowRight className="h-4 w-4" />
+              Let's Talk <ArrowRight className="h-4 w-4" />
             </Link>
             <button
               className="lg:hidden rounded-full p-2 text-gray-700 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary transition-colors"
