@@ -33,7 +33,7 @@ export function Navbar() {
       <div
         className={`w-full transition-all duration-500 rounded-full border ${
           scrolled
-            ? "bg-white/[0.02] backdrop-blur-2xl border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] py-1.5 px-6"
+            ? "bg-white/80 dark:bg-white/[0.02] backdrop-blur-2xl border-gray-200/50 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] py-1.5 px-6"
             : "bg-transparent border-transparent py-2 px-8"
         }`}
       >
@@ -44,7 +44,7 @@ export function Navbar() {
               alt="Infynux Solutions"
               className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-body texthat17px] font-bold tracking-tight text-white">
+            <span className="font-body text-[17px] font-bold tracking-tight text-gray-900 dark:text-white">
               INFYNUX
             </span>
           </Link>
@@ -55,8 +55,8 @@ export function Navbar() {
                 <div key={l.to} className="relative group">
                   <Link 
                     to={l.to} 
-                    className="text-[14px] font-medium text-[#a1a1aa] hover:text-white transition-colors py-2 flex items-center gap-1"
-                    activeProps={{ className: "text-white font-semibold" }}
+                    className="text-[14px] font-medium text-gray-600 dark:text-[#a1a1aa] hover:text-gray-900 dark:hover:text-white transition-colors py-2 flex items-center gap-1"
+                    activeProps={{ className: "text-gray-900 dark:text-white font-semibold" }}
                   >
                     {l.label} <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
                   </Link>
@@ -114,8 +114,8 @@ export function Navbar() {
                 <Link 
                   key={l.to} 
                   to={l.to} 
-                  className="text-[14px] font-medium text-[#a1a1aa] hover:text-white transition-colors py-2 flex items-center gap-1"
-                  activeProps={{ className: "text-white font-semibold" }}
+                  className="text-[14px] font-medium text-gray-600 dark:text-[#a1a1aa] hover:text-gray-900 dark:hover:text-white transition-colors py-2 flex items-center gap-1"
+                  activeProps={{ className: "text-gray-900 dark:text-white font-semibold" }}
                 >
                   {l.label}
                 </Link>
