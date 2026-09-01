@@ -44,7 +44,7 @@ export function Navbar() {
               alt="Infynux Solutions"
               className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-body text-[17px] font-bold tracking-tight text-gray-900 dark:text-white">
+            <span className={`font-body text-[17px] font-bold tracking-tight ${scrolled ? 'text-gray-900 dark:text-white' : 'text-white'}`}>
               INFYNUX
             </span>
           </Link>
@@ -55,8 +55,8 @@ export function Navbar() {
                 <div key={l.to} className="relative group">
                   <Link 
                     to={l.to} 
-                    className="text-[14px] font-medium text-gray-600 dark:text-[#a1a1aa] hover:text-gray-900 dark:hover:text-white transition-colors py-2 flex items-center gap-1"
-                    activeProps={{ className: "text-gray-900 dark:text-white font-semibold" }}
+                    className={`text-[14px] font-medium transition-colors py-2 flex items-center gap-1 ${scrolled ? 'text-gray-600 dark:text-[#a1a1aa] hover:text-gray-900 dark:hover:text-white' : 'text-[#a1a1aa] hover:text-white'}`}
+                    activeProps={{ className: `font-semibold ${scrolled ? 'text-gray-900 dark:text-white' : 'text-white'}` }}
                   >
                     {l.label} <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
                   </Link>
@@ -114,8 +114,8 @@ export function Navbar() {
                 <Link 
                   key={l.to} 
                   to={l.to} 
-                  className="text-[14px] font-medium text-gray-600 dark:text-[#a1a1aa] hover:text-gray-900 dark:hover:text-white transition-colors py-2 flex items-center gap-1"
-                  activeProps={{ className: "text-gray-900 dark:text-white font-semibold" }}
+                  className={`text-[14px] font-medium transition-colors py-2 flex items-center gap-1 ${scrolled ? 'text-gray-600 dark:text-[#a1a1aa] hover:text-gray-900 dark:hover:text-white' : 'text-[#a1a1aa] hover:text-white'}`}
+                  activeProps={{ className: `font-semibold ${scrolled ? 'text-gray-900 dark:text-white' : 'text-white'}` }}
                 >
                   {l.label}
                 </Link>
@@ -126,7 +126,7 @@ export function Navbar() {
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary transition-colors"
+              className={`p-2 rounded-full transition-colors ${scrolled ? 'text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary' : 'text-gray-300 hover:text-white hover:bg-white/10'}`}
               aria-label="Toggle theme"
             >
               {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
@@ -138,7 +138,7 @@ export function Navbar() {
               Let's Talk <ArrowRight className="h-4 w-4" />
             </Link>
             <button
-              className="lg:hidden rounded-full p-2 text-gray-700 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary transition-colors"
+              className={`lg:hidden rounded-full p-2 transition-colors ${scrolled ? 'text-gray-700 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary' : 'text-gray-300 hover:text-white hover:bg-white/10'}`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
