@@ -31,10 +31,10 @@ export function Navbar() {
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 lg:px-8 transition-all duration-300">
       <div className="w-full max-w-6xl relative">
       <div
-        className={`w-full transition-all duration-500 rounded-full border backdrop-blur-[20px] ${
+        className={`w-full transition-all duration-500 rounded-full border ${
           scrolled
-            ? "bg-[#0a0a0f]/90 border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] py-1.5 px-6"
-            : "bg-[#0a0a0f]/60 border-white/10 shadow-sm py-2 px-8"
+            ? "bg-white/[0.02] backdrop-blur-2xl border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] py-1.5 px-6"
+            : "bg-transparent border-transparent py-2 px-8"
         }`}
       >
         <nav className="flex items-center justify-between">
@@ -44,7 +44,7 @@ export function Navbar() {
               alt="Infynux Solutions"
               className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-body text-[17px] font-bold tracking-tight text-white">
+            <span className="font-body texthat17px] font-bold tracking-tight text-white">
               INFYNUX
             </span>
           </Link>
