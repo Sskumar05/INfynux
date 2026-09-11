@@ -119,7 +119,7 @@ function RoleApplicationPage() {
     // We will show a pending/integration message instead of fake success.
     setSubmitMessage({
       type: 'error',
-      text: 'Backend integration pending. Your application data is ready for submission.'
+      text: 'Unable to try again later'
     });
     
     setIsSubmitting(false);
