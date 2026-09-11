@@ -738,19 +738,19 @@ function PortfolioSummary() {
     {
       cat: "Web App",
       title: "Korrakar Siddhar",
-      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935227/423797b0-b1c8-4355-a59c-a97abfb00f62_euwqwo.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1788958020/397b1f0d-7f6c-4e9a-8cef-fd13e2d108f4_qgpb7f.png",
       url: "https://korakkarsiddhar.in/"
     },
     {
       cat: "WebSite",
       title: "Live Wire",
-      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935116/7c9ef178-0525-4db0-b2b8-c5923155a532_uivoc3.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1788958114/4a7752e7-23c9-4f1a-a83e-871aa51be704_bgqjia.png",
       url: "https://caddxpertai.in/"
     },
     {
       cat: "Web App",
       title: "Emirates Hotel",
-      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935399/e24297b3-46dd-47b0-9e8b-c3d01dd2b8c6_zzhfn2.png",
+      img: "https://res.cloudinary.com/dhjupdyus/image/upload/v1788957974/f5da064c-3fcc-4187-8c67-e0184ceb7461_i7gddb.png",
       url: "https://emiratesinns.com/"
     },
   ];

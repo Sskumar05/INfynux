@@ -15,10 +15,12 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesServiceIdRouteImport } from './routes/services_.$serviceId'
+import { Route as CareersRoleIdRouteImport } from './routes/careers_.$roleId'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -50,6 +52,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -70,28 +77,37 @@ const ServicesServiceIdRoute = ServicesServiceIdRouteImport.update({
   path: '/services/$serviceId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CareersRoleIdRoute = CareersRoleIdRouteImport.update({
+  id: '/careers_/$roleId',
+  path: '/careers/$roleId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/careers/$roleId': typeof CareersRoleIdRoute
   '/services/$serviceId': typeof ServicesServiceIdRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/careers/$roleId': typeof CareersRoleIdRoute
   '/services/$serviceId': typeof ServicesServiceIdRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -99,12 +115,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/careers_/$roleId': typeof CareersRoleIdRoute
   '/services_/$serviceId': typeof ServicesServiceIdRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -113,36 +131,42 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/careers'
     | '/contact'
     | '/cookies'
     | '/portfolio'
     | '/privacy'
     | '/terms'
     | '/work'
+    | '/careers/$roleId'
     | '/services/$serviceId'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/careers'
     | '/contact'
     | '/cookies'
     | '/portfolio'
     | '/privacy'
     | '/terms'
     | '/work'
+    | '/careers/$roleId'
     | '/services/$serviceId'
     | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/careers'
     | '/contact'
     | '/cookies'
     | '/portfolio'
     | '/privacy'
     | '/terms'
     | '/work'
+    | '/careers_/$roleId'
     | '/services_/$serviceId'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -150,12 +174,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
   PortfolioRoute: typeof PortfolioRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
   WorkRoute: typeof WorkRoute
+  CareersRoleIdRoute: typeof CareersRoleIdRoute
   ServicesServiceIdRoute: typeof ServicesServiceIdRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -204,6 +230,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -232,18 +265,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesServiceIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/careers_/$roleId': {
+      id: '/careers_/$roleId'
+      path: '/careers/$roleId'
+      fullPath: '/careers/$roleId'
+      preLoaderRoute: typeof CareersRoleIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
   PortfolioRoute: PortfolioRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
   WorkRoute: WorkRoute,
+  CareersRoleIdRoute: CareersRoleIdRoute,
   ServicesServiceIdRoute: ServicesServiceIdRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }

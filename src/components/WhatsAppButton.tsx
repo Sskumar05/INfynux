@@ -3,7 +3,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/t
 
 export const WhatsAppButton = () => {
   return (
-    <div className="fixed bottom-6 right-4 sm:bottom-10 sm:right-6 md:bottom-16 md:right-8 z-[9999] flex items-center justify-center">
+    <div className="fixed bottom-6 right-4 sm:bottom-10 sm:right-6 md:bottom-25 md:right-6 z-[9999] flex items-center justify-center">
       <TooltipProvider>
         <Tooltip delayDuration={300}>
           <TooltipTrigger asChild>

@@ -39,7 +39,7 @@ const PROJECTS: Project[] = [
     domain: "India",
     live: "korakkarsiddhar.in",
     year: "2023",
-    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510603/image4_psfgyx.png",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1788958020/397b1f0d-7f6c-4e9a-8cef-fd13e2d108f4_qgpb7f.png",
     url: "https://korakkarsiddhar.in/",
   },
   {
@@ -51,7 +51,7 @@ const PROJECTS: Project[] = [
     domain: "India",
     live: "caddxpertai.in",
     year: "2023",
-    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1781510586/image3_cniteu.png",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1788958114/4a7752e7-23c9-4f1a-a83e-871aa51be704_bgqjia.png",
     url: "https://caddxpertai.in/",
   },
   {
@@ -63,7 +63,7 @@ const PROJECTS: Project[] = [
     domain: "UAE",
     live: "emiratesinns.com",
     year: "2024",
-    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1785233905/emirates_r7dw8j.png",
+    image: "https://res.cloudinary.com/dhjupdyus/image/upload/v1788957974/f5da064c-3fcc-4187-8c67-e0184ceb7461_i7gddb.png",
     url: "https://emiratesinns.com/",
   },
 ];

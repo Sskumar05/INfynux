@@ -337,7 +337,7 @@ function InfynnoJourneySection() {
           <h2 data-aos="fade-up" className="font-display text-4xl md:text-[44px] font-bold tracking-tight text-foreground mb-6">
             How Infynux Began - <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">And Why It Still Matters</span>
           </h2>
-          <p data-aos="fade-up" data-aos-delay="100" className="text-base md:text-[17px] text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p data-aos="fade-up" data-aos-delay="100" className="text-base md:text-[17px] text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             What began as a vision in 2026 has grown into a journey of innovation, growth, and impact. Here’s our story.          </p>
         </div>
 
@@ -383,7 +383,7 @@ function InfynnoJourneySection() {
                     <div className="w-5 h-5 rounded-full bg-[#2a1758] flex items-center justify-center shrink-0">
                       <Check className="w-3 h-3 text-purple-400 stroke-[3]" />
                     </div>
-                    <span className="text-[13px] text-gray-300 font-medium leading-[1.4]">{text}</span>
+                    <span className="text-[13px] text-foreground/80 font-medium leading-[1.4]">{text}</span>
                   </div>
                 ))}
               </div>
@@ -415,7 +415,7 @@ function InfynnoJourneySection() {
                     <div className="w-5 h-5 rounded-full bg-cyan-900/30 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-cyan-400 stroke-[3]" />
                     </div>
-                    <span className="text-[14px] text-gray-400 leading-relaxed font-medium">{text}</span>
+                    <span className="text-[14px] text-muted-foreground leading-relaxed font-medium">{text}</span>
                   </div>
                 ))}
               </div>
@@ -444,7 +444,7 @@ function InfynnoJourneySection() {
                     <div className="w-5 h-5 rounded-full bg-emerald-900/30 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-emerald-400 stroke-[3]" />
                     </div>
-                    <span className="text-[14px] text-gray-400 leading-relaxed font-medium">{text}</span>
+                    <span className="text-[14px] text-muted-foreground leading-relaxed font-medium">{text}</span>
                   </div>
                 ))}
               </div>
@@ -480,7 +480,7 @@ function MissionVisionSection() {
                  </div>
                  <h3 className="text-2xl font-bold text-foreground">Our Vision</h3>
               </div>
-              <div className="space-y-6 text-[15px] text-muted-foreground leading-[1.8] border-l-2 border-white/10 pl-5">
+              <div className="space-y-6 text-[15px] text-muted-foreground leading-[1.8] border-l-2 border-border/60 pl-5">
                  <p>To empower businesses and people through digital solutions - creating more opportunities, simplifying lives, and building digital solutions that genuinely matters.</p>
                  <p>Solutions are at their most powerful when they're invisible - quietly removing friction, automating the dreaded task, opening doors that were previously closed.</p>
               </div>
@@ -589,7 +589,7 @@ function WorkingProcessSection() {
           {/* Progress Timeline */}
           <div className="relative flex justify-between items-start mb-16 hidden md:flex">
             {/* Connecting Line Container */}
-            <div className="absolute top-[22px] left-[8.33%] right-[8.33%] h-[2px] bg-white/10 -z-10" />
+            <div className="absolute top-[22px] left-[8.33%] right-[8.33%] h-[2px] bg-border -z-10" />
             <div className="absolute top-[22px] left-[8.33%] right-[8.33%] h-[2px] -z-10">
               <div 
                 className="h-full bg-[#1d4ed8] transition-all duration-500 ease-in-out" 
@@ -607,7 +607,7 @@ function WorkingProcessSection() {
                     ${isChecked ? 'bg-[#1d4ed8] text-white shadow-[0_0_15px_rgba(29,78,216,0.3)]' : 'bg-card text-muted-foreground border border-border group-hover:border-foreground/30 dark:bg-[#18181b] dark:text-gray-300 dark:border-white/10 dark:group-hover:border-white/30'}`}>
                     {isChecked ? <Check className="w-5 h-5" /> : `0${i + 1}`}
                   </div>
-                  <div className={`text-[11px] text-center font-medium max-w-[130px] transition-colors duration-300 ${isActive ? 'text-[#3b82f6]' : 'text-gray-400'}`}>
+                  <div className={`text-[11px] text-center font-medium max-w-[130px] transition-colors duration-300 ${isActive ? 'text-[#3b82f6]' : 'text-muted-foreground'}`}>
                     {step.title}
                   </div>
                 </div>
@@ -619,7 +619,7 @@ function WorkingProcessSection() {
             <div className="w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm bg-[#1d4ed8] text-white">
               0{activeStep + 1}
             </div>
-            <div className="flex-1 h-[2px] bg-white/10 relative">
+            <div className="flex-1 h-[2px] bg-border relative">
               <div 
                 className="absolute left-0 top-0 bottom-0 bg-[#1d4ed8] transition-all duration-500" 
                 style={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }} 
@@ -642,7 +642,7 @@ function WorkingProcessSection() {
               )} */}
             </h3>
             {steps[activeStep].desc && (
-              <div className="text-gray-300 text-base md:text-[16px] leading-relaxed max-w-[700px] mb-8 font-normal">
+              <div className="text-foreground/80 text-base md:text-[16px] leading-relaxed max-w-[700px] mb-8 font-normal">
                 {steps[activeStep].desc}
               </div>
             )}
@@ -754,7 +754,7 @@ function TechStackSection() {
           <h2 data-aos="fade-up" className="font-display text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-5">
             Built With Tools That <span className="text-gradient">Scale Businesses</span>
           </h2>
-          <p data-aos="fade-up" data-aos-delay="100" className="text-base md:text-[17px] text-gray-400 max-w-xl mx-auto leading-relaxed">
+          <p data-aos="fade-up" data-aos-delay="100" className="text-base md:text-[17px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
             We pick the right tool for every layer of the stack - not the trendiest one.
           </p>
         </div>
@@ -797,16 +797,16 @@ function TechStackSection() {
                 <h3 className="text-3xl font-bold text-[#06b6d4] tracking-tight">{activeData.name}</h3>
               </div>
               
-              <h4 className="text-[16px] font-medium text-gray-300 mb-6">
+              <h4 className="text-[16px] font-medium text-foreground/80 mb-6">
                 {activeData.subtitle}
               </h4>
               
-              <p className="text-[15px] leading-[1.8] text-gray-400 mb-10">
+              <p className="text-[15px] leading-[1.8] text-muted-foreground mb-10">
                 {activeData.desc}
               </p>
               
               <div className="bg-card dark:bg-[#121214] border border-border dark:border-white/5 rounded-[1rem] p-6 mt-auto">
-                <p className="text-[14px] leading-relaxed text-gray-400">
+                <p className="text-[14px] leading-relaxed text-muted-foreground">
                   <span className="font-bold text-foreground">Best for:</span> {activeData.bestFor}
                 </p>
               </div>
@@ -814,7 +814,7 @@ function TechStackSection() {
 
             {/* Right Content */}
             <div className="flex flex-col pt-2 lg:pt-4">
-              <h5 className="text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase mb-8">
+              <h5 className="text-[11px] font-bold tracking-[0.2em] text-muted-foreground uppercase mb-8">
                 Technologies
               </h5>
               
@@ -983,7 +983,7 @@ function FAQSection() {
           <h2 data-aos="fade-up" className="font-display text-4xl md:text-[44px] font-bold tracking-tight text-foreground mb-5">
             Frequently Asked <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-indigo-400">Questions</span>
           </h2>
-          <p data-aos="fade-up" data-aos-delay="100" className="text-[17px] text-[#94a3b8]">
+          <p data-aos="fade-up" data-aos-delay="100" className="text-[17px] text-muted-foreground">
             Common questions about Infynno Solutions.
           </p>
         </div>
@@ -1014,13 +1014,13 @@ function FAQSection() {
                         {faq.question}
                       </h3>
                       <div className="shrink-0 ml-4 transition-transform duration-300 flex items-center">
-                        {isOpen ? <X className="w-5 h-5 text-indigo-400" /> : <Plus className="w-5 h-5 text-gray-400" />}
+                        {isOpen ? <X className="w-5 h-5 text-indigo-400" /> : <Plus className="w-5 h-5 text-muted-foreground" />}
                       </div>
                     </div>
                     
                     <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] mt-6' : 'grid-rows-[0fr]'}`}>
                       <div className="overflow-hidden">
-                        <p className="text-[15px] leading-relaxed text-gray-400 pr-4 md:pr-12 pb-1">
+                        <p className="text-[15px] leading-relaxed text-foreground/75 pr-4 md:pr-12 pb-1">
                           {faq.answer}
                         </p>
                       </div>
@@ -1055,7 +1055,7 @@ function LetsTalkSection() {
                 Let’s Build Something That<br />Matters
               </h2>
               
-              <p className="text-[15px] md:text-[17px] text-gray-400 leading-[1.7] mb-10 max-w-xl">
+              <p className="text-[15px] md:text-[17px] text-muted-foreground leading-[1.7] mb-10 max-w-xl">
                 Whether you’re a founder with an idea, an SMB ready to replace manual operations with smart software, or an enterprise evaluating a long-term technology partner - we’d like to start with a conversation.
               </p>
               
@@ -1079,15 +1079,15 @@ function LetsTalkSection() {
               
               <div className="relative">
                 {/* Connecting Line */}
-                <div className="absolute left-[13.5px] top-[14px] bottom-[14px] w-[2px] bg-[#1e3a8a]/50" />
+                <div className="absolute left-[13.5px] top-[14px] bottom-[14px] w-[2px] bg-primary/30" />
                 
                 <div className="flex flex-col gap-7">
                   {["1. Book a discovery call", "2. Share your goals", "3. Get a clear plan", "4. Start building"].map((step, i) => (
                     <div key={i} className="flex items-center gap-5 relative z-10">
-                      <div className="w-7 h-7 rounded-full bg-[#0a0a0c] border border-[#1d4ed8]/50 flex items-center justify-center text-[12px] font-medium text-[#60a5fa] shrink-0">
+                      <div className="w-7 h-7 rounded-full bg-primary/10 border border-primary/40 flex items-center justify-center text-[12px] font-medium text-primary shrink-0">
                         {i + 1}
                       </div>
-                      <span className="text-[14px] font-medium text-gray-200">{step}</span>
+                      <span className="text-[14px] font-medium text-foreground/80">{step}</span>
                     </div>
                   ))}
                 </div>
@@ -1095,7 +1095,7 @@ function LetsTalkSection() {
             </div>
           </div>
 
-          <hr className="border-t border-white/10 mb-8" />
+          <hr className="border-t border-border mb-8" />
           
           {/* Bottom Badges */}
           <div className="flex flex-wrap items-center gap-3">

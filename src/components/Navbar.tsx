@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X, ArrowRight, Sun, Moon, ChevronDown } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { servicesData } from "../data/servicesData";
@@ -11,6 +11,10 @@ export function Navbar() {
   const [activeCategoryId, setActiveCategoryId] = useState(servicesData[0]?.id);
   const { theme, toggleTheme } = useTheme();
 
+  // Detect current route — only the Home page gets transparent/white-text treatment
+  const routerState = useRouterState();
+  const isHomePage = routerState.location.pathname === "/";
+
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -19,11 +23,16 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // On inner pages always use the "scrolled" (dark-text pill) style.
+  // On the home page use the actual scroll state (transparent+white-text over dark hero).
+  const useDarkText = !isHomePage || scrolled;
+
   const links = [
-    { label: "Home", to: "/" },
+    // { label: "Home", to: "/" },
     { label: "About", to: "/about" },
     { label: "Services", to: "/services" },
     { label: "Projects", to: "/work" },
+    { label: "Careers", to: "/careers" },
     { label: "Contact", to: "/contact" },
   ];
 
@@ -32,7 +41,7 @@ export function Navbar() {
       <div className="w-full max-w-6xl relative">
       <div
         className={`w-full transition-all duration-500 rounded-full border ${
-          scrolled
+          useDarkText
             ? "bg-white/80 dark:bg-white/[0.02] backdrop-blur-2xl border-gray-200/50 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] py-1.5 px-6"
             : "bg-transparent border-transparent py-2 px-8"
         }`}
@@ -44,7 +53,7 @@ export function Navbar() {
               alt="Infynux Solutions"
               className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className={`font-body text-[17px] font-bold tracking-tight ${scrolled ? 'text-gray-900 dark:text-white' : 'text-white'}`}>
+            <span className={`font-body text-[17px] font-bold tracking-tight ${useDarkText ? 'text-[#111827] dark:text-white' : 'text-white dark:text-white'}`}>
               INFYNUX
             </span>
           </Link>
@@ -55,8 +64,8 @@ export function Navbar() {
                 <div key={l.to} className="relative group">
                   <Link 
                     to={l.to} 
-                    className={`text-[14px] font-medium transition-colors py-2 flex items-center gap-1 ${scrolled ? 'text-gray-600 dark:text-[#a1a1aa] hover:text-gray-900 dark:hover:text-white' : 'text-[#a1a1aa] hover:text-white'}`}
-                    activeProps={{ className: `font-semibold ${scrolled ? 'text-gray-900 dark:text-white' : 'text-white'}` }}
+                    className={`text-[14px] font-medium transition-colors py-2 flex items-center gap-1 ${useDarkText ? 'text-[#374151] dark:text-[#a1a1aa] hover:text-[#111827] dark:hover:text-white' : 'text-white/90 dark:text-white/90 hover:text-white dark:hover:text-white'}`}
+                    activeProps={{ className: `font-semibold ${useDarkText ? 'text-[#111827] dark:text-white' : 'text-white'}` }}
                   >
                     {l.label} <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
                   </Link>
@@ -114,8 +123,8 @@ export function Navbar() {
                 <Link 
                   key={l.to} 
                   to={l.to} 
-                  className={`text-[14px] font-medium transition-colors py-2 flex items-center gap-1 ${scrolled ? 'text-gray-600 dark:text-[#a1a1aa] hover:text-gray-900 dark:hover:text-white' : 'text-[#a1a1aa] hover:text-white'}`}
-                  activeProps={{ className: `font-semibold ${scrolled ? 'text-gray-900 dark:text-white' : 'text-white'}` }}
+                  className={`text-[14px] font-medium transition-colors py-2 flex items-center gap-1 ${useDarkText ? 'text-[#374151] dark:text-[#a1a1aa] hover:text-[#111827] dark:hover:text-white' : 'text-white/90 dark:text-white/90 hover:text-white dark:hover:text-white'}`}
+                  activeProps={{ className: `font-semibold ${useDarkText ? 'text-[#111827] dark:text-white' : 'text-white'}` }}
                 >
                   {l.label}
                 </Link>
@@ -126,7 +135,7 @@ export function Navbar() {
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={toggleTheme}
-              className={`p-2 rounded-full transition-colors ${scrolled ? 'text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary' : 'text-gray-300 hover:text-white hover:bg-white/10'}`}
+              className={`p-2 rounded-full transition-colors ${useDarkText ? 'text-gray-500 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary' : 'text-white/70 hover:text-white hover:bg-white/10 dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10'}`}
               aria-label="Toggle theme"
             >
               {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
@@ -138,7 +147,7 @@ export function Navbar() {
               Let's Talk <ArrowRight className="h-4 w-4" />
             </Link>
             <button
-              className={`lg:hidden rounded-full p-2 transition-colors ${scrolled ? 'text-gray-700 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary' : 'text-gray-300 hover:text-white hover:bg-white/10'}`}
+              className={`lg:hidden rounded-full p-2 transition-colors ${useDarkText ? 'text-gray-700 dark:text-muted-foreground hover:bg-gray-100 dark:hover:bg-secondary' : 'text-white/80 hover:text-white hover:bg-white/10 dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10'}`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
