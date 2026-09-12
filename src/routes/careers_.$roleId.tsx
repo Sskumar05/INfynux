@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { BackToTop } from "../components/BackToTop";
-import { ArrowLeft, ArrowRight, Briefcase, Clock, MonitorSmartphone, Layers, Video } from "lucide-react";
+import { ArrowLeft, ArrowRight, Briefcase, Clock, MonitorSmartphone, Layers, Video, FileText, UploadCloud } from "lucide-react";
+import { submitCareerApplication } from "../services/careerService";
 
 export const Route = createFileRoute("/careers_/$roleId")({
   component: RoleApplicationPage,
@@ -87,10 +88,33 @@ function RoleApplicationPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{type: 'success'|'error', text: string} | null>(null);
 
+  const [isDragging, setIsDragging] = useState(false);
+
   const role = ROLE_DATA[roleId];
   const roleName = role?.title || roleId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
-  const { register, handleSubmit, formState: { errors } } = useForm<ApplicationFormData>();
+  const { register, handleSubmit, reset, watch, setValue, formState: { errors } } = useForm<ApplicationFormData>();
+
+  const selectedResume = watch('resume');
+  const selectedFile = selectedResume?.[0];
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+  
+  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+  
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragging(false);
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      setValue('resume', e.dataTransfer.files, { shouldValidate: true });
+    }
+  };
 
   useEffect(() => {
     AOS.init({ duration: 800, easing: "ease-out-cubic", once: true, offset: 60 });
@@ -108,19 +132,53 @@ function RoleApplicationPage() {
     setIsSubmitting(true);
     setSubmitMessage(null);
     
-    // Simulate backend submission wait
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // The prompt specifies: 
-    // "If no backend endpoint exists yet, DO NOT invent a fake successful submission.
-    // Instead, create the frontend form structure and clearly keep the submission integration ready for the existing backend.
-    // Do NOT display a fake 'Application submitted successfully' unless the backend actually confirms submission."
-    
-    // We will show a pending/integration message instead of fake success.
-    setSubmitMessage({
-      type: 'error',
-      text: 'Unable to try again later'
-    });
+    try {
+      const file = data.resume?.[0];
+      if (!file) {
+        setSubmitMessage({ type: 'error', text: 'Please select a resume to upload' });
+        setIsSubmitting(false);
+        return;
+      }
+      
+      const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      if (!validTypes.includes(file.type)) {
+        setSubmitMessage({ type: 'error', text: 'Please upload a PDF or DOC/DOCX file' });
+        setIsSubmitting(false);
+        return;
+      }
+      
+      const maxSize = 5 * 1024 * 1024; // 5MB
+      if (file.size > maxSize) {
+        setSubmitMessage({ type: 'error', text: 'Resume file size must be less than 5MB' });
+        setIsSubmitting(false);
+        return;
+      }
+
+      const applicationData = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        yearOfGraduation: data.yearOfGraduation,
+        gender: data.gender,
+        experienceInYears: data.experienceInYears,
+        currentLocation: data.currentLocation,
+        preferredLocation: data.preferredLocation,
+        appliedRole: roleName
+      };
+
+      const result = await submitCareerApplication(applicationData, file);
+      
+      if (result.success) {
+        setSubmitMessage({ type: 'success', text: 'Application submitted successfully! We will get back to you soon.' });
+        reset();
+      } else {
+        setSubmitMessage({ type: 'error', text: result.error || 'Failed to submit application. Please try again.' });
+      }
+    } catch (error: any) {
+      console.error("Submission error:", error);
+      setSubmitMessage({ type: 'error', text: 'An unexpected error occurred. Please try again.' });
+    }
     
     setIsSubmitting(false);
   };
@@ -319,7 +377,6 @@ function RoleApplicationPage() {
                         <option value="" className="bg-background text-muted-foreground">Select Gender</option>
                         <option value="male" className="bg-background">Male</option>
                         <option value="female" className="bg-background">Female</option>
-                        <option value="non-binary" className="bg-background">Non-binary</option>
                         <option value="prefer-not" className="bg-background">Prefer not to say</option>
                       </select>
                       {errors.gender && <span className="text-xs text-rose-500 mt-1">{errors.gender.message}</span>}
@@ -363,13 +420,73 @@ function RoleApplicationPage() {
 
                   <div className="flex flex-col">
                     <label className="text-sm font-medium text-foreground mb-2">Resume / CV Upload *</label>
+                    
+                    {selectedFile ? (
+                      <div className="w-full border border-border/50 rounded-xl p-4 bg-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div className="flex items-center gap-3 overflow-hidden">
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                            <FileText className="w-5 h-5" />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-medium text-foreground truncate">{selectedFile.name}</p>
+                            <p className="text-xs text-muted-foreground mt-0.5">
+                              {selectedFile.type === 'application/pdf' ? 'PDF' : selectedFile.name.endsWith('.docx') ? 'DOCX' : 'DOC'} • {(selectedFile.size / (1024 * 1024)).toFixed(1)} MB
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3 shrink-0">
+                          <button 
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setValue('resume', undefined as unknown as FileList, { shouldValidate: true });
+                            }}
+                            className="text-xs font-semibold text-rose-500 hover:text-rose-600 transition-colors"
+                          >
+                            Remove
+                          </button>
+                          <span className="w-px h-4 bg-border/50"></span>
+                          <label htmlFor="resume-upload" className="text-xs font-semibold text-primary hover:text-primary/80 transition-colors cursor-pointer">
+                            Change
+                          </label>
+                        </div>
+                      </div>
+                    ) : (
+                      <label 
+                        htmlFor="resume-upload"
+                        onDragOver={handleDragOver}
+                        onDragLeave={handleDragLeave}
+                        onDrop={handleDrop}
+                        className={`relative w-full border-2 border-dashed rounded-xl p-8 transition-all flex flex-col items-center justify-center text-center group cursor-pointer
+                          ${isDragging ? 'border-primary bg-primary/5' : 'border-border/60 hover:border-primary/50 hover:bg-card/50'}`}
+                      >
+                        <div className={`w-12 h-12 rounded-full mb-4 flex items-center justify-center transition-colors
+                          ${isDragging ? 'bg-primary/20 text-primary' : 'bg-primary/10 text-primary group-hover:bg-primary/20'}`}>
+                          <UploadCloud className="w-6 h-6" />
+                        </div>
+                        
+                        <p className="text-base font-semibold text-foreground mb-1">Upload your resume</p>
+                        
+                        <p className="text-sm text-muted-foreground mb-4">
+                          Drag & drop your file here, or{' '}
+                          <span className="text-primary font-semibold group-hover:underline">Browse files</span>
+                        </p>
+                        
+                        <p className="text-xs font-medium text-muted-foreground/70 bg-secondary/50 px-3 py-1 rounded-full">
+                          PDF, DOC, DOCX • Max 5MB
+                        </p>
+                      </label>
+                    )}
+
                     <input 
+                      id="resume-upload"
                       {...register('resume', { required: "Please select a file to upload" })}
                       type="file" 
                       accept=".pdf,.doc,.docx"
-                      className="w-full text-sm text-muted-foreground file:mr-4 file:py-2.5 file:px-5 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all cursor-pointer border border-border/50 rounded-xl p-3" 
+                      className="sr-only" 
                     />
-                    {errors.resume && <span className="text-xs text-rose-500 mt-1">{errors.resume.message}</span>}
+                    
+                    {errors.resume && <span className="text-xs text-rose-500 mt-2">{errors.resume.message}</span>}
                   </div>
 
                   {submitMessage && (
@@ -378,7 +495,7 @@ function RoleApplicationPage() {
                     </div>
                   )}
 
-                  <div className="mt-4">
+                  <div className="mt-4 flex justify-center">
                     <button 
                       type="submit" 
                       disabled={isSubmitting}

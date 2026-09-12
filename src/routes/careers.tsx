@@ -85,14 +85,14 @@ function CareersHero() {
           </button>
         </div>
 
-        <div data-aos="fade-up" data-aos-delay="300" className="flex flex-wrap justify-center gap-3 md:gap-4 mt-2">
-          <div className="px-5 py-2.5 rounded-full border border-border bg-card/60 backdrop-blur-sm text-foreground text-sm font-medium hover:border-primary/40 hover:bg-primary/5 transition-all shadow-sm">
-            Creative & Collaborative Culture
+        <div data-aos="fade-up" data-aos-delay="300" className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-3 md:gap-4 mt-2 w-full px-2 md:px-0">
+          <div className="flex items-center justify-center text-center px-3 md:px-5 py-2.5 rounded-[2rem] border border-border bg-card/60 backdrop-blur-sm text-foreground text-xs md:text-sm font-medium hover:border-primary/40 hover:bg-primary/5 transition-all shadow-sm leading-tight h-full">
+            Creative Culture
           </div>
-          <div className="px-5 py-2.5 rounded-full border border-border bg-card/60 backdrop-blur-sm text-foreground text-sm font-medium hover:border-primary/40 hover:bg-primary/5 transition-all shadow-sm">
+          <div className="flex items-center justify-center text-center px-3 md:px-5 py-2.5 rounded-[2rem] border border-border bg-card/60 backdrop-blur-sm text-foreground text-xs md:text-sm font-medium hover:border-primary/40 hover:bg-primary/5 transition-all shadow-sm leading-tight h-full">
             Continuous Learning
           </div>
-          <div className="px-5 py-2.5 rounded-full border border-border bg-card/60 backdrop-blur-sm text-foreground text-sm font-medium hover:border-primary/40 hover:bg-primary/5 transition-all shadow-sm">
+          <div className="col-span-2 md:col-span-1 mx-auto md:mx-0 w-fit flex items-center justify-center text-center px-5 py-2.5 rounded-[2rem] border border-border bg-card/60 backdrop-blur-sm text-foreground text-sm font-medium hover:border-primary/40 hover:bg-primary/5 transition-all shadow-sm leading-tight">
             Meaningful Digital Work
           </div>
         </div>

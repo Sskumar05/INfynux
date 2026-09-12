@@ -55,7 +55,7 @@ function Index() {
         <main className="overflow-hidden">
           <Hero />
           <TrustedBy />
-          <Testimonials />
+          <OurProducts />
           <ServicesSummary />
           <PortfolioSummary />
           <ProcessSection />
@@ -89,7 +89,7 @@ function Hero() {
         <h1 data-aos="fade-up" className="font-display mx-auto mt-8 max-w-5xl text-3xl leading-[1.1] font-semibold tracking-tight sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] text-white px-4 sm:px-0">
           Software Solutions <br className="hidden sm:block" /> <span className="text-gradient">for Modern Businesses.</span>
         </h1>
-        
+
         <p data-aos="fade-up" data-aos-delay="100" className="mx-auto mt-4 sm:mt-6 max-w-[90%] sm:max-w-3xl text-sm sm:text-base font-normal leading-relaxed md:max-w-4xl md:text-xl md:leading-relaxed text-white/70">
           Infynux Solutions is a leading software company providing web development, mobile app development, UI/UX design, AI integration, SEO and cloud solutions for startups, businesses and enterprises.
         </p>
@@ -123,28 +123,28 @@ function Hero() {
               Explore Universe <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform text-white/70" />
             </a>
           </div>
-          
+
           <div className="bg-white/10 hidden h-11 w-px shrink-0 lg:block" aria-hidden="true"></div>
-          
+
           <div className="flex flex-wrap items-center justify-center gap-2.5">
-             <a
+            <a
               href="https://wa.me/917010850923"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 rounded-2xl px-4 py-2.5 backdrop-blur-2xl bg-white/[0.04] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:bg-white/[0.08] transition-all"
-             >
-               <span className="grid size-9 shrink-0 place-items-center rounded-xl backdrop-blur-xl bg-[#25D366]/20 border border-[#25D366]/30 shadow-[0_0_20px_rgba(37,211,102,0.2)]">
-                 <svg viewBox="0 0 24 24" fill="#25D366" className="h-5 w-5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
-               </span>
-               <span className="text-left">
-                 <span className="text-white block text-[13px] sm:text-sm font-semibold leading-none drop-shadow-md">WhatsApp</span>
-                 <span className="mt-0.5 sm:mt-1 block text-[10px] sm:text-xs font-medium leading-none text-white/60">Chat with us</span>
-               </span>
-             </a>
+            >
+              <span className="grid size-9 shrink-0 place-items-center rounded-xl backdrop-blur-xl bg-[#25D366]/20 border border-[#25D366]/30 shadow-[0_0_20px_rgba(37,211,102,0.2)]">
+                <svg viewBox="0 0 24 24" fill="#25D366" className="h-5 w-5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
+              </span>
+              <span className="text-left">
+                <span className="text-white block text-[13px] sm:text-sm font-semibold leading-none drop-shadow-md">WhatsApp</span>
+                <span className="mt-0.5 sm:mt-1 block text-[10px] sm:text-xs font-medium leading-none text-white/60">Chat with us</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
-      
+
       {/* Subtle bottom separator fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </section>
@@ -301,14 +301,12 @@ function TrustedBy() {
               aria-label={`${c.name} — ${c.country}`}
             >
               {/* Logo card */}
-              <div className="trusted-logo-card">
-                <img
-                  src={c.img}
-                  alt={c.name}
-                  loading="lazy"
-                  className="trusted-logo-img"
-                />
-              </div>
+              <img
+                src={c.img}
+                alt={c.name}
+                loading="lazy"
+                className="trusted-logo-img"
+              />
               {/* Name */}
               <div className="trusted-logo-name">{c.name}</div>
               {/* Country row */}
@@ -356,27 +354,9 @@ function TrustedBy() {
           opacity: 0.75;
         }
 
-        .trusted-logo-card {
-          width: 160px;
-          height: 96px;
-          border-radius: 12px;
-          overflow: hidden;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: border-color 0.25s ease, background 0.25s ease;
-        }
-
-        .trusted-logo-item:hover .trusted-logo-card {
-          border-color: rgba(91,108,249,0.35);
-          background: rgba(91,108,249,0.05);
-        }
-
         .trusted-logo-img {
-          width: 80%;
-          height: 80%;
+          width: 130px;
+          height: 80px;
           object-fit: contain;
           display: block;
           filter: none;
@@ -426,10 +406,9 @@ function TrustedBy() {
           .trusted-logo-item {
             padding: 0 24px;
           }
-          .trusted-logo-card {
-            width: 120px;
-            height: 72px;
-            border-radius: 9px;
+          .trusted-logo-img {
+            width: 100px;
+            height: 60px;
           }
           .trusted-logo-name {
             font-size: 11px;
@@ -440,9 +419,9 @@ function TrustedBy() {
           .trusted-logo-item {
             padding: 0 16px;
           }
-          .trusted-logo-card {
-            width: 100px;
-            height: 60px;
+          .trusted-logo-img {
+            width: 80px;
+            height: 50px;
           }
         }
       `}</style>
@@ -767,7 +746,7 @@ function PortfolioSummary() {
 
   return (
     <section id="work" className="py-24 lg:py-20">
-      <div 
+      <div
         className="site-container"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -784,10 +763,10 @@ function PortfolioSummary() {
             Showcasing our finest work built with passion and precision.
           </p>
         </div>
-        
+
         {/* BELOW: Split Layout */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-12">
-          
+
           {/* LEFT SIDE: Project List */}
           <div className="lg:w-[35%] flex flex-col justify-center">
             <div className="flex flex-col border-t border-border/50">
@@ -850,7 +829,7 @@ function PortfolioSummary() {
             </div>
           </div>
         </div>
-        
+
         {/* BOTTOM CENTERED CTAs */}
         <div className="mt-16 lg:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
           {/* Button 1: Secondary / Outlined */}
@@ -860,7 +839,7 @@ function PortfolioSummary() {
           >
             View all projects <ArrowUpRight className="h-4 w-4" />
           </a>
-          
+
           {/* Button 2: Primary Blue Gradient */}
           <a
             href={activeProject.url || "#"}
@@ -871,7 +850,7 @@ function PortfolioSummary() {
             Explore Project <ArrowRight className="h-4 w-4" />
           </a>
         </div>
-        
+
       </div>
     </section>
   );
@@ -918,7 +897,7 @@ function ProcessSection() {
         <div className="absolute top-[20%] left-[10%] h-[500px] w-[500px] rounded-full bg-primary/5 blur-[100px]" />
         <div className="absolute bottom-[20%] right-[10%] h-[500px] w-[500px] rounded-full bg-accent/5 blur-[120px]" />
       </div>
-      
+
       <div className="site-container relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-24">
           <div data-aos="fade-up" className="inline-block rounded-full bg-primary/10 px-5 py-2 text-xs font-bold uppercase tracking-widest text-primary mb-6">
@@ -942,7 +921,7 @@ function ProcessSection() {
             >
               {/* Subtle top hover line */}
               <div className="absolute inset-x-0 -top-px h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              
+
               <div className="flex items-center gap-4 mb-4 lg:mb-5">
                 <span className="font-display text-2xl lg:text-3xl font-bold text-primary opacity-90 group-hover:opacity-100 transition-opacity duration-300 shrink-0">
                   {step.num}
@@ -1011,7 +990,7 @@ function WhyChooseUs() {
   return (
     <section className="py-24 md:py-32 overflow-hidden bg-background relative">
       <div className="site-container max-w-[1400px] mx-auto">
-        
+
         {/* Header */}
         <div data-aos="fade-up" className="text-center max-w-3xl mx-auto mb-16 lg:mb-24 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-5 py-2 text-xs font-bold uppercase tracking-widest text-primary mb-6 shadow-[0_0_15px_rgba(91,108,249,0.15)]">
@@ -1028,7 +1007,7 @@ function WhyChooseUs() {
 
         {/* Desktop Connected Strategy Visual */}
         <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-8 xl:gap-16 items-center relative min-h-[500px]">
-          
+
           {/* Left Features */}
           <div className="flex flex-col justify-between h-full py-6 space-y-16 text-right items-end relative z-10">
             {leftFeatures.map((f, i) => (
@@ -1051,12 +1030,12 @@ function WhyChooseUs() {
             {/* Concentric glowing rings */}
             <div className="absolute inset-[-60px] rounded-full border border-primary/20 border-dashed animate-[spin_40s_linear_infinite_reverse]" />
             <div className="absolute inset-[-30px] rounded-full border border-primary/10" />
-            
+
             {/* Main Hub Container */}
             <div className="relative w-full h-full rounded-full border border-primary/30 bg-card flex flex-col items-center justify-center shadow-[0_0_60px_rgba(91,108,249,0.15)] overflow-hidden">
               {/* Inner glow */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/10 via-transparent to-violet-500/10" />
-              
+
               <div className="relative z-10 flex flex-col items-center">
                 <img src="https://res.cloudinary.com/dhjupdyus/image/upload/v1787933035/INfynux-Logo_f2bote.png" alt="Infynux" className="w-14 h-14 object-contain mb-3 opacity-90" />
                 <div className="font-display text-xl font-bold text-foreground tracking-wide">Your Success</div>
@@ -1149,40 +1128,42 @@ function WhyChooseUs() {
   );
 }
 
-/* ---------- TESTIMONIALS ---------- */
-function Testimonials() {
-  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
-
-  const items = [
+/* ---------- OUR PRODUCTS ---------- */
+function OurProducts() {
+  const products = [
     {
-      name: "Emirates Inn",
-      role: "Innovation · Expert · Design",
-      avatar: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935673/92685f20-811f-495b-a83e-92fb393af707.png",
-      photo: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935673/92685f20-811f-495b-a83e-92fb393af707.png",
-      text: "Creative and modern digital ideas tailored for business growth.",
+      label: "INFYNUX PRODUCT",
+      title: "INFYBUYS",
+      description: "A smart POS system built to simplify billing, inventory, and everyday business operations. Designed to help businesses manage sales faster, work smarter, and grow efficiently everywhere.",
+      status: "COMING SOON",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 24, height: 24, color: "#7C3AED" }}>
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
+        </svg>
+      )
     },
     {
-      name: "Korakkar Siddhar",
-      role: "Innovation · Expert · Design",
-      avatar: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935699/68dbaa33-cd65-4622-b616-feb06e4df46d.png",
-      photo: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935699/68dbaa33-cd65-4622-b616-feb06e4df46d.png",
-      text: "Reliable communication and continuous support throughout the project.",
-    },
-    {
-      name: "Caddxpert",
-      role: "Innovation · Expert · Design",
-      avatar: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935793/cbdbaf71-6b3e-4ace-961f-41f779c055fe.png",
-      photo: "https://res.cloudinary.com/dhjupdyus/image/upload/v1787935793/cbdbaf71-6b3e-4ace-961f-41f779c055fe.png",
-      text: "High-quality development with clean design and smooth performance.",
-    },
+      label: "INFYNUX PRODUCT",
+      title: "INFEPOS",
+      description: "A modern digital marketplace concept that connects businesses and customers through a seamless buying experience. Built to make discovering, managing, and purchasing products simpler.",
+      status: "COMING SOON",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 24, height: 24, color: "#3B82F6" }}>
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+        </svg>
+      )
+    }
   ];
 
   return (
     <section
-      id="testimonials"
-      className="testimonials-section"
+      id="our-products"
+      className="products-section bg-background text-foreground"
       style={{
-        background: "#000000",
         padding: "88px 0 80px",
         position: "relative",
         overflow: "hidden",
@@ -1194,372 +1175,229 @@ function Testimonials() {
         style={{
           position: "absolute",
           inset: 0,
-          background:
-            "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(91,108,249,0.09), transparent 70%)",
+          background: "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(91,108,249,0.06), transparent 70%)",
           pointerEvents: "none",
         }}
       />
 
       <div className="site-container" style={{ position: "relative", zIndex: 2 }}>
-
         {/* ── HEADING ── */}
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
+          <p
+            data-aos="fade-up"
+            className="text-muted-foreground/80"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "clamp(10px, 1.1vw, 12px)",
+              fontWeight: 700,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              margin: "0 0 16px",
+            }}
+          >
+            OUR PRODUCTS
+          </p>
           <h2
             data-aos="fade-up"
-            className="testimonial-heading-primary"
+            data-aos-delay="40"
+            className="text-foreground"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: "clamp(1.9rem, 4vw, 2.75rem)",
               fontWeight: 800,
-              color: "#ffffff",
               lineHeight: 1.15,
               margin: "0 0 16px",
               letterSpacing: "-0.02em",
             }}
           >
-            What Founders Say About Working With Infynux
+            Built by Infynux.<span className="text-gradient"> Coming Soon.</span>
           </h2>
           <p
             data-aos="fade-up"
             data-aos-delay="80"
-            className="testimonial-heading-muted"
+            className="text-muted-foreground"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(14px, 1.5vw, 16px)",
               fontWeight: 400,
-              color: "rgba(255,255,255,0.48)",
-              maxWidth: "550px",
+              maxWidth: "650px",
               margin: "0 auto",
               lineHeight: 1.65,
             }}
           >
-            Video testimonials from founders, product leaders, and business owners
-            who partnered with us to build and scale software products.
+            We're building our own digital products to simplify workflows, solve real-world problems, and create smarter experiences for modern businesses.
           </p>
         </div>
 
-        {/* ── THREE CARDS ── */}
+        {/* ── TWO CARDS ── */}
         <div
           data-aos="fade-up"
           data-aos-delay="120"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "20px",
-            marginBottom: "48px",
-          }}
-          className="testimonial-grid"
+          className="products-grid"
         >
-          {items.map((t, i) => (
-            <div key={t.name} className="testimonial-card-outer">
-              {/* Gradient border wrapper */}
-              <div className="testimonial-card-border">
-                <div className="testimonial-card-inner">
-
-                  {/* ── CLIENT TESTIMONIAL header ── */}
-                  <div className="testimonial-card-header">
-                    <span className="testimonial-italic">Client</span>
-                    <span className="testimonial-bold">TESTIMONIAL</span>
+          {products.map((p, i) => (
+            <div key={i} className="product-card">
+              <div className="product-card-border">
+                <div className="product-card-inner">
+                  <div className="product-icon-wrap">
+                    {p.icon}
                   </div>
 
-                  {/* ── Photo / video area ── */}
-                  <div
-                    className="testimonial-photo-wrap"
-                    onClick={() =>
-                      setPlayingIndex(playingIndex === i ? null : i)
-                    }
-                  >
-                    <img
-                      src={t.photo}
-                      alt={t.name}
-                      loading="lazy"
-                      className="testimonial-photo-img"
-                    />
-                    {/* quote overlay */}
-                    <div className="testimonial-quote-overlay">
-                      &ldquo;{t.text}&rdquo;
-                    </div>
-                    {/* Play button */}
-                    {/* <button
-                      className="testimonial-play-btn"
-                      aria-label={`Play ${t.name} testimonial`}
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style={{ width: 18, height: 18 }}
-                      >
-                        <path
-                          d="M8 5.14v13.72a1 1 0 001.515.857l11-6.86a1 1 0 000-1.714l-11-6.86A1 1 0 008 5.14z"
-                          fill="#7C3AED"
-                        />
-                      </svg>
-                    </button> */}
-                  </div>
+                  <div className="product-label">{p.label}</div>
+                  <h3 className="product-title">{p.title}</h3>
+                  <p className="product-description">{p.description}</p>
 
-                  {/* ── Person info ── */}
-                  <div className="testimonial-person">
-                    <img
-                      src={t.avatar}
-                      alt={t.name}
-                      loading="lazy"
-                      className="testimonial-avatar"
-                    />
-                    <div className="testimonial-person-text">
-                      <div className="testimonial-name">{t.name}</div>
-                      <div className="testimonial-role">{t.role}</div>
-                    </div>
+                  <div className="product-status-wrap">
+                    <span className="product-status">{p.status}</span>
                   </div>
-
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* ── CTA ── */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="200"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
-          <a
-            href="/work"
-            className="testimonials-cta"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "13px 28px",
-              borderRadius: "9999px",
-              border: "1px solid rgba(255,255,255,0.2)",
-              background: "transparent",
-              color: "rgba(255,255,255,0.85)",
-              fontFamily: "'Inter', sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              textDecoration: "none",
-              transition: "border-color 0.2s ease, color 0.2s ease, background 0.2s ease",
-              letterSpacing: "0.01em",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(124,58,237,0.6)";
-              (e.currentTarget as HTMLAnchorElement).style.color = "#ffffff";
-              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(124,58,237,0.08)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.2)";
-              (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.85)";
-              (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
-            }}
-          >
-            View All Testimonials
-            <svg viewBox="0 0 24 24" fill="none" style={{ width: 14, height: 14 }}>
-              <path
-                d="M7 17L17 7M17 7H7M17 7v10"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-
       </div>
 
-      {/* ── Scoped CSS ── */}
       <style>{`
-        /* Grid → 1 col on mobile */
+        .products-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 32px;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
         @media (max-width: 767px) {
-          .testimonial-grid {
-            grid-template-columns: 1fr !important;
-            gap: 16px !important;
-          }
-        }
-        @media (min-width: 768px) and (max-width: 1023px) {
-          .testimonial-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-          .testimonial-card-outer:last-child {
-            grid-column: 1 / -1;
-            max-width: calc(50% - 10px);
-            margin: 0 auto;
+          .products-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
           }
         }
 
-        /* Card outer — no visual, just sizing */
-        .testimonial-card-outer {
+        .product-card {
           display: flex;
           flex-direction: column;
         }
 
-        /* Gradient border */
-        .testimonial-card-border {
-          background: linear-gradient(160deg, #3B82F6 0%, #7C3AED 55%, #1E1B4B 100%);
-          border-radius: 18px;
-          padding: 2px;
+        .product-card-border {
+          background: linear-gradient(160deg, rgba(59,130,246,0.15) 0%, rgba(124,58,237,0.15) 55%, rgba(0,0,0,0.05) 100%);
+          border-radius: 20px;
+          padding: 1px;
           flex: 1;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 0 32px rgba(91,108,249,0.18);
-          transition: box-shadow 0.3s ease;
-        }
-        .testimonial-card-outer:hover .testimonial-card-border {
-          box-shadow: 0 0 48px rgba(124,58,237,0.35);
+          box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+          transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
-        /* Inner card */
-        .testimonial-card-inner {
-          background: #0a0a14;
-          border-radius: 16px;
-          overflow: hidden;
+        .dark .product-card-border {
+          background: linear-gradient(160deg, rgba(59,130,246,0.3) 0%, rgba(124,58,237,0.3) 55%, rgba(30,27,75,0.3) 100%);
+          box-shadow: 0 0 32px rgba(91,108,249,0.05);
+        }
+
+        .product-card-border:hover {
+          box-shadow: 0 8px 30px rgba(124,58,237,0.12);
+          transform: translateY(-4px);
+        }
+
+        .dark .product-card-border:hover {
+          box-shadow: 0 0 48px rgba(124,58,237,0.15);
+        }
+
+        .product-card-inner {
+          background: hsl(var(--card));
+          border-radius: 19px;
           flex: 1;
           display: flex;
           flex-direction: column;
-          padding: 20px 20px 18px;
-          gap: 0;
-        }
-
-        /* "Client TESTIMONIAL" header */
-        .testimonial-card-header {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          margin-bottom: 14px;
-          line-height: 1;
-          user-select: none;
-        }
-        .testimonial-italic {
-          font-family: Georgia, 'Times New Roman', serif;
-          font-style: italic;
-          font-size: 18px;
-          font-weight: 400;
-          color: rgba(255,255,255,0.82);
-          letter-spacing: 0.01em;
-          line-height: 1.2;
-        }
-        .testimonial-bold {
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 26px;
-          font-weight: 900;
-          color: #ffffff;
-          letter-spacing: -0.02em;
-          line-height: 1.1;
-          text-transform: uppercase;
-        }
-
-        /* Photo area */
-        .testimonial-photo-wrap {
+          padding: 36px 32px;
           position: relative;
-          width: 100%;
-          aspect-ratio: 3/4;
-          border-radius: 12px;
           overflow: hidden;
-          background: #111;
-          cursor: pointer;
-          flex-shrink: 0;
-        }
-        .testimonial-photo-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: top;
-          display: block;
-          transition: transform 0.4s ease;
-        }
-        .testimonial-card-outer:hover .testimonial-photo-img {
-          transform: scale(1.03);
         }
 
-        /* Quote overlay */
-        .testimonial-quote-overlay {
+        .dark .product-card-inner {
+          background: #0a0a14;
+        }
+
+        .product-card-inner::before {
+          content: "";
           position: absolute;
-          inset: 0;
-          background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 55%, transparent 100%);
-          display: flex;
-          align-items: flex-end;
-          padding: 16px;
-          font-family: 'Inter', sans-serif;
-          font-size: 12px;
-          font-weight: 400;
-          color: rgba(255,255,255,0.72);
-          line-height: 1.5;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 150px;
+          background: radial-gradient(circle at top left, rgba(124,58,237,0.05), transparent 70%);
           pointer-events: none;
         }
 
-        /* Play button */
-        .testimonial-play-btn {
-          position: absolute;
-          bottom: 14px;
-          right: 14px;
-          width: 42px;
-          height: 42px;
-          border-radius: 50%;
-          background: #ffffff;
-          border: none;
-          cursor: pointer;
+        .dark .product-card-inner::before {
+          background: radial-gradient(circle at top left, rgba(124,58,237,0.1), transparent 70%);
+        }
+
+        .product-icon-wrap {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          background: hsl(var(--muted));
+          border: 1px solid hsl(var(--border));
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          z-index: 5;
-        }
-        .testimonial-play-btn:hover {
-          transform: scale(1.1);
-          box-shadow: 0 6px 24px rgba(124,58,237,0.5);
+          margin-bottom: 24px;
         }
 
-        /* Person info */
-        .testimonial-person {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          margin-top: 16px;
-          padding-top: 0;
-        }
-        .testimonial-avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          object-fit: cover;
-          object-position: top;
-          border: 2px solid rgba(91,108,249,0.5);
-          flex-shrink: 0;
-        }
-        .testimonial-person-text {
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-          min-width: 0;
-        }
-        .testimonial-name {
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 15px;
-          font-weight: 700;
-          color: #ffffff;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          letter-spacing: -0.01em;
-        }
-        .testimonial-role {
+        .product-label {
           font-family: 'Inter', sans-serif;
           font-size: 11px;
+          font-weight: 600;
+          color: hsl(var(--muted-foreground));
+          opacity: 0.9;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          margin-bottom: 8px;
+        }
+
+        .product-title {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          color: hsl(var(--card-foreground));
+          margin: 0 0 16px;
+          line-height: 1.2;
+        }
+
+        .product-description {
+          font-family: 'Inter', sans-serif;
+          font-size: 14px;
           font-weight: 400;
-          color: rgba(255,255,255,0.42);
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          letter-spacing: 0.01em;
+          color: hsl(var(--muted-foreground));
+          line-height: 1.6;
+          margin: 0 0 32px;
+          flex: 1;
+        }
+
+        .product-status-wrap {
+          display: flex;
+          align-items: center;
+          margin-top: auto;
+        }
+
+        .product-status {
+          display: inline-flex;
+          align-items: center;
+          padding: 8px 16px;
+          background: rgba(124,58,237,0.1);
+          border: 1px solid rgba(124,58,237,0.2);
+          border-radius: 9999px;
+          color: #7C3AED;
+          font-family: 'Inter', sans-serif;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.05em;
         }
       `}</style>
     </section>
   );
 }
-
 /* ---------- CTA ---------- */
 function CTA() {
   return null;
@@ -1677,11 +1515,10 @@ function FAQSection() {
             return (
               <div
                 key={i}
-                className={`faq-item border ${
-                  isOpen
+                className={`faq-item border ${isOpen
                     ? "border-indigo-400/45 bg-indigo-500/5 dark:bg-indigo-500/10"
                     : "border-border bg-card dark:border-white/10 dark:bg-white/5"
-                }`}
+                  }`}
                 style={{
                   borderRadius: "14px",
                   overflow: "hidden",
@@ -1701,11 +1538,10 @@ function FAQSection() {
                 >
                   {/* Number circle */}
                   <div
-                    className={`${
-                      isOpen
+                    className={`${isOpen
                         ? "bg-gradient-to-br from-indigo-500 to-violet-600 text-white border-none"
                         : "bg-background border border-border text-muted-foreground dark:bg-white/5 dark:border-white/10 dark:text-white/45"
-                    }`}
+                      }`}
                     style={{
                       flexShrink: 0,
                       width: "34px",

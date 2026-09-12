@@ -128,3 +128,132 @@ export const sendEnquiryNotifications = createServerFn({ method: 'POST' })
       return { success: false, error: 'Internal gateway communication breakdown' };
     }
   });
+
+export const sendCareerApplicationNotifications = createServerFn({ method: 'POST' })
+  .handler(async ({ data }: any) => {
+    try {
+      try {
+        process.loadEnvFile();
+      } catch (e) {}
+      
+      const apiKey = process.env.RESEND_API_KEY;
+      const adminEmail = process.env.ADMIN_EMAIL;
+      const fromEmail = process.env.FROM_EMAIL;
+
+      if (!apiKey || !adminEmail || !fromEmail) {
+        return { success: false, error: 'Email service is not properly configured.' };
+      }
+
+      const resend = new Resend(apiKey);
+      if (!data) {
+        console.error('Server action received undefined data payload');
+        return { success: false, error: 'Invalid payload structure: missing data object' };
+      }
+
+      console.log('--- CAREER APPLICATION DIAGNOSTICS ---');
+      console.log('Email exists:', !!data.email);
+      console.log('Resume exists:', !!data.resumeContentBase64);
+      console.log('Resume filename:', data.resumeFileName);
+      console.log('Resume MIME type:', data.resumeMimeType);
+      console.log('Resume size (bytes):', data.resumeSize);
+      console.log('---------------------------------------');
+
+      const {
+        email,
+        firstName,
+        lastName,
+        appliedRole,
+        resumeFileName,
+        resumeContentBase64,
+        resumeMimeType,
+        resumeSize
+      } = data;
+
+      if (!email || !resumeContentBase64) {
+        return { success: false, error: 'Missing required fields for application' };
+      }
+
+      // Safely diagnose buffer size
+      const resumeBuffer = Buffer.from(resumeContentBase64, 'base64');
+      console.log('--- CAREER EMAIL ATTACHMENT DIAGNOSTICS ---');
+      console.log('Admin recipient:', adminEmail);
+      console.log('Attachment filename:', resumeFileName);
+      console.log('Attachment MIME type:', resumeMimeType);
+      console.log('Attachment original size:', resumeSize);
+      console.log('Attachment buffer size:', resumeBuffer.byteLength);
+      console.log('Attachment included:', resumeBuffer.byteLength > 0);
+      console.log('-------------------------------------------');
+
+      if (resumeBuffer.byteLength === 0) {
+        return { success: false, error: 'Resume attachment is empty' };
+      }
+
+      const formattedFromEmail = `INFYNUX Solutions <${fromEmail}>`;
+
+      const applicantEmailPayload = {
+        from: formattedFromEmail,
+        to: email,
+        subject: `Thank you for applying to INFYNUX Solutions`,
+        html: `
+          <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
+            <p>Hi ${firstName},</p>
+            <p>Thank you for applying for the <strong>${appliedRole}</strong> position at INFYNUX Solutions.</p>
+            <p>We have successfully received your application and resume. Our team will review your profile and get back to you if your qualifications match our current needs.</p>
+            <p>Best regards,<br>The INFYNUX Team</p>
+          </div>
+        `
+      };
+
+      const adminEmailPayload = {
+        from: formattedFromEmail,
+        to: adminEmail,
+        subject: `New Job Application: ${appliedRole} - ${firstName} ${lastName}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
+            <h2>New Career Application</h2>
+            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Role:</strong> ${appliedRole}</p>
+            <p>Please find the applicant's resume attached to this email.</p>
+          </div>
+        `,
+        attachments: [
+          {
+            filename: resumeFileName,
+            content: resumeContentBase64, // The base64 string directly
+          }
+        ]
+      };
+
+      const [applicantResponse, adminResponse] = await Promise.all([
+        resend.emails.send(applicantEmailPayload),
+        resend.emails.send(adminEmailPayload)
+      ]);
+
+      if (adminResponse.error) {
+        console.error('Resend Career API admin error:', adminResponse.error);
+        return { success: false, error: adminResponse.error.message };
+      }
+      
+      if (applicantResponse.error) {
+        console.error('Resend Career API applicant error:', applicantResponse.error);
+        return { success: false, error: applicantResponse.error.message };
+      }
+
+      return { success: true, messageId: adminResponse.data?.id };
+    } catch (error: any) {
+      console.error('--- CAREER RESEND ERROR ---');
+      console.log('Message:', error?.message);
+      console.log('Name:', error?.name);
+      console.log('Status Code:', error?.statusCode);
+      if (data) {
+        console.log('Attachment filename:', data.resumeFileName);
+        console.log('Attachment MIME type:', data.resumeMimeType);
+        console.log('Attachment original size:', data.resumeSize);
+      }
+      console.error('---------------------------');
+      
+      const safeErrorMsg = error?.message || 'An unknown error occurred during email delivery';
+      return { success: false, error: safeErrorMsg };
+    }
+  });
