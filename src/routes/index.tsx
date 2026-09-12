@@ -1172,6 +1172,7 @@ function OurProducts() {
       {/* Background glow */}
       <div
         aria-hidden="true"
+        className="hidden dark:block"
         style={{
           position: "absolute",
           inset: 0,
@@ -1279,7 +1280,7 @@ function OurProducts() {
         }
 
         .product-card-border {
-          background: linear-gradient(160deg, rgba(59,130,246,0.15) 0%, rgba(124,58,237,0.15) 55%, rgba(0,0,0,0.05) 100%);
+          background: rgba(0, 0, 0, 0.08);
           border-radius: 20px;
           padding: 1px;
           flex: 1;
@@ -1295,7 +1296,7 @@ function OurProducts() {
         }
 
         .product-card-border:hover {
-          box-shadow: 0 8px 30px rgba(124,58,237,0.12);
+          box-shadow: 0 8px 30px rgba(0,0,0,0.06);
           transform: translateY(-4px);
         }
 
@@ -1304,7 +1305,7 @@ function OurProducts() {
         }
 
         .product-card-inner {
-          background: hsl(var(--card));
+          background: #ffffff;
           border-radius: 19px;
           flex: 1;
           display: flex;
@@ -1325,7 +1326,7 @@ function OurProducts() {
           left: 0;
           right: 0;
           height: 150px;
-          background: radial-gradient(circle at top left, rgba(124,58,237,0.05), transparent 70%);
+          background: none;
           pointer-events: none;
         }
 
