@@ -12,7 +12,7 @@ import {
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { BackToTop } from "../components/BackToTop";
-import { supabase } from "../lib/supabase";
+import { submitContactForm } from "../services/contactService";
 import { contactSchema, type ContactInput } from "../lib/contact";
 import { sendEnquiryNotifications } from "../server-actions";
 
@@ -275,7 +275,12 @@ function ReferenceContactSection({
 
             {/* Form body */}
             <form
-              onSubmit={handleSubmit(onSubmit)}
+              onSubmit={handleSubmit((data) => {
+                onSubmit({
+                  ...data,
+                  projectType: projectType.join(", ")
+                });
+              })}
               noValidate
               style={{ padding: "28px 28px 24px" }}
             >
@@ -1101,14 +1106,14 @@ function ContactPage() {
 
   const createSubmitHandler = (setSub: (val: boolean) => void, resetFn: () => void) => async (data: ContactInput) => {
     try {
-      const { error } = await supabase
-        .from("contact_inquiries")
-        .insert([{ name: data.name, email: data.email, message: data.message }]);
+      const result = await submitContactForm(data);
 
-      if (error) throw new Error(error.message);
+      if (!result.success) throw new Error(result.error);
 
       try {
-        await sendEnquiryNotifications({ data: { name: data.name, email: data.email, message: data.message } });
+        console.log("TRIGGERING sendEnquiryNotifications...");
+        const emailResult = await sendEnquiryNotifications({ data: { name: data.name, email: data.email, message: data.message, projectType: data.projectType } });
+        console.log("sendEnquiryNotifications RESULT:", emailResult);
       } catch (emailError) {
         console.error("Failed to send notification emails:", emailError);
       }

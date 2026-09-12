@@ -19,6 +19,8 @@ export const contactSchema = z.object({
     .min(10, "Message must be at least 10 characters")
     .max(5000, "Message must be 5 000 characters or fewer")
     .trim(),
+    
+  projectType: z.string().optional(),
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;

@@ -8,9 +8,17 @@ import { z } from 'zod';
 export const sendEnquiryNotifications = createServerFn({ method: 'POST' })
   .handler(async ({ data }: any) => {
     try {
+      try {
+        process.loadEnvFile();
+      } catch (e) {
+        // ignore if already loaded or not found
+      }
       const apiKey = process.env.RESEND_API_KEY;
       const adminEmail = process.env.ADMIN_EMAIL;
       const fromEmail = process.env.FROM_EMAIL;
+      
+      console.log("SERVER ACTION CALLED: sendEnquiryNotifications");
+      console.log("ENV CHECK - API KEY EXISTS:", !!apiKey, "ADMIN:", !!adminEmail, "FROM:", !!fromEmail);
 
       if (!apiKey || !apiKey.startsWith('re_') || !adminEmail || !fromEmail) {
         console.error('Server Configuration Error: Missing or invalid RESEND_API_KEY, ADMIN_EMAIL, or FROM_EMAIL.');
@@ -18,7 +26,7 @@ export const sendEnquiryNotifications = createServerFn({ method: 'POST' })
       }
 
       const resend = new Resend(apiKey);
-      const { name, email, message, company, phone, service, budget } = data;
+      const { name, email, message, company, phone, service, budget, projectType } = data;
 
       if (!name || !name.trim()) {
         return { success: false, error: 'Name is required.' };
@@ -40,6 +48,7 @@ export const sendEnquiryNotifications = createServerFn({ method: 'POST' })
       const safePhone = phone ? escape(phone) : '';
       const safeService = service ? escape(service) : '';
       const safeBudget = budget ? escape(budget) : '';
+      const safeProjectType = projectType ? escape(projectType) : 'Not specified';
       
       const submissionDate = new Date().toLocaleString();
 
@@ -47,52 +56,50 @@ export const sendEnquiryNotifications = createServerFn({ method: 'POST' })
       console.log("ADMIN EMAIL:", adminEmail);
       console.log("FROM EMAIL:", fromEmail);
 
-      const isTestMode = process.env.NODE_ENV === 'development' || process.env.RESEND_TEST_MODE === 'true';
       let toUserEmail = email;
       let toAdminEmail = adminEmail;
-
-      if (isTestMode) {
-        console.log("RESEND TESTING MODE ACTIVE: Overriding 'to' recipients to 'delivered@resend.dev' to comply with Resend unverified domain limits.");
-        toUserEmail = 'delivered@resend.dev';
-        toAdminEmail = 'delivered@resend.dev';
-      }
+      
+      const formattedFromEmail = `INFYNUX Solutions <${fromEmail}>`;
 
       const resendPayload = [
         {
-          from: fromEmail,
+          from: formattedFromEmail,
           to: toUserEmail,
           subject: 'Thank You for Contacting INFYNUX',
           html: `
             <div style="font-family: Arial, sans-serif; padding: 24px; background: #ffffff; color: #333333; max-width: 600px; line-height: 1.6;">
               <p>Hi ${safeName},</p>
-              <p>Thank you for reaching out to INFYNUX.</p>
-              <p>We’ve received your enquiry successfully. Our team will review your requirements and get back to you as soon as possible.</p>
-              <p>We appreciate your interest in working with us.</p>
+              <p>Thank you for contacting INFYNUX.</p>
+              <p>We have received your enquiry regarding:<br/>
+              <strong>${safeProjectType}</strong></p>
+              <p>Our team will review your requirements and get back to you soon.</p>
+              <p>Thank you for considering INFYNUX.</p>
               <br/>
-              <p>Best regards,<br/><strong>INFYNUX Team</strong></p>
+              <p>Regards,<br/><strong>INFYNUX Solutions</strong><br/>support@infynuxsolutions.in</p>
             </div>
           `
         },
         {
-          from: fromEmail,
+          from: formattedFromEmail,
           to: toAdminEmail,
-          subject: `New Website Enquiry — ${safeName}`,
+          subject: `New Website Enquiry – ${safeProjectType}`,
           html: `
             <div style="font-family: Arial, sans-serif; padding: 24px; background: #f9f9f9; color: #333333; max-width: 600px;">
               <h2 style="color: #4f46e5; border-bottom: 1px solid #dddddd; padding-bottom: 12px; margin-bottom: 20px;">
-                New Enquiry Received
+                New Website Enquiry
               </h2>
               <table style="width: 100%; border-collapse: collapse; text-align: left;">
                 <tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee; width: 100px;">Name:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${safeName}</td></tr>
                 <tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">Email:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${safeEmail}</td></tr>
+                <tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">Project Type:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${safeProjectType}</td></tr>
                 ${safePhone ? `<tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">Phone:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${safePhone}</td></tr>` : ''}
                 ${safeCompany ? `<tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">Company:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${safeCompany}</td></tr>` : ''}
                 ${safeService ? `<tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">Service:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${safeService}</td></tr>` : ''}
                 ${safeBudget ? `<tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">Budget:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${safeBudget}</td></tr>` : ''}
-                <tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">Date:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${submissionDate}</td></tr>
+                <tr><th style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">Submitted At:</th><td style="padding: 8px 0; border-bottom: 1px solid #eeeeee;">${submissionDate}</td></tr>
               </table>
               <div style="margin-top: 24px; padding: 16px; background: #ffffff; border: 1px solid #dddddd; border-radius: 4px;">
-                <p style="margin: 0 0 8px 0; color: #666666; font-size: 14px;"><strong>Message / Enquiry Details:</strong></p>
+                <p style="margin: 0 0 8px 0; color: #666666; font-size: 14px;"><strong>Project Details:</strong></p>
                 <p style="margin: 0; white-space: pre-wrap;">${safeMessage}</p>
               </div>
             </div>
