@@ -62,9 +62,9 @@ function CareersHero() {
       </div>
 
       <div className="site-container max-w-4xl mx-auto flex flex-col items-center relative z-10">
-        <div data-aos="fade-up" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-bold tracking-widest uppercase mb-6">
+        {/* <div data-aos="fade-up" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-bold tracking-widest uppercase mb-6">
           CAREERS AT INFYNUX
-        </div>
+        </div> */}
         <h1 data-aos="fade-up" data-aos-delay="100" className="font-display text-[clamp(2.75rem,6vw,5rem)] leading-[1.1] font-bold tracking-tight mb-8 text-foreground">
           Build What’s Next <span className="text-gradient">With Us.</span>
         </h1>

@@ -67,10 +67,10 @@ function HeroSection() {
 
       <div className="site-container">
         <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
-          <div data-aos="fade-up" className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary shadow-[0_0_20px_rgba(var(--primary),0.1)]">
+          {/* <div data-aos="fade-up" className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary shadow-[0_0_20px_rgba(var(--primary),0.1)]">
             <GraduationCap className="h-4 w-4" />
             <span>INFYNUX Academy</span>
-          </div>
+          </div> */}
 
           <h1 data-aos="fade-up" data-aos-delay="100" className="font-display text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-bold tracking-tight mb-6">
             <span className="block">Learn. Create. Innovate.</span>
