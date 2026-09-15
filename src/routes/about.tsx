@@ -948,32 +948,37 @@ function FAQSection() {
   const faqs = [
     { 
       question: "What is Infynux Solutions?", 
-      answer: "Infynux Solutions LLP is a custom software development company founded in 2018 in Ahmedabad, India. We build web applications, mobile apps, SaaS platforms, MVPs, and AI-powered digital products for startups, SMBs, and enterprises across Australia, USA, UK, Canada, Norway, Netherlands, and Singapore." 
+      answer: "INFYNUX Solutions is a technology company founded in 2026 in Thiruvarur, India. We specialize in custom software development and digital solutions, building web applications, mobile apps, AI-powered solutions, UI/UX experiences, and scalable digital products for startups, businesses, and organizations across different industries." 
     },
-    { 
-      question: "What kind of team will work on my project?", 
-      answer: "You will have a dedicated team of senior engineers, product designers, and project managers tailored to your specific technical requirements and project scope." 
-    },
-    { 
-      question: "How many projects has Infynux delivered?", 
-      answer: "We have successfully delivered over 150 digital products across various industries globally, maintaining a strong track record of success." 
-    },
-    { 
-      question: "What industries does Infynux work with?", 
-      answer: "We have deep expertise in FinTech, Healthcare, E-commerce, Logistics, EdTech, and AI-driven platforms, though our technical capabilities are industry-agnostic." 
-    },
-    { 
-      question: "Is Infynux rated on Upwork and Clutch?", 
-      answer: "Yes, we are highly rated on both platforms, maintaining a Top Rated Plus status on Upwork and consistent 5-star reviews from our clients on Clutch." 
-    },
-    { 
-      question: "What is Infynux approach to client confidentiality?", 
-      answer: "We sign strict NDAs before any discussion and follow enterprise-grade security protocols to protect your intellectual property and sensitive data." 
-    },
-    { 
-      question: "How does Infynux use AI in software development?", 
-      answer: "We leverage AI for both our internal development velocity and by integrating advanced AI capabilities like LLMs and RAG pipelines directly into client products." 
-    }
+    {
+  question: "What kind of team will work on my project?",
+  answer: "Your project will be handled by a collaborative team of experienced developers, designers, and technology professionals selected based on your project requirements. We bring together the right expertise across development, UI/UX, technology, and project execution to ensure your solution is designed, developed, and delivered effectively."
+},
+
+{
+  question: "How many projects has Infynux delivered?",
+  answer: "INFYNUX has worked on a growing portfolio of digital projects for businesses and organizations across different requirements. Our experience includes websites, web applications, software solutions, digital platforms, and other technology-driven projects, with a focus on delivering practical, scalable, and user-focused solutions."
+},
+
+{
+  question: "What industries does Infynux work with?",
+  answer: "INFYNUX works with businesses and organizations across a variety of industries and business domains. Rather than limiting our expertise to a single industry, we understand each client's unique requirements and develop technology solutions around their goals, workflows, audience, and business challenges."
+},
+
+{
+  question: "Is Infynux rated on Upwork and Clutch?",
+  answer: "INFYNUX is focused on building a strong professional presence and establishing long-term relationships with clients through quality work and reliable technology solutions. Our presence and ratings on third-party platforms may evolve as we continue to grow and expand our portfolio."
+},
+
+{
+  question: "What is Infynux's approach to client confidentiality?",
+  answer: "At INFYNUX, we understand that every project may involve valuable business information, project requirements, and sensitive data. We handle client information responsibly and ensure that project details are shared only with the relevant members of our team. We also follow appropriate security and confidentiality practices throughout the project lifecycle."
+},
+
+{
+  question: "How does Infynux use AI in software development?",
+  answer: "INFYNUX uses modern AI technologies to enhance software development and create smarter digital solutions. Depending on the project requirements, we explore AI for workflow automation, intelligent features, data-driven experiences, productivity improvements, and AI-powered applications, helping businesses adopt practical and meaningful uses of emerging technology."
+}
   ];
 
   return (

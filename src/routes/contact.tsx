@@ -138,7 +138,7 @@ function ReferenceContactSection({
 
             {/* Card 2 — Call / WhatsApp */}
             <a
-              href="https://wa.me/919944911273"
+              href="https://wa.me/917010850923"
               target="_blank"
               rel="noopener noreferrer"
               className="ref-info-card"
@@ -149,7 +149,7 @@ function ReferenceContactSection({
               </div>
               <div className="ref-info-text">
                 <div className="ref-info-label">CALL / WHATSAPP</div>
-                <div className="ref-info-value">+91 99449 11273</div>
+                <div className="ref-info-value">+91 7010850923</div>
               </div>
               <div className="ref-info-arrow">→</div>
             </a>
@@ -635,7 +635,7 @@ function AfterSendSection() {
   const faqs = [
     {
       q: "How fast do you respond?",
-      a: "We respond to every inquiry within 24 hours on business days. For urgent requests, reach us directly via WhatsApp at +91 99449 11273 for a faster reply.",
+      a: "We respond to every inquiry within 24 hours on business days. For urgent requests, reach us directly via WhatsApp at +91 7010850923 for a faster reply.",
     },
     {
       q: "Do you work with startups?",
