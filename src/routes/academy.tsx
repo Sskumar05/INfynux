@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import {
   GraduationCap, ArrowRight, ArrowUpRight, BrainCircuit,
   Target, Zap, Compass, CheckCircle, MessagesSquare,
-  BookOpen, Terminal, Wrench, TrendingUp, Layout, Briefcase, Map, Users
+  BookOpen, Terminal, Wrench, TrendingUp, Layout, Briefcase, Map, Users,
+  ChevronLeft, ChevronRight
 } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
@@ -200,6 +201,8 @@ function WhatYouWillGain() {
 
 /* ---------- FROM LEARNING TO BUILDING ---------- */
 function FromLearningToBuilding() {
+  const [activeStep, setActiveStep] = useState(0);
+
   const steps = [
     {
       title: "Learn",
@@ -223,10 +226,20 @@ function FromLearningToBuilding() {
     }
   ];
 
+  const handlePrev = () => {
+    if (activeStep > 0) setActiveStep(activeStep - 1);
+  };
+
+  const handleNext = () => {
+    if (activeStep < steps.length - 1) setActiveStep(activeStep + 1);
+  };
+
+  const ActiveIcon = steps[activeStep].icon;
+
   return (
     <section className="py-12 lg:py-16">
       <div className="site-container">
-        <div className="text-center mb-12 lg:mb-16" data-aos="fade-up">
+        <div className="text-center mb-6 lg:mb-12" data-aos="fade-up">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">From Learning to Building</h2>
           <div className="h-1 w-12 bg-primary mx-auto rounded-full" />
         </div>
@@ -235,17 +248,49 @@ function FromLearningToBuilding() {
           {/* Connecting line (Desktop) */}
           <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
           
-          <div className="grid md:grid-cols-4 gap-8 md:gap-4 relative z-10">
+          {/* Mobile Layout (Carousel) */}
+          <div className="md:hidden flex items-center justify-between w-full max-w-sm mx-auto relative z-10 pt-4">
+            {/* Left Arrow */}
+            <button
+              onClick={handlePrev}
+              disabled={activeStep === 0}
+              className="size-10 rounded-full border border-border/50 flex items-center justify-center text-primary bg-background hover:bg-primary/5 disabled:opacity-30 disabled:pointer-events-none transition-colors shrink-0 shadow-sm"
+              aria-label="Previous step"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            {/* Active Step Content */}
+            <div className="flex-1 flex flex-col items-center text-center px-4 animate-in fade-in slide-in-from-bottom-2 duration-500" key={activeStep}>
+              <div className="size-20 rounded-2xl glass border border-border/50 flex items-center justify-center mb-6 text-primary shadow-xl shadow-black/5 bg-background">
+                <ActiveIcon className="h-8 w-8 opacity-90" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">{steps[activeStep].title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-[200px]">
+                {steps[activeStep].desc}
+              </p>
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              onClick={handleNext}
+              disabled={activeStep === steps.length - 1}
+              className="size-10 rounded-full border border-border/50 flex items-center justify-center text-primary bg-background hover:bg-primary/5 disabled:opacity-30 disabled:pointer-events-none transition-colors shrink-0 shadow-sm"
+              aria-label="Next step"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Desktop Layout (Grid) */}
+          <div className="hidden md:grid md:grid-cols-4 gap-8 md:gap-4 relative z-10">
             {steps.map((step, idx) => (
               <div key={idx} data-aos="fade-up" data-aos-delay={idx * 100} className="flex flex-col items-center text-center group">
-                <div className="size-20 md:size-24 rounded-2xl glass border border-border/50 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300 shadow-xl shadow-black/5 bg-background">
-                  <step.icon className="h-8 w-8 md:h-10 md:w-10 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="size-24 rounded-2xl glass border border-border/50 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300 shadow-xl shadow-black/5 bg-background">
+                  <step.icon className="h-10 w-10 opacity-80 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed max-w-[200px]">{step.desc}</p>
-                {idx < steps.length - 1 && (
-                  <div className="md:hidden mt-6 h-8 w-[2px] bg-gradient-to-b from-primary/20 to-transparent" />
-                )}
               </div>
             ))}
           </div>
