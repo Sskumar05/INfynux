@@ -16,8 +16,8 @@ export function Footer() {
   return (
     <footer className="bg-background border-t border-border pt-20 pb-10 mt-10 relative overflow-hidden">
       <div className="site-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="space-y-6 lg:col-span-1">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-12 mb-16">
+          <div className="space-y-6 col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 group inline-flex">
               <img
                 src="/INfynux-Logo.png"
@@ -64,6 +64,7 @@ export function Footer() {
               { label: "Services", to: "/services" },
               { label: "Projects", to: "/work" },
               { label: "Careers", to: "/careers" },
+              { label: "Academy", to: "/academy" },
               { label: "Contact", to: "/contact" }
             ]}
           />
@@ -81,7 +82,7 @@ export function Footer() {
             ]}
           />
 
-          <div className="space-y-6 lg:col-span-1">
+          <div className="space-y-6 col-span-2 md:col-span-1">
             <div className="relative inline-block">
               <h4 className="font-display text-lg font-semibold text-foreground">Connect</h4>
             </div>

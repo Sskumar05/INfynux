@@ -36,7 +36,7 @@ function CareersPage() {
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary">
       <Navbar />
       
-      <main className="relative pb-20 overflow-hidden" tabIndex={-1}>
+      <main className="relative overflow-hidden" tabIndex={-1}>
         <CareersHero />
         <CareersIntro />
         <WhyWorkWithUs />
@@ -55,7 +55,7 @@ function CareersPage() {
 
 function CareersHero() {
   return (
-    <section className="relative pb-16 lg:pb-24 pt-32 lg:pt-40 overflow-hidden text-center">
+    <section className="relative pb-12 lg:pb-16 pt-28 lg:pt-36 overflow-hidden text-center">
       <div className="pointer-events-none absolute inset-0 -z-10 flex justify-center items-center">
         <div className="bg-primary/10 absolute -top-40 size-[min(800px,100vw)] rounded-full blur-[120px]" />
         <div className="bg-purple-500/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full blur-[100px]" />
@@ -103,7 +103,7 @@ function CareersHero() {
 
 function CareersIntro() {
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-background relative overflow-hidden">
       <div className="site-container max-w-3xl mx-auto text-center">
         <h2 data-aos="fade-up" className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-6 text-foreground">
           Where Ideas Become Impact.
@@ -128,7 +128,7 @@ function WhyWorkWithUs() {
   ];
 
   return (
-    <section className="py-28 relative bg-card/30 border-y border-border/50 overflow-hidden">
+    <section className="py-16 lg:py-20 relative bg-card/30 border-y border-border/50 overflow-hidden">
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[40%] h-[80%] bg-primary/5 rounded-full blur-[120px]" />
@@ -136,7 +136,7 @@ function WhyWorkWithUs() {
 
       <div className="site-container max-w-6xl mx-auto">
         {/* Section heading */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 lg:mb-16">
           <h2 data-aos="fade-up" className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4 text-foreground">
             Why Work With INFYNUX?
           </h2>
@@ -248,7 +248,7 @@ function CareerPaths() {
   ];
 
   return (
-    <section id="career-paths" className="py-24 relative bg-background">
+    <section id="career-paths" className="py-16 lg:py-20 relative bg-background">
       <div className="site-container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 data-aos="fade-up" className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4 text-foreground">
@@ -287,12 +287,12 @@ function CareerPaths() {
 
 function LifeAtInfynux() {
   return (
-    <section className="py-24 relative overflow-hidden bg-card/30 border-y border-border/50">
+    <section className="py-16 lg:py-20 relative overflow-hidden bg-card/30 border-y border-border/50">
       <div className="site-container max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-background text-foreground text-xs font-bold tracking-widest uppercase mb-6" data-aos="fade-up">
           Life at INFYNUX
         </div>
-        <h2 data-aos="fade-up" data-aos-delay="100" className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-12 text-foreground">
+        <h2 data-aos="fade-up" data-aos-delay="100" className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-8 lg:mb-12 text-foreground">
           More than a workplace. <span className="text-gradient">A space to create, learn and grow.</span>
         </h2>
         
@@ -440,14 +440,14 @@ function GrowthSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 relative bg-card/20 overflow-hidden">
+    <section className="py-16 lg:py-20 relative bg-card/20 overflow-hidden">
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-primary/5 rounded-full blur-[120px]" />
       </div>
 
       <div className="site-container max-w-6xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-20 lg:mb-28">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <h2 data-aos="fade-up" className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8 text-foreground">
             Keep Growing. <span className="text-gradient block mt-2 md:inline md:mt-0">Keep Creating.</span>
           </h2>
@@ -531,7 +531,7 @@ function CareersClosing() {
   ];
 
   return (
-    <section className="py-24 md:py-24 relative bg-background overflow-hidden border-t border-border/50">
+    <section className="py-16 lg:py-20 relative bg-background overflow-hidden border-t border-border/50">
       {/* Background Glows */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-primary/10 to-transparent rounded-full blur-[120px]" />
@@ -540,7 +540,7 @@ function CareersClosing() {
 
       <div className="site-container max-w-5xl mx-auto relative z-10">
         {/* Top Content */}
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-28">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <h2 data-aos="fade-up" className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 text-foreground">
             Create. Learn. Grow. <span className="text-gradient block mt-2 md:inline md:mt-0">Together.</span>
           </h2>

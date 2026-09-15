@@ -33,6 +33,7 @@ export function Navbar() {
     { label: "Services", to: "/services" },
     { label: "Projects", to: "/work" },
     { label: "Careers", to: "/careers" },
+    { label: "Academy", to: "/academy" },
     { label: "Contact", to: "/contact" },
   ];
 
