@@ -33,7 +33,7 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               {[
-                { Icon: Youtube, href: "#" },
+                { Icon: Youtube, href: "https://www.youtube.com/@Infynuxsolutions" },
                 { Icon: Linkedin, href: "https://www.linkedin.com/company/infynux-solutions/" },
                 { Icon: Instagram, href: "https://www.instagram.com/infynuxsolutions/" },
                 { Icon: WhatsAppIcon, href: "https://wa.me/917010850923" },
